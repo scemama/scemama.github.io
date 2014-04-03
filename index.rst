@@ -87,6 +87,9 @@
 `QMC=Chem <http://qmcchem.ups-tlse.fr>`_
   Massively parallel general Quantum Monte Carlo code
 
+`The Quantum Package <http://github.com/LCPQ/quantum_package>`_
+  A set of libraries and tools to easily write quantum chemistry programs.
+
   
 |h3_start| Contributions in |h3_end|
   
