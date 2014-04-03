@@ -138,7 +138,7 @@ Setup a mirrored server
   Creation of volume testvol has been successful. Please start the volume to access data.
 
 Setup screen for multi-user
----------------------------
+===========================
 
 Set the setuid bit on the executable
 
@@ -161,7 +161,7 @@ User 1 starts a screen session
 
   user1@localhost $ screen 
 
-User 2 connects to the screem
+User 2 connects to the screen
 
 .. code-block:: bash
 

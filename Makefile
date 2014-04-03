@@ -17,4 +17,4 @@ pub_list.html:
 	$(RST2HTML) $< > $@
 
 sync:
-	rsync -e ssh -aluvP * scemama@irssv2.ups-tlse.fr:vhosts/irssv2.ups-tlse.fr/htdocs/perso/scemama/
+	git commit -a && git push
