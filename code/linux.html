@@ -179,8 +179,9 @@ Creation of volume testvol has been successful. Please start the volume to acces
 </pre></div>
 </div>
 </div>
+</div>
 <div class="section" id="setup-screen-for-multi-user">
-<h3>Setup screen for multi-user<a class="headerlink" href="#setup-screen-for-multi-user" title="Permalink to this headline">¶</a></h3>
+<h2>Setup screen for multi-user<a class="headerlink" href="#setup-screen-for-multi-user" title="Permalink to this headline">¶</a></h2>
 <p>Set the setuid bit on the executable</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>sudo chmod u+s /usr/bin/screen
 <span class="nv">$ </span>ls -l /usr/bin/screen
@@ -196,10 +197,9 @@ acladd bgates,lellison,gvanrossum,dknuth,dnorman
 <div class="highlight-bash"><div class="highlight"><pre>user1@localhost <span class="nv">$ </span>screen
 </pre></div>
 </div>
-<p>User 2 connects to the screem</p>
+<p>User 2 connects to the screen</p>
 <div class="highlight-bash"><div class="highlight"><pre>user1@localhost <span class="nv">$ </span>screen -r user1/
 </pre></div>
-</div>
 </div>
 </div>
 <div class="section" id="gpg">
@@ -264,9 +264,9 @@ setxkbmap -layout <span class="k">${</span><span class="nv">new_layout</span><sp
 <li><a class="reference internal" href="#setup-a-master">Setup a master</a></li>
 <li><a class="reference internal" href="#setup-a-client">Setup a client</a></li>
 <li><a class="reference internal" href="#setup-a-mirrored-server">Setup a mirrored server</a></li>
-<li><a class="reference internal" href="#setup-screen-for-multi-user">Setup screen for multi-user</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#setup-screen-for-multi-user">Setup screen for multi-user</a></li>
 <li><a class="reference internal" href="#gpg">GPG</a></li>
 <li><a class="reference internal" href="#change-keyboard-layout-in-x">Change keyboard layout in X</a></li>
 <li><a class="reference internal" href="#ipmi">IPMI</a></li>
@@ -319,7 +319,7 @@ setxkbmap -layout <span class="k">${</span><span class="nv">new_layout</span><sp
     </div>
     <div class="footer">
         &copy; Copyright 2013, Anthony Scemama.
-      Last updated on Mar 29, 2014.
+      Last updated on Apr 17, 2014.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
     </div>
   </body>
