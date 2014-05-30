@@ -91,6 +91,12 @@ ifconfig eth0 up
 /sbin/iwconfig/ wlan0 power off</pre>
 </div>
 </div>
+<div class="section" id="turn-on-manually-interface">
+<h3>Turn on manually interface<a class="headerlink" href="#turn-on-manually-interface" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">echo </span>on &gt; /sys/devices/pci0000<span class="se">\:</span>00/0000<span class="se">\:</span>00<span class="se">\:</span>19.0/power/control
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="glusterfs">
 <h2>GlusterFS<a class="headerlink" href="#glusterfs" title="Permalink to this headline">¶</a></h2>
@@ -258,6 +264,7 @@ setxkbmap -layout <span class="k">${</span><span class="nv">new_layout</span><sp
 <li><a class="reference internal" href="#network">Network</a><ul>
 <li><a class="reference internal" href="#change-dynamically-mac-address">Change dynamically MAC address</a></li>
 <li><a class="reference internal" href="#fix-wireless-problems-when-on-battery">Fix wireless problems when on battery</a></li>
+<li><a class="reference internal" href="#turn-on-manually-interface">Turn on manually interface</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#glusterfs">GlusterFS</a><ul>
@@ -319,7 +326,7 @@ setxkbmap -layout <span class="k">${</span><span class="nv">new_layout</span><sp
     </div>
     <div class="footer">
         &copy; Copyright 2013, Anthony Scemama.
-      Last updated on Apr 17, 2014.
+      Last updated on May 30, 2014.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
     </div>
   </body>

@@ -45,6 +45,13 @@ Fix wireless problems when on battery
   #!/bin/sh
   /sbin/iwconfig/ wlan0 power off
 
+Turn on manually interface
+--------------------------
+
+.. code-block:: bash
+
+  echo on > /sys/devices/pci0000\:00/0000\:00\:19.0/power/control
+
 
 GlusterFS
 =========
