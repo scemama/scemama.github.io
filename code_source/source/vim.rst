@@ -18,6 +18,11 @@ Text
 * z= : Propose spell correction
 * zg : Add to spell dictionary
 
+.. code-block:: vim
+
+  hi SpellBad cterm=underline ctermbg=NONE ctermfg=darkred
+
+
 Code
 ====
 
@@ -37,24 +42,9 @@ Navigation in wrapped lines with Ctrl:
 
 Tab completion:
 
-.. code-block:: vim
-
-  " Super TAB
-  function! IndentTab()
-     if strpart(getline('.'), 0, col('.') - 1) =~ '^\s*$'
-  "       return "\<Tab>"
-         return "  "
-     else
-         if &dictionary != ''
-             return "\<C-K>"
-         else
-             return "\<C-P>"
-         endif
-     endif
-  endfunction
-  inoremap <Tab> <C-R>=IndentTab()<cr>
-  set et
-
+.. literalinclude:: Vim/supertab.vim
+   :language: vim
+  
 
 Fortran:
 
@@ -65,18 +55,28 @@ Fortran:
     set nosmartindent
     iab char character*
     iab print print *, 
-    iab double double precision
-    iab intt integer
-    iab bool logical 
+    iab doubl  double precision, allocatable ::
+    iab double double precision ::
+    iab intt integer ::
+    iab bool logical ::
     iab sub subroutine
     iab imp implicit none
     iab doi do i=1
-    iab begpro BEGIN_PROVIDER 
+    iab doj do j=1
+    iab dok do k=1
+    iab begpro BEGIN_PROVIDER [ , ]<CR><CR><UP>END_PROVIDER<ESC>O implicit none<CR>BEGIN_DOC<CR>END_DOC<CR><UP><ESC>O! <ESC>?[<CR>
     iab endpro END_PROVIDER
-    iab begdoc BEGIN_DOC  
+    iab begdoc BEGIN_DOC<CR><CR>END_DOC<ESC><UP>0i!
     iab enddoc END_DOC
+    let b:cmt = '!'   " For ToggleComments
+    " Use irpf90_indent to indent code with =
+    set equalprg=~/irpf90/bin/irpf90_indent
   endfunction
   au BufNewFile,BufRead *.f,*.f90,*.F,*.F90  call FortranAbbr()
 
 
+Toggle comments with `!`:
 
+.. literalinclude:: Vim/comment.vim
+   :language: vim
+  

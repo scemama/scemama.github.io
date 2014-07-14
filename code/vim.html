@@ -66,6 +66,9 @@
 <li>z= : Propose spell correction</li>
 <li>zg : Add to spell dictionary</li>
 </ul>
+<div class="highlight-vim"><div class="highlight"><pre><span class="nb">hi</span> SpellBad cterm<span class="p">=</span><span class="nb">underline</span> ctermbg<span class="p">=</span><span class="nb">NONE</span> ctermfg<span class="p">=</span>darkred
+</pre></div>
+</div>
 </div>
 <div class="section" id="code">
 <h2>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h2>
@@ -87,16 +90,16 @@ imap <span class="p">&lt;</span>C<span class="p">-</span>DOWN<span class="p">&gt
 <span class="k">function</span><span class="p">!</span> IndentTab<span class="p">()</span>
    <span class="k">if</span> strpart<span class="p">(</span>getline<span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">),</span> <span class="m">0</span><span class="p">,</span> <span class="k">col</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span> <span class="p">-</span> <span class="m">1</span><span class="p">)</span> <span class="p">=~</span> <span class="s1">&#39;^\s*$&#39;</span>
 <span class="c">&quot;       return &quot;\&lt;Tab&gt;&quot;</span>
-       <span class="k">return</span> <span class="s2">&quot;  &quot;</span>
+       <span class="k">return</span> <span class="c">&quot;  &quot;</span>
    <span class="k">else</span>
        <span class="k">if</span> &amp;<span class="nb">dictionary</span> <span class="p">!=</span> <span class="s1">&#39;&#39;</span>
-           <span class="k">return</span> <span class="s2">&quot;\&lt;C-K&gt;&quot;</span>
+           <span class="k">return</span> <span class="c">&quot;\&lt;C-K&gt;&quot;</span>
        <span class="k">else</span>
-           <span class="k">return</span> <span class="s2">&quot;\&lt;C-P&gt;&quot;</span>
+           <span class="k">return</span> <span class="c">&quot;\&lt;C-P&gt;&quot;</span>
        <span class="k">endif</span>
    <span class="k">endif</span>
 <span class="k">endfunction</span>
-<span class="nb">inoremap</span> <span class="p">&lt;</span>Tab<span class="p">&gt;</span> <span class="p">&lt;</span>C<span class="p">-</span>R<span class="p">&gt;=</span>IndentTab<span class="p">()&lt;</span><span class="k">cr</span><span class="p">&gt;</span>
+inoremap <span class="p">&lt;</span>Tab<span class="p">&gt;</span> <span class="p">&lt;</span>C<span class="p">-</span>R<span class="p">&gt;=</span>IndentTab<span class="p">()&lt;</span><span class="k">cr</span><span class="p">&gt;</span>
 <span class="k">set</span> <span class="nb">et</span>
 </pre></div>
 </div>
@@ -104,20 +107,71 @@ imap <span class="p">&lt;</span>C<span class="p">-</span>DOWN<span class="p">&gt
 <div class="highlight-vim"><div class="highlight"><pre><span class="k">function</span><span class="p">!</span> FortranAbbr<span class="p">()</span>
   <span class="k">set</span> <span class="nb">autoindent</span>
   <span class="k">set</span> <span class="nb">nosmartindent</span>
-  iab char character*
-  iab print print *<span class="p">,</span>
-  iab double double precision
-  iab intt integer
-  iab bool logical
-  iab <span class="k">sub</span> subroutine
-  iab imp implicit none
-  iab doi <span class="k">do</span> <span class="k">i</span><span class="p">=</span><span class="m">1</span>
-  iab begpro BEGIN_PROVIDER
-  iab endpro END_PROVIDER
-  iab begdoc BEGIN_DOC
-  iab enddoc END_DOC
+  <span class="k">iab</span> char character*
+  <span class="k">iab</span> print print *<span class="p">,</span>
+  <span class="k">iab</span> doubl  double precision<span class="p">,</span> allocatable ::
+  <span class="k">iab</span> double double precision ::
+  <span class="k">iab</span> intt integer ::
+  <span class="k">iab</span> bool logical ::
+  <span class="k">iab</span> sub subroutine
+  <span class="k">iab</span> imp implicit none
+  <span class="k">iab</span> doi do i<span class="p">=</span><span class="m">1</span>
+  <span class="k">iab</span> doj do <span class="k">j</span><span class="p">=</span><span class="m">1</span>
+  <span class="k">iab</span> dok do <span class="k">k</span><span class="p">=</span><span class="m">1</span>
+  <span class="k">iab</span> begpro BEGIN_PROVIDER [ <span class="p">,</span> ]<span class="p">&lt;</span>CR<span class="p">&gt;&lt;</span>CR<span class="p">&gt;&lt;</span>UP<span class="p">&gt;</span>END_PROVIDER<span class="p">&lt;</span>ESC<span class="p">&gt;</span>O implicit none<span class="p">&lt;</span>CR<span class="p">&gt;</span>BEGIN_DOC<span class="p">&lt;</span>CR<span class="p">&gt;</span>END_DOC<span class="p">&lt;</span>CR<span class="p">&gt;&lt;</span>UP<span class="p">&gt;&lt;</span>ESC<span class="p">&gt;</span>O<span class="p">!</span> <span class="p">&lt;</span>ESC<span class="p">&gt;</span>?[<span class="p">&lt;</span>CR<span class="p">&gt;</span>
+  <span class="k">iab</span> endpro END_PROVIDER
+  <span class="k">iab</span> begdoc BEGIN_DOC<span class="p">&lt;</span>CR<span class="p">&gt;&lt;</span>CR<span class="p">&gt;</span>END_DOC<span class="p">&lt;</span>ESC<span class="p">&gt;&lt;</span>UP<span class="p">&gt;</span><span class="m">0</span>i<span class="p">!</span>
+  <span class="k">iab</span> enddoc END_DOC
+  <span class="k">let</span> <span class="k">b</span>:cmt <span class="p">=</span> <span class="s1">&#39;!&#39;</span>   <span class="c">&quot; For ToggleComments</span>
+<span class="c">  &quot; Use irpf90_indent to indent code with =</span>
+  <span class="k">set</span> <span class="nb">equalprg</span><span class="p">=~</span><span class="sr">/irpf90/</span><span class="nb">bin</span>/irpf90_indent
 <span class="k">endfunction</span>
-<span class="k">au</span> <span class="nb">BufNewFile</span><span class="p">,</span><span class="nb">BufRead</span> *.<span class="k">f</span><span class="p">,</span>*.f90<span class="p">,</span>*.F<span class="p">,</span>*.F90  <span class="k">call</span> FortranAbbr<span class="p">()</span>
+au <span class="nb">BufNewFile</span><span class="p">,</span><span class="nb">BufRead</span> *.<span class="k">f</span><span class="p">,</span>*.f90<span class="p">,</span>*.F<span class="p">,</span>*.F90  <span class="k">call</span> FortranAbbr<span class="p">()</span>
+</pre></div>
+</div>
+<p>Toggle comments with <cite>!</cite>:</p>
+<div class="highlight-vim"><div class="highlight"><pre><span class="k">function</span><span class="p">!</span> ToggleComment <span class="p">()</span>
+  <span class="k">if</span> exists<span class="p">(</span><span class="s1">&#39;b:cmt&#39;</span><span class="p">)</span> 
+     <span class="k">let</span> <span class="k">c</span> <span class="p">=</span> <span class="k">b</span>:cmt
+  <span class="k">else</span>
+     <span class="k">let</span> <span class="k">c</span> <span class="p">=</span> <span class="s1">&#39;#&#39;</span>
+  <span class="k">endif</span>
+  <span class="k">let</span> line <span class="p">=</span> getline<span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
+  <span class="k">if</span> line <span class="p">=~</span> <span class="s1">&#39;^&#39;</span>.<span class="k">c</span>
+    <span class="k">let</span> newline <span class="p">=</span> substitute<span class="p">(</span>line<span class="p">,</span> <span class="s1">&#39;^&#39;</span>.<span class="k">c</span> <span class="p">,</span> <span class="c">&quot;&quot;, &quot;&quot;)</span>
+    <span class="k">call</span> setline<span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> newline<span class="p">)</span>
+  <span class="k">else</span>
+    <span class="k">let</span> newline <span class="p">=</span> substitute<span class="p">(</span>line<span class="p">,</span> <span class="s1">&#39;^&#39;</span><span class="p">,</span> <span class="k">c</span> <span class="p">,</span> <span class="c">&quot;&quot;)</span>
+    <span class="k">call</span> setline<span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> newline<span class="p">)</span>
+  <span class="k">endif</span>
+<span class="k">endfunction</span>
+
+<span class="k">function</span><span class="p">!</span> ToggleBlock <span class="p">()</span> range
+  <span class="k">if</span> exists<span class="p">(</span><span class="s1">&#39;b:cmt&#39;</span><span class="p">)</span> 
+     <span class="k">let</span> <span class="k">c</span> <span class="p">=</span> <span class="k">b</span>:cmt
+  <span class="k">else</span>
+     <span class="k">let</span> <span class="k">c</span> <span class="p">=</span> <span class="s1">&#39;#&#39;</span>
+  <span class="k">endif</span>
+
+  <span class="k">let</span> <span class="nb">lines</span> <span class="p">=</span> getline<span class="p">(</span>a:firstline<span class="p">,</span> a:lastline<span class="p">)</span>
+  <span class="k">let</span> line_num <span class="p">=</span> a:firstline
+  <span class="k">if</span> <span class="nb">lines</span>[<span class="m">0</span>] <span class="p">=~</span> <span class="s1">&#39;^&#39;</span>.<span class="k">c</span>
+    <span class="k">for</span> line <span class="k">in</span> <span class="nb">lines</span>
+      <span class="k">let</span> newline <span class="p">=</span> substitute<span class="p">(</span>line<span class="p">,</span> <span class="s1">&#39;^&#39;</span>.<span class="k">c</span><span class="p">,</span> <span class="c">&quot;&quot;, &quot;&quot;)</span>
+      <span class="k">call</span> setline<span class="p">(</span>line_num<span class="p">,</span> newline<span class="p">)</span>
+      <span class="k">let</span> line_num <span class="p">+=</span> <span class="m">1</span>
+    <span class="k">endfor</span>
+  <span class="k">else</span>
+    <span class="k">for</span> line <span class="k">in</span> <span class="nb">lines</span>
+        <span class="k">let</span> newline <span class="p">=</span> substitute<span class="p">(</span>line<span class="p">,</span> <span class="s1">&#39;^\(&#39;</span>.<span class="k">c</span>.<span class="s1">&#39;\)\?&#39;</span><span class="p">,</span> <span class="k">c</span><span class="p">,</span> <span class="c">&quot;&quot;)</span>
+      <span class="k">call</span> setline<span class="p">(</span>line_num<span class="p">,</span> newline<span class="p">)</span>
+      <span class="k">let</span> line_num <span class="p">+=</span> <span class="m">1</span>
+    <span class="k">endfor</span>
+  <span class="k">endif</span>
+<span class="k">endfunction</span>
+
+nmap <span class="p">&lt;</span><span class="k">silent</span><span class="p">&gt;</span> <span class="p">!</span> :<span class="k">call</span> ToggleComment<span class="p">()&lt;</span>CR<span class="p">&gt;</span><span class="k">j</span>
+vmap <span class="p">&lt;</span><span class="k">silent</span><span class="p">&gt;</span> <span class="p">!</span> :<span class="k">call</span> ToggleBlock<span class="p">()&lt;</span>CR<span class="p">&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -179,7 +233,7 @@ imap <span class="p">&lt;</span>C<span class="p">-</span>DOWN<span class="p">&gt
     </div>
     <div class="footer">
         &copy; Copyright 2013, Anthony Scemama.
-      Last updated on Apr 17, 2014.
+      Last updated on Jul 14, 2014.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
     </div>
   </body>
