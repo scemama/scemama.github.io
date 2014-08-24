@@ -245,6 +245,21 @@ setxkbmap -layout <span class="k">${</span><span class="nv">new_layout</span><sp
 <div class="highlight-python"><pre>$ /usr/bin/ipmitool -I lanplus -U root -H $HOSTNAME -P $PASSWORD -e @ sol activate</pre>
 </div>
 </div>
+<div class="section" id="install-gnu-parallel">
+<h2>Install GNU-Parallel<a class="headerlink" href="#install-gnu-parallel" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c">#!/bin/bash</span>
+
+<span class="nv">BIN</span><span class="o">=</span>~/bin
+
+wget <span class="s2">&quot;http://mirror.ibcp.fr/pub/gnu/parallel/parallel-latest.tar.bz2&quot;</span>
+tar -xjvf parallel-latest.tar.bz2
+<span class="nb">cd </span>parallel-20*/
+./configure
+make
+cp <span class="k">$(</span>find src -executable | grep <span class="s1">&#39;/&#39;</span> <span class="k">)</span> <span class="nv">$BIN</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -277,6 +292,7 @@ setxkbmap -layout <span class="k">${</span><span class="nv">new_layout</span><sp
 <li><a class="reference internal" href="#gpg">GPG</a></li>
 <li><a class="reference internal" href="#change-keyboard-layout-in-x">Change keyboard layout in X</a></li>
 <li><a class="reference internal" href="#ipmi">IPMI</a></li>
+<li><a class="reference internal" href="#install-gnu-parallel">Install GNU-Parallel</a></li>
 </ul>
 </li>
 </ul>
@@ -326,7 +342,7 @@ setxkbmap -layout <span class="k">${</span><span class="nv">new_layout</span><sp
     </div>
     <div class="footer">
         &copy; Copyright 2013, Anthony Scemama.
-      Last updated on May 30, 2014.
+      Last updated on Aug 24, 2014.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
     </div>
   </body>

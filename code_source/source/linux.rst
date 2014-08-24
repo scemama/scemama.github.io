@@ -224,3 +224,20 @@ Console redirection::
   $ /usr/bin/ipmitool -I lanplus -U root -H $HOSTNAME -P $PASSWORD -e @ sol activate
 
 
+Install GNU-Parallel
+====================
+
+.. code-block:: bash
+
+  #!/bin/bash
+  
+  BIN=~/bin
+  
+  wget "http://mirror.ibcp.fr/pub/gnu/parallel/parallel-latest.tar.bz2"
+  tar -xjvf parallel-latest.tar.bz2
+  cd parallel-20*/
+  ./configure
+  make
+  cp $(find src -executable | grep '/' ) $BIN
+
+
