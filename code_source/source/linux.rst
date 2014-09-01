@@ -241,3 +241,59 @@ Install GNU-Parallel
   cp $(find src -executable | grep '/' ) $BIN
 
 
+Seafile
+=======
+
+init::
+
+  seaf-cli init [-c <config-dir>] -d <parent-dir>
+
+start::
+
+  seaf-cli start [-c <config-dir>]
+
+stop::
+
+  seaf-cli stop [-c <config-dir>]
+
+Download::
+
+  seaf-cli download -l <library-id> -s <seahub-server-url> -d <parent-directory> -u <username> -p <password>
+
+sync::
+
+  seaf-cli sync -l <library-id> -s <seahub-server-url> -d <existing-folder> -u <username> -p <password>
+
+desync::
+
+  seaf-cli desync -d <existing-folder>
+
+create::
+
+  seaf-cli create -s <seahub-server-url> -n <library-name> -u <username> -p <password> -t <description> [-e <library-password>]
+
+
+Fetchmail
+=========
+
+~/.fetchmailrc
+
+.. code-block:: bash
+
+  set daemon 60
+  set syslog
+
+  poll pop.gmail.com protocol POP3
+     user "recent:xxxx@gmail.com" there is scemama here
+     password 'xxxx'
+     keep
+     ssl
+
+
+check_mail.sh
+
+.. code-block:: bash
+
+  mailx -H
+  echo > $MAIL
+

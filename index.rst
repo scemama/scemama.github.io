@@ -78,7 +78,7 @@
 `IRPF90 <http://irpf90.ups-tlse.fr>`_
    Fortran pre-processor helping the development of large scientific codes in Fortran
 
-`EZFIO <http://ezfio.sourceforge.net>`_
+`EZFIO <http://github.com/scemama/EZFIO>`_
   The Easy Fortran I/O library generator
 
 `EPLF <http://eplf.sourceforge.net>`_

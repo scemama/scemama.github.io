@@ -260,6 +260,49 @@ cp <span class="k">$(</span>find src -executable | grep <span class="s1">&#39;/&
 </pre></div>
 </div>
 </div>
+<div class="section" id="seafile">
+<h2>Seafile<a class="headerlink" href="#seafile" title="Permalink to this headline">¶</a></h2>
+<p>init:</p>
+<div class="highlight-python"><pre>seaf-cli init [-c &lt;config-dir&gt;] -d &lt;parent-dir&gt;</pre>
+</div>
+<p>start:</p>
+<div class="highlight-python"><pre>seaf-cli start [-c &lt;config-dir&gt;]</pre>
+</div>
+<p>stop:</p>
+<div class="highlight-python"><pre>seaf-cli stop [-c &lt;config-dir&gt;]</pre>
+</div>
+<p>Download:</p>
+<div class="highlight-python"><pre>seaf-cli download -l &lt;library-id&gt; -s &lt;seahub-server-url&gt; -d &lt;parent-directory&gt; -u &lt;username&gt; -p &lt;password&gt;</pre>
+</div>
+<p>sync:</p>
+<div class="highlight-python"><pre>seaf-cli sync -l &lt;library-id&gt; -s &lt;seahub-server-url&gt; -d &lt;existing-folder&gt; -u &lt;username&gt; -p &lt;password&gt;</pre>
+</div>
+<p>desync:</p>
+<div class="highlight-python"><pre>seaf-cli desync -d &lt;existing-folder&gt;</pre>
+</div>
+<p>create:</p>
+<div class="highlight-python"><pre>seaf-cli create -s &lt;seahub-server-url&gt; -n &lt;library-name&gt; -u &lt;username&gt; -p &lt;password&gt; -t &lt;description&gt; [-e &lt;library-password&gt;]</pre>
+</div>
+</div>
+<div class="section" id="fetchmail">
+<h2>Fetchmail<a class="headerlink" href="#fetchmail" title="Permalink to this headline">¶</a></h2>
+<p>~/.fetchmailrc</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">set </span>daemon 60
+<span class="nb">set </span>syslog
+
+poll pop.gmail.com protocol POP3
+   user <span class="s2">&quot;recent:xxxx@gmail.com&quot;</span> there is scemama here
+   password <span class="s1">&#39;xxxx&#39;</span>
+   keep
+   ssl
+</pre></div>
+</div>
+<p>check_mail.sh</p>
+<div class="highlight-bash"><div class="highlight"><pre>mailx -H
+<span class="nb">echo</span> &gt; <span class="nv">$MAIL</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -293,6 +336,8 @@ cp <span class="k">$(</span>find src -executable | grep <span class="s1">&#39;/&
 <li><a class="reference internal" href="#change-keyboard-layout-in-x">Change keyboard layout in X</a></li>
 <li><a class="reference internal" href="#ipmi">IPMI</a></li>
 <li><a class="reference internal" href="#install-gnu-parallel">Install GNU-Parallel</a></li>
+<li><a class="reference internal" href="#seafile">Seafile</a></li>
+<li><a class="reference internal" href="#fetchmail">Fetchmail</a></li>
 </ul>
 </li>
 </ul>
@@ -342,7 +387,7 @@ cp <span class="k">$(</span>find src -executable | grep <span class="s1">&#39;/&
     </div>
     <div class="footer">
         &copy; Copyright 2013, Anthony Scemama.
-      Last updated on Aug 24, 2014.
+      Last updated on Sep 02, 2014.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
     </div>
   </body>
