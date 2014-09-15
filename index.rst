@@ -175,6 +175,12 @@
 
 |h2_start| Teaching |h2_end|
 
+|h3_start| Intensive Course of the European Master in Theoretical Chemistry and Computational Modelling (TCCM) |h3_end|
+
+* `Parallel programming <http://irpf90.ups-tlse.fr/files/parallel_programming.pdf>`_
+* `Source files <http://github.com/scemama/tccm2014>`_
+
+ 
 |h3_start| CECAM Workshop |h3_end|
 
 | *Atomistic and molecular simulations on massively parallel architectures*
