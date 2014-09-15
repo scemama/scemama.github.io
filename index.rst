@@ -177,6 +177,8 @@
 
 |h3_start| Intensive Course of the European Master in Theoretical Chemistry and Computational Modelling (TCCM) |h3_end|
 
+| 22-26/09/2014, Toulouse
+
 * `Parallel programming <http://irpf90.ups-tlse.fr/files/parallel_programming.pdf>`_
 * `Source files <http://github.com/scemama/tccm2014>`_
 
