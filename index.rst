@@ -118,6 +118,8 @@
 
 |h2_start| Oral presentations |h2_end|
   
+#. | `Un algorithme permettant de traiter plus d’un million d’atomes en chimie quantique <http://irpf90.ups-tlse.fr/files/reims.pdf>`__
+   | 30/9/2014 Maison de la simulation de l'Université de Reims Champagne-Ardenne
 #. | `Millions of atoms in DFTB <http://irpf90.ups-tlse.fr/files/cecam_lausanne.pdf>`__
    | 23/1/2014 CECAM Workshop on two-dimensional inorganic materials, EPFL, Lausanne (Switzerland)
 #. | `Un million d'atomes en chimie quantique <http://irpf90.ups-tlse.fr/files/mesochallenge2013.pdf>`__
