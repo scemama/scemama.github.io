@@ -96,7 +96,7 @@
 `Q5Cost <http://q5cost.org>`_
   Library for a common file format for Quantum Chemistry
   
-`deMon Nano <http://physics.jacobs-university.de/theine/research/deMon>`_
+`deMon Nano <http://demon-nano.ups-tlse.fr>`_
   DFTB branch of deMon
   
 |h3_start| Useful tools |h3_end|
