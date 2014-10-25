@@ -120,8 +120,7 @@
   
 .. raw:: html
 
-   <script async class="speakerdeck-embed" data-id="f2861fb03e910132cb665e1978f9d5ef" data-ratio="1.0" src="//speakerdeck.com/assets/embed.js"></script>
-.. <script async class="speakerdeck-embed" data-id="f2861fb03e910132cb665e1978f9d5ef" data-ratio="1.33681462140992" src="//speakerdeck.com/assets/embed.js"></script>
+   <script async class="speakerdeck-embed" data-id="f2861fb03e910132cb665e1978f9d5ef" data-ratio="1.33681462140992" src="//speakerdeck.com/assets/embed.js"></script>
 
 #. | `IRPF90 : a Fortran code generator for HPC <http://irpf90.ups-tlse.fr/files/pyconf_2014.pdf>`_
    | 25/10/2014 Conférence Python PyConFr, Lyon
