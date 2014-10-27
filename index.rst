@@ -129,7 +129,7 @@
 #. | `Software optimization for petaflops/s scale Quantum Monte Carlo simulations <http://irpf90.ups-tlse.fr/files/mds.pdf>`__
    | 4/12/2012 Maison de la simulation, Saclay
 #. | `Implémentation de simulations QMC  massivement parallèles pourla chimie: Du laboratoire aux calculateurs pétaflopiques en passant par les mésocentres <http://irpf90.ups-tlse.fr/files/equipatmeso.pdf>`__
-   | 18/10/2012 Journée scientifique Equip@Meso, Strasbourg
+   | 18/10/2012 Journée scientifique Equip@Meso, Strasbourg, `Watch video <http://canalc2.u-strasbg.fr/video.asp?idvideo=11473>`_
 #. | `QMC=Chem: a quantum Monte Carlo program for large-scale simulations in chemistry at the petascale level and beyond <http://irpf90.ups-tlse.fr/files/kobe_talk.pdf>`__
    | 18/07/2012  10th International Meeting on High-Performance Computing for Computational Science (VECPAR 2012), Kobe (Japan)
 #. | `Quantum Monte Carlo simulations in chemistry at the petascale level and beyond <http://irpf90.ups-tlse.fr/files/teratec.pdf>`__
