@@ -59,7 +59,8 @@
 | IRSAMC, Université Paul Sabatier Toulouse III   
 | 118, route de Narbonne                          
 | 31062 Toulouse Cedex 4                          
-| email: scemama@irsamc.ups-tlse.fr               
+| scemama@irsamc.ups-tlse.fr               
+| @scemama666
 
 .. raw:: html
 
