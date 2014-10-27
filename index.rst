@@ -60,7 +60,7 @@
 | 118, route de Narbonne                          
 | 31062 Toulouse Cedex 4                          
 | scemama@irsamc.ups-tlse.fr               
-| @scemama666
+| `@scemama666 <http://twitter.com/scemama666>`_
 
 .. raw:: html
 
