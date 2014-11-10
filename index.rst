@@ -91,7 +91,7 @@
 `The Quantum Package <http://github.com/LCPQ/quantum_package>`_
   A set of libraries and tools to easily write quantum chemistry programs.
 
-`F77_ZMQ <http://github.com/scemama/f77_zmq`_
+`F77_ZMQ <http://github.com/scemama/f77_zmq>`_
   A Fortran77 binding for the ZeroMQ communication library.
 
   
