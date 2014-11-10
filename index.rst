@@ -91,6 +91,9 @@
 `The Quantum Package <http://github.com/LCPQ/quantum_package>`_
   A set of libraries and tools to easily write quantum chemistry programs.
 
+`F77_ZMQ <http://github.com/scemama/f77_zmq`_
+  A Fortran77 binding for the ZeroMQ communication library.
+
   
 |h3_start| Contributions in |h3_end|
   
@@ -143,7 +146,7 @@
    | 28/06/2012 Forum Teratec, Ecole Polytechnique, Palaisau
 #. | `Quantum Monte Carlo simulations for Alzheimer’s disease on the Curie machine : Efficient strategies for extreme parallelism onpetascale platforms and beyond <http://irpf90.ups-tlse.fr/files/isc.pdf>`__
    | 19/06/2012 International Supercomputing Conference, Intel Theater, Hamburg (Germany)
-#. | `Interprétation des liaisons chimiques à partir de fonctiond d'ondes de grande précision <http://irpf90.ups-tlse.fr/files/lcc_2012.pdf>`__
+#. | `Interprétation des liaisons chimiques à partir de fonctions d'ondes de grande précision <http://irpf90.ups-tlse.fr/files/lcc_2012.pdf>`__
    | 15/06/2012 Laboratoire de Chimie de Coordination, Toulouse
 #. | `Gestion de clusters de calcul avec Rocks <http://irpf90.ups-tlse.fr/files/rocks.pdf>`__
    | 26/4/2012 Réunion Capitoul, Toulouse
