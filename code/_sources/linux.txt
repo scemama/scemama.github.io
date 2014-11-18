@@ -297,3 +297,29 @@ check_mail.sh
   mailx -H
   echo > $MAIL
 
+Software RAID
+=============
+
+Check global status::
+
+  $ cat /proc/mdstat
+
+Check one partition::
+
+  $ mdadm --detail /dev/md1
+
+Sending email
+=============
+
+* Download ssmtp.
+
+.. code-block:: bash
+
+  $ vi /etc/ssmtp/ssmtp.conf
+  AuthUser=user.com
+  AuthPass=Your-Gmail-Password
+  FromLineOverride=YES
+  mailhub=smtp.gmail.com:587
+  UseSTARTTLS=YES
+
+
