@@ -60,7 +60,7 @@
 | 118, route de Narbonne                          
 | 31062 Toulouse Cedex 4                          
 | scemama@irsamc.ups-tlse.fr               
-| `@scemama666 <http://twitter.com/scemama666>`_
+| `@scemama666 <http://twitter.com/scemama666>`__
 
 .. raw:: html
 
@@ -76,42 +76,42 @@
 
 |h2_start| Software |h2_end|
   
-`IRPF90 <http://irpf90.ups-tlse.fr>`_
+`IRPF90 <http://irpf90.ups-tlse.fr>`__
    Fortran pre-processor helping the development of large scientific codes in Fortran
 
-`EZFIO <http://github.com/scemama/EZFIO>`_
+`EZFIO <http://github.com/scemama/EZFIO>`__
   The Easy Fortran I/O library generator
 
-`EPLF <http://eplf.sourceforge.net>`_
+`EPLF <http://eplf.sourceforge.net>`__
   Computes the Electron Pair Localization Function (EPLF) for a given wave function
 
-`QMC=Chem <http://qmcchem.ups-tlse.fr>`_
+`QMC=Chem <http://qmcchem.ups-tlse.fr>`__
   Massively parallel general Quantum Monte Carlo code
 
-`The Quantum Package <http://github.com/LCPQ/quantum_package>`_
+`The Quantum Package <http://github.com/LCPQ/quantum_package>`__
   A set of libraries and tools to easily write quantum chemistry programs.
 
-`F77_ZMQ <http://github.com/scemama/f77_zmq>`_
+`F77_ZMQ <http://github.com/scemama/f77_zmq>`__
   A Fortran77 binding for the ZeroMQ communication library.
 
   
 |h3_start| Contributions in |h3_end|
   
-`Q5Cost <http://q5cost.org>`_
+`Q5Cost <http://q5cost.org>`__
   Library for a common file format for Quantum Chemistry
   
-`deMon Nano <http://demon-nano.ups-tlse.fr>`_
+`deMon Nano <http://demon-nano.ups-tlse.fr>`__
   DFTB branch of deMon
   
 |h3_start| Useful tools |h3_end|
 
-`Slater-Condon rules <https://github.com/scemama/slater_condon>`_
+`Slater-Condon rules <https://github.com/scemama/slater_condon>`__
   Computes Slater-Condon rules using SSE4.2 and popcnt for determinant-driven calculations
 
-`Multiuser <https://github.com/scemama/multiuser>`_
+`Multiuser <https://github.com/scemama/multiuser>`__
   Allow multiple users to share the same linux account (for demos, and classes)
 
-`<code>`_
+`<code>`__
   Useful bits of code
 
 |box_end|
@@ -126,8 +126,8 @@
 
    <script async class="speakerdeck-embed" data-id="f2861fb03e910132cb665e1978f9d5ef" data-ratio="1.33681462140992" src="//speakerdeck.com/assets/embed.js"></script>
 
-#. | `IRPF90 : a Fortran code generator for HPC <http://irpf90.ups-tlse.fr/files/pyconf_2014.pdf>`_
-   | 25/10/2014 Conférence Python PyConFr, Lyon
+#. | `IRPF90 : a Fortran code generator for HPC <http://irpf90.ups-tlse.fr/files/pyconf_2014.pdf>`__
+   | 25/10/2014 Conférence Python PyConFr, Lyon `Watch video <http://www.infoq.com/fr/presentations/irpf90-fortran-code-generator-hpc>`__
 #. | `Un algorithme permettant de traiter plus d’un million d’atomes en chimie quantique <http://irpf90.ups-tlse.fr/files/reims2014.pdf>`__
    | 30/9/2014 Maison de la simulation de l'Université de Reims Champagne-Ardenne
 #. | `Millions of atoms in DFTB <http://irpf90.ups-tlse.fr/files/cecam_lausanne.pdf>`__
@@ -139,7 +139,7 @@
 #. | `Software optimization for petaflops/s scale Quantum Monte Carlo simulations <http://irpf90.ups-tlse.fr/files/mds.pdf>`__
    | 4/12/2012 Maison de la simulation, Saclay
 #. | `Implémentation de simulations QMC  massivement parallèles pourla chimie: Du laboratoire aux calculateurs pétaflopiques en passant par les mésocentres <http://irpf90.ups-tlse.fr/files/equipatmeso.pdf>`__
-   | 18/10/2012 Journée scientifique Equip@Meso, Strasbourg, `Watch video <http://canalc2.u-strasbg.fr/video.asp?idvideo=11473>`_
+   | 18/10/2012 Journée scientifique Equip@Meso, Strasbourg, `Watch video <http://canalc2.u-strasbg.fr/video.asp?idvideo=11473>`__
 #. | `QMC=Chem: a quantum Monte Carlo program for large-scale simulations in chemistry at the petascale level and beyond <http://irpf90.ups-tlse.fr/files/kobe_talk.pdf>`__
    | 18/07/2012  10th International Meeting on High-Performance Computing for Computational Science (VECPAR 2012), Kobe (Japan)
 #. | `Quantum Monte Carlo simulations in chemistry at the petascale level and beyond <http://irpf90.ups-tlse.fr/files/teratec.pdf>`__
@@ -191,8 +191,8 @@
 
 | 22-26/09/2014, Toulouse
 
-* `Parallel programming <http://irpf90.ups-tlse.fr/files/parallel_programming.pdf>`_
-* `Source files <http://github.com/scemama/tccm2014>`_
+* `Parallel programming <http://irpf90.ups-tlse.fr/files/parallel_programming.pdf>`__
+* `Source files <http://github.com/scemama/tccm2014>`__
 
  
 |h3_start| CECAM Workshop |h3_end|
@@ -210,12 +210,12 @@
 15-19/04/2013, Paris
 
 * | `Bash <http://gdrcorelec.ups-tlse.fr/files/bash.pdf>`__
-  | `Exercise <http://gdrcorelec.ups-tlse.fr/files/TPBash.tgz>`__ `Solution <http://gdrcorelec.ups-tlse.fr/files/spectrum.sh.gz>`__
+  | `Exercise <http://gdrcorelec.ups-tlse.fr/files/TPBash.tgz>`_ `Solution <http://gdrcorelec.ups-tlse.fr/files/spectrum.sh.gz>`__
 * | `Task automation <http://gdrcorelec.ups-tlse.fr/files/task.pdf>`__
 * | `Sphinx <http://gdrcorelec.ups-tlse.fr/files/Sphinx/build/html/index.html>`__
 * | Python
-  | `Exercise: Verlet algorithm <http://gdrcorelec.ups-tlse.fr/files/python_verlet.pdf>`__  `Solution <http://gdrcorelec.ups-tlse.fr/files/python_verlet.py.gz>`__
-  | `Exercise: Symbolic calculation <http://gdrcorelec.ups-tlse.fr/files/python_object.pdf>`__  `Solution <http://gdrcorelec.ups-tlse.fr/files/gaussians.py.gz>`__
+  | `Exercise: Verlet algorithm <http://gdrcorelec.ups-tlse.fr/files/python_verlet.pdf>`_  `Solution <http://gdrcorelec.ups-tlse.fr/files/python_verlet.py.gz>`__
+  | `Exercise: Symbolic calculation <http://gdrcorelec.ups-tlse.fr/files/python_object.pdf>`_  `Solution <http://gdrcorelec.ups-tlse.fr/files/gaussians.py.gz>`__
 
 
 |h3_start| Atelier COMPIL |h3_end|
