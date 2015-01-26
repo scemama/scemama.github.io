@@ -111,7 +111,7 @@
 `Multiuser <https://github.com/scemama/multiuser>`__
   Allow multiple users to share the same linux account (for demos, and classes)
 
-`<code>`__
+`Gists <https://gist.github.com/scemama>`__
   Useful bits of code
 
 |box_end|
