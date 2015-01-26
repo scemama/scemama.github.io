@@ -28,4 +28,10 @@ A = P.L.U
    :language: fortran
   
 
+Call a fortran subroutine from C program (ifort)
+================================================
+
+.. code-block:: bash
+
+  gcc fort_file.o c_file.o -lifcore -lirc -lcomposerxe_gen_helpers_core_2.3
 

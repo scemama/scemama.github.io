@@ -284,7 +284,7 @@ Fetchmail
   set syslog
 
   poll pop.gmail.com protocol POP3
-     user "recent:xxxx@gmail.com" there is scemama here
+     user "recent:xxxx@gmail.com" there is xxx here
      password 'xxxx'
      keep
      ssl
@@ -322,4 +322,22 @@ Sending email
   mailhub=smtp.gmail.com:587
   UseSTARTTLS=YES
 
+Video record screen
+===================
+
+
+.. code-block:: bash
+
+  $ ffmpeg -f alsa -i pulse -f x11grab -r 15 -s 1024*768 -i :0.0 -vcodec libx264 -preset ultrafast -threads 4 -y -sameq out.mkv
+
+
+Turn off screen saver
+=====================
+
+.. code-block:: bash
+
+  $ setterm -blank 0  
+  $ xset -q
+  $ xset s off
+  $ xset -dpms
 

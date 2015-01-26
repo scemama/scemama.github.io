@@ -87,18 +87,18 @@
 <span class="nv">OCAMLBUILD</span><span class="o">=</span>ocamlbuild -cflags <span class="k">$(</span>OCAMLCFLAGS<span class="k">)</span>
 
 
-<span class="nf">default</span><span class="o">:</span> <span class="m">my_program.byte</span>
+default: my_program.byte
 
-<span class="nf">ezfio.ml</span><span class="o">:</span> <span class="m">~/quantum_package/EZFIO/Ocaml/ezfio.ml</span>
+ezfio.ml: ~/quantum_package/EZFIO/Ocaml/ezfio.ml
       cp ~/quantum_package/EZFIO/Ocaml/ezfio.ml .
 
-<span class="nf">%.byte</span><span class="o">:</span> <span class="m">$(wildcard *.ml) qptypes.ml ezfio.ml</span>
+%.byte: <span class="k">$(</span>wildcard *.ml<span class="k">)</span> qptypes.ml ezfio.ml
       <span class="k">$(</span>OCAMLBUILD<span class="k">)</span> <span class="nv">$*</span>.byte  -use-ocamlfind  <span class="k">$(</span>PKGS<span class="k">)</span>
 
-<span class="nf">%.native</span><span class="o">:</span> <span class="m">$(wildcard *.ml) qptypes.ml ezfio.ml</span>
+%.native: <span class="k">$(</span>wildcard *.ml<span class="k">)</span> qptypes.ml ezfio.ml
       <span class="k">$(</span>OCAMLBUILD<span class="k">)</span> <span class="nv">$*</span>.native -use-ocamlfind <span class="k">$(</span>PKGS<span class="k">)</span>
 
-<span class="nf">clean</span><span class="o">:</span>
+clean:
       rm -rf _build
 </pre></div>
 </div>
@@ -174,7 +174,7 @@
     </div>
     <div class="footer">
         &copy; Copyright 2013, Anthony Scemama.
-      Last updated on Jul 17, 2014.
+      Last updated on Jan 26, 2015.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
     </div>
   </body>

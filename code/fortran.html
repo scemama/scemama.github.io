@@ -27,7 +27,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="top" title="Useful pieces of code 1.0 documentation" href="index.html" />
-    <link rel="next" title="Python" href="python.html" />
+    <link rel="next" title="Ocaml" href="ocaml.html" />
     <link rel="prev" title="Bash" href="bash.html" /> 
   </head>
   <body>
@@ -38,7 +38,7 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="python.html" title="Python"
+          <a href="ocaml.html" title="Ocaml"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="bash.html" title="Bash"
@@ -168,6 +168,12 @@ Put the following code in a C source file.</p>
 </pre></div>
 </div>
 </div>
+<div class="section" id="call-a-fortran-subroutine-from-c-program-ifort">
+<h2>Call a fortran subroutine from C program (ifort)<a class="headerlink" href="#call-a-fortran-subroutine-from-c-program-ifort" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre>gcc fort_file.o c_file.o -lifcore -lirc -lcomposerxe_gen_helpers_core_2.3
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -182,6 +188,7 @@ Put the following code in a C source file.</p>
 <li><a class="reference internal" href="#get-time-stamp-counter">Get time stamp counter</a></li>
 <li><a class="reference internal" href="#create-a-random-matrix">Create a random matrix</a></li>
 <li><a class="reference internal" href="#lu-factorization">LU factorization</a></li>
+<li><a class="reference internal" href="#call-a-fortran-subroutine-from-c-program-ifort">Call a fortran subroutine from C program (ifort)</a></li>
 </ul>
 </li>
 </ul>
@@ -190,8 +197,8 @@ Put the following code in a C source file.</p>
   <p class="topless"><a href="bash.html"
                         title="previous chapter">Bash</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="python.html"
-                        title="next chapter">Python</a></p>
+  <p class="topless"><a href="ocaml.html"
+                        title="next chapter">Ocaml</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/fortran.txt"
@@ -221,7 +228,7 @@ Put the following code in a C source file.</p>
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="python.html" title="Python"
+          <a href="ocaml.html" title="Ocaml"
              >next</a> |</li>
         <li class="right" >
           <a href="bash.html" title="Bash"
@@ -231,7 +238,7 @@ Put the following code in a C source file.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2013, Anthony Scemama.
-      Last updated on Apr 17, 2014.
+      Last updated on Jan 26, 2015.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
     </div>
   </body>
