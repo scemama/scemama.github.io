@@ -7,7 +7,7 @@ body {
 	padding: 0;
 	color: #666;
 	font-family: Tahoma, Geneva, sans-serif;
-	font-size: 12px;
+	font-size: 14px;
 	line-height: 1.5em; 
 	background-color: #bdbdbd;
 	background-image: url(../images/templatemo_body.jpg);
@@ -25,6 +25,7 @@ a:hover {
 }
 
 a.gototop { 
+	font-size: 10px;
 	display: block; 
 	clear: both; 
 	color: #333; 
@@ -44,7 +45,7 @@ a.gototop:hover {
 
 p { margin: 0 0 10px 0; padding: 0; }
 img { border: none; }
-blockquote { font-style: italic; margin: 0 0 0 10px;}
+blockquote { font-style: italic; margin: 0 0 0 14px;}
 cite { font-weight: bold; color:#333; }
 cite span { color: #333; }
 em { color: #333; font-weight: 400 }
@@ -81,12 +82,12 @@ h5 { font-size: 16px; margin: 0 0 10px; padding: 0;  }
 h6 { font-size: 14px; margin: 0 0 5px; padding: 0; }
 
 .cleaner { clear: both }
-.h10 { height: 10px }
-.h20 { height: 20px }
-.h30 { height: 30px }
-.h40 { height: 40px }
-.h50 { height: 50px }
-.h60 { height: 60px }
+.h10 { height: 15px }
+.h20 { height: 25px }
+.h30 { height: 35px }
+.h40 { height: 45px }
+.h50 { height: 55px }
+.h60 { height: 65px }
 
 .float_l { float: left }
 .float_r { float: right }
