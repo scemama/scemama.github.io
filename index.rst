@@ -122,10 +122,9 @@
 
 |h2_start| Oral presentations |h2_end|
   
-.. raw:: html
 
-   <script async class="speakerdeck-embed" data-id="f2861fb03e910132cb665e1978f9d5ef" data-ratio="1.33681462140992" src="//speakerdeck.com/assets/embed.js"></script>
-
+#. | `IRPF90 : a Fortran code generator for HPC <http://irpf90.ups-tlse.fr/files/hpckp2015.pdf>`__
+   | 3/2/2015 HPC Knowledge Portal meeting, Barcelona 
 #. | `IRPF90 : a Fortran code generator for HPC <http://irpf90.ups-tlse.fr/files/pyconf_2014.pdf>`__
    | 25/10/2014 Conférence Python PyConFr, Lyon `Watch video <http://www.infoq.com/fr/presentations/irpf90-fortran-code-generator-hpc>`__
 #. | `Un algorithme permettant de traiter plus d’un million d’atomes en chimie quantique <http://irpf90.ups-tlse.fr/files/reims2014.pdf>`__
