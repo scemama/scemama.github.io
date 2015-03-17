@@ -8,8 +8,17 @@ General
 
 * { : go to beginning of paragraph
 * } : go to end of paragraph
+* fx : find next 'x'
 * set cursorline : highlight the current line
 * set cursorcolumn : highlight the current column
+* di( : delete inside ()
+* da( : delete around ()
+* dap : delete around sentence
+* das : delete around paragraph
+* ci( : change inside ()
+* ca( : change around ()
+* dtx : delete till 'x'
+* cfx : change find 'x'
 
 Text
 ====
@@ -27,6 +36,12 @@ Code
 ====
 
 * gd : Go to definition of variable 
+
+Save macros
+===========
+
+* "qp: put in the file the macro that is saved in ``q``
+* "qyy: update the ``q`` macro with the macro below the cursor
 
 Scripts
 =======
