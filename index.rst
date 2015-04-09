@@ -44,7 +44,7 @@
 
   <div class="col_w320 float_r">
 
-.. image:: images/Scemama.jpg 
+.. image:: images/Scemama2.jpg 
   :height: 120px
 
 
