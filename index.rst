@@ -124,9 +124,9 @@
   
 
 #. | `Quantum chemistry in the Cloud <http://devlog.cnrs.fr/_media/jdev2015/jdev2015_t5_anthonyscemama_francegrilles_20150702.pdf>`__
-   | 2/7/2015 JDev 2015, Bordeaux
+   | 2/7/2015 JDev 2015, Bordeaux `Watch video <https://webcast.in2p3.fr/videos-retour_dexperience_sur_lutilisation_de_services_francegrilles_projet_challenge_fg>`__
 #. | `IRPF90 : a Fortran code generator for HPC <http://devlog.cnrs.fr/_media/jdev2015/jdev2015_t8_anthonyscemama_irpf90_20150702.pdf>`__
-   | 2/7/2015 JDev 2015, Bordeaux
+   | 2/7/2015 JDev 2015, Bordeaux `Watch video <https://webcast.in2p3.fr/videos-irpf90>`__
 #. | `Chimie quantique et parallélisme massif <http://irpf90.ups-tlse.fr/files/cecam2015.pdf>`__
    | 13/3/2015 discussion meeting CECAM-Fr-IdF "Développement de codes de chimie théorique dans un environnement HPC", Orsay
 #. | `IRPF90 : a Fortran code generator for HPC <http://irpf90.ups-tlse.fr/files/hpckp2015.pdf>`__
