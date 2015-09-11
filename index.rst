@@ -123,6 +123,8 @@
 |h2_start| Oral presentations |h2_end|
   
 
+#. | `A convenient solution to the multiple parentage problem: test of a MRCC method and prospects <http://irpf90.ups-tlse.fr/files/gdr_2015.pdf>`__
+   | 8/7/2015 Reunion du GDR Correl, Marseille
 #. | `Quantum chemistry in the Cloud <http://devlog.cnrs.fr/_media/jdev2015/jdev2015_t5_anthonyscemama_francegrilles_20150702.pdf>`__
    | 2/7/2015 JDev 2015, Bordeaux `Watch video <https://webcast.in2p3.fr/videos-retour_dexperience_sur_lutilisation_de_services_francegrilles_projet_challenge_fg>`__
 #. | `IRPF90 : a Fortran code generator for HPC <http://devlog.cnrs.fr/_media/jdev2015/jdev2015_t8_anthonyscemama_irpf90_20150702.pdf>`__
