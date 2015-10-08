@@ -125,6 +125,10 @@
 |h2_start| Oral presentations |h2_end|
   
 
+#. | `ZeroMQ for massively parallel codes <http://irpf90.ups-tlse.fr/files/oslo_zmq.pdf>`__
+   | 8/10/2015 Centre for Theoretical and Computational Chemistry, Oslo
+#. | `IRPF90 : a Fortran code generator for HPC <http://irpf90.ups-tlse.fr/files/oslo_irpf90.pdf>`__
+   | 7/10/2015 Centre for Theoretical and Computational Chemistry, Oslo
 #. | `A convenient solution to the multiple parentage problem: test of a MRCC method and prospects <http://irpf90.ups-tlse.fr/files/gdr_2015.pdf>`__
    | 8/7/2015 Reunion du GDR Correl, Marseille
 #. | `Quantum chemistry in the Cloud <http://devlog.cnrs.fr/_media/jdev2015/jdev2015_t5_anthonyscemama_francegrilles_20150702.pdf>`__
