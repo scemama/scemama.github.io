@@ -138,7 +138,7 @@
 #. | `Chimie quantique et parallélisme massif <http://irpf90.ups-tlse.fr/files/cecam2015.pdf>`__
    | 13/3/2015 discussion meeting CECAM-Fr-IdF "Développement de codes de chimie théorique dans un environnement HPC", Orsay
 #. | `IRPF90 : a Fortran code generator for HPC <http://irpf90.ups-tlse.fr/files/hpckp2015.pdf>`__
-   | 3/2/2015 HPC Knowledge Portal meeting, Barcelona 
+   | 3/2/2015 HPC Knowledge Portal meeting, Barcelona `Watch video <https://youtu.be/TpMXkBlePSE>`__
 #. | `IRPF90 : a Fortran code generator for HPC <http://irpf90.ups-tlse.fr/files/pyconf_2014.pdf>`__
    | 25/10/2014 Conférence Python PyConFr, Lyon `Watch video <http://www.infoq.com/fr/presentations/irpf90-fortran-code-generator-hpc>`__
 #. | `Un algorithme permettant de traiter plus d’un million d’atomes en chimie quantique <http://irpf90.ups-tlse.fr/files/reims2014.pdf>`__
