@@ -125,9 +125,9 @@
 |h2_start| Oral presentations |h2_end|
   
 
-#. | `Chimie quantique et parallélisme massif <http://irpf90.ups-tlse.fr/irpf90_files/toucam2015.pdf>`__
+#. | `Chimie quantique et parallélisme massif <http://irpf90.ups-tlse.fr/files/toucam2015.pdf>`__
    | 6/11/2015 Réunion TouCAM, Toulouse
-#. | `Retour sur le cloud Challenge France Grilles <http://irpf90.ups-tlse.fr/irpf90_files/succes2015.pdf>`__
+#. | `Retour sur le cloud Challenge France Grilles <http://irpf90.ups-tlse.fr/files/succes2015.pdf>`__
    | 5/11/2015 Journées SUCCES, Paris
 #. | `ZeroMQ for massively parallel codes <http://irpf90.ups-tlse.fr/files/oslo_zmq.pdf>`__
    | 8/10/2015 Centre for Theoretical and Computational Chemistry, Oslo
