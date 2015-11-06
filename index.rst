@@ -128,7 +128,7 @@
 #. | `Chimie quantique et parallélisme massif <http://irpf90.ups-tlse.fr/files/toucam2015.pdf>`__
    | 6/11/2015 Réunion TouCAM, Toulouse
 #. | `Retour sur le cloud Challenge France Grilles <http://irpf90.ups-tlse.fr/files/succes2015.pdf>`__
-   | 5/11/2015 Journées SUCCES, Paris
+   | 5/11/2015 Journées SUCCES, Paris `Watch vider <http://webcast.in2p3.fr/videos-utilisation_hpc_en_chimie_quantique>`__
 #. | `ZeroMQ for massively parallel codes <http://irpf90.ups-tlse.fr/files/oslo_zmq.pdf>`__
    | 8/10/2015 Centre for Theoretical and Computational Chemistry, Oslo
 #. | `IRPF90 : a Fortran code generator for HPC <http://irpf90.ups-tlse.fr/files/oslo_irpf90.pdf>`__
