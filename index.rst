@@ -125,6 +125,8 @@
 |h2_start| Oral presentations |h2_end|
   
 
+#. | `QMC with very large multideterminant expansions <http://irpf90.ups-tlse.fr/files/pacifichem.pdf>`__
+   | 18/12/2015 Pacifichem QMC symposium, Honolulu
 #. | `Chimie quantique et parallélisme massif <http://irpf90.ups-tlse.fr/files/toucam2015.pdf>`__
    | 6/11/2015 Réunion TouCAM, Toulouse
 #. | `Retour sur le cloud Challenge France Grilles <http://irpf90.ups-tlse.fr/files/succes2015.pdf>`__
