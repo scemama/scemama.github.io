@@ -125,6 +125,8 @@
 |h2_start| Oral presentations |h2_end|
   
 
+#. | `Development in wave function methods made easy with IRPF90 and the Quantum Pacakge <http://irpf90.ups-tlse.fr/files/nancy2016.pdf>`__
+   | 23/03/2016 SRSMC, Nancy
 #. | `QMC with very large multideterminant expansions <http://irpf90.ups-tlse.fr/files/pacifichem.pdf>`__
    | 18/12/2015 Pacifichem QMC symposium, Honolulu
 #. | `Chimie quantique et parallélisme massif <http://irpf90.ups-tlse.fr/files/toucam2015.pdf>`__
