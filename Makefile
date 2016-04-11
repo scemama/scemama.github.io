@@ -10,7 +10,7 @@ code:
 
 pub_list.html: 
 	- mv pub_list.html pub_list.html.old
-	wget "http://irssv2.ups-tlse.fr/publications/embed3.php?do=author&authorid=108" -O - | tail -n +33 | head -n -1 | ./remove_links.py > pub_list.html
+	wget "http://irssv2.ups-tlse.fr/publications/embed3.php?do=author&authorid=170" -O - | tail -n +33 | head -n -1 | ./remove_links.py > pub_list.html
 
 %.html: %.rst template.txt pub_list.html
 	$(MAKE) -B pub_list.html
