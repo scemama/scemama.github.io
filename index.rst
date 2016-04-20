@@ -208,6 +208,12 @@
 
 |h2_start| Teaching |h2_end|
 
+|h3_start| Module HPC ISAE |h3_end|
+| 2016, Toulouse
+
+* `Introduction à MPI : Calcul de Pi <http://irpf90.ups-tlse.fr/files/mpi_pi.pdf>`, `fichiers <http://irpf90.ups-tlse.fr/files/pi.tar.gz>`
+* `Problème de Poisson <http://irpf90.ups-tlse.fr/files/poisson.pdf>`, `fichiers <http://irpf90.ups-tlse.fr/files/poisson.tar.gz>`
+
 |h3_start| Intensive Course of the European Master in Theoretical Chemistry and Computational Modelling (TCCM) |h3_end|
 
 | 22-26/09/2014, Toulouse
