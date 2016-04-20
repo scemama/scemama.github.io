@@ -212,8 +212,8 @@
 
 | 2016, Toulouse
 
-* `Introduction à MPI : Calcul de Pi <http://irpf90.ups-tlse.fr/files/mpi_pi.pdf>`, `fichiers <http://irpf90.ups-tlse.fr/files/pi.tar.gz>`
-* `Problème de Poisson <http://irpf90.ups-tlse.fr/files/poisson.pdf>`, `fichiers <http://irpf90.ups-tlse.fr/files/poisson.tar.gz>`
+* `Introduction à MPI : Calcul de Pi <http://irpf90.ups-tlse.fr/files/mpi_pi.pdf>`__, `fichiers <http://irpf90.ups-tlse.fr/files/pi.tar.gz>`__
+* `Problème de Poisson <http://irpf90.ups-tlse.fr/files/poisson.pdf>`__, `fichiers <http://irpf90.ups-tlse.fr/files/poisson.tar.gz>`__
 
 |h3_start| Intensive Course of the European Master in Theoretical Chemistry and Computational Modelling (TCCM) |h3_end|
 
