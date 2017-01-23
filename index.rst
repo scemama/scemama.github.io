@@ -208,6 +208,13 @@
 
 |h2_start| Teaching |h2_end|
 
+|h3_start| Tutorials in Theoretical Chemistry |h3_end|
+
+| 2017, Luchon
+
+* `Supercomputing <http://irpf90.ups-tlse.fr/files/lttc17_supercomputing.pdf>`_
+* `Programming for supercomputers <http://irpf90.ups-tlse.fr/files/lttc17_parallelism.pdf>`_
+
 |h3_start| Module HPC ISAE |h3_end|
 
 | 2016, Toulouse
