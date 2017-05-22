@@ -124,7 +124,8 @@
 
 |h2_start| Oral presentations |h2_end|
   
-
+#. | `Accelerated MR-PT2 with a Hybrid Stochastic/Deterministic Algorithm <http://irpf90.ups-tlse.fr/files/cecam_2017.pdf>`__
+   | 22/05/2017 CECAM Theoretical Chemistry for Extended Systems, Toulouse
 #. | `Development in wave function methods made easy with IRPF90 and the Quantum Package <http://irpf90.ups-tlse.fr/files/nancy2016.pdf>`__
    | 23/03/2016 SRSMC, Nancy
 #. | `QMC with very large multideterminant expansions <http://irpf90.ups-tlse.fr/files/pacifichem.pdf>`__
