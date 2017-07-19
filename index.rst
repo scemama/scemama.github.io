@@ -125,6 +125,7 @@
 |h2_start| Oral presentations |h2_end|
   
 #. | `QMC with large trial wave functions <http://irpf90.ups-tlse.fr/files/telluride2017.pdf>`__
+   | 19/07/2017 TSRC, Telluride, USA
 #. | `IRPF90: A Fortran code generator for HPC <http://irpf90.ups-tlse.fr/files/argonne_irpf90.pdf>`__
    | 13/07/2017 ALCF, Argonne, USA
 #. | `Accelerated MR-PT2 with a Hybrid Stochastic/Deterministic Algorithm <http://irpf90.ups-tlse.fr/files/cecam_2017.pdf>`__
