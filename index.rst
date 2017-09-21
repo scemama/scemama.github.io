@@ -124,6 +124,8 @@
 
 |h2_start| Oral presentations |h2_end|
   
+#. | `QMC=Chem : Vectorisation efficace sur processeurs scalaires <http://irpf90.ups-tlse.fr/files/vecto_calmip2017.pdf>`__
+   | 21/09/2017 CALMIP, Toulouse
 #. | `QMC with large trial wave functions <http://irpf90.ups-tlse.fr/files/telluride2017.pdf>`__
    | 19/07/2017 TSRC, Telluride, USA
 #. | `IRPF90: A Fortran code generator for HPC <http://irpf90.ups-tlse.fr/files/argonne_irpf90.pdf>`__
@@ -222,7 +224,7 @@
 
 |h3_start| Module HPC ISAE |h3_end|
 
-| 2016-2017, Toulouse
+| 2016-, Toulouse
 
 * `Introduction à MPI : Calcul de Pi <http://irpf90.ups-tlse.fr/files/mpi_pi.pdf>`__, `fichiers <http://irpf90.ups-tlse.fr/files/pi.tar.gz>`__
 * `Problème de Poisson <http://irpf90.ups-tlse.fr/files/poisson.pdf>`__, `fichiers <http://irpf90.ups-tlse.fr/files/poisson.tar.gz>`__
