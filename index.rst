@@ -63,6 +63,7 @@
 | ORCID : 0000-0003-4955-7136
 | `@scemama666 <http://twitter.com/scemama666>`__
 | `GitHub profile <https://github.com/scemama>`__
+| `ResearchGate profile <https://www.researchgate.net/profile/Anthony_Scemama>`__
 
 .. raw:: html
 
