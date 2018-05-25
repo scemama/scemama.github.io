@@ -3,10 +3,7 @@ RST2HTML=rst2html --link-stylesheet --stylesheet-path="./css/" --stylesheet="css
 
 .PHONY: default 
 
-default: index.html code pub_list.html
-
-code: 
-	make -C code_source
+default: index.html pub_list.html
 
 pub_list.html: 
 	- mv pub_list.html pub_list.html.old

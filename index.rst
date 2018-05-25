@@ -77,16 +77,13 @@
 
 |box_start|
 
-|h2_start| Software |h2_end|
+|h2_start| Main Software |h2_end|
   
 `IRPF90 <http://irpf90.ups-tlse.fr>`__
    Fortran pre-processor helping the development of large scientific codes in Fortran
 
 `EZFIO <http://github.com/scemama/EZFIO>`__
   The Easy Fortran I/O library generator
-
-`EPLF <http://eplf.sourceforge.net>`__
-  Computes the Electron Pair Localization Function (EPLF) for a given wave function
 
 `QMC=Chem <http://qmcchem.ups-tlse.fr>`__
   Massively parallel general Quantum Monte Carlo code
@@ -131,6 +128,8 @@
    | 19/07/2017 TSRC, Telluride, USA
 #. | `IRPF90: A Fortran code generator for HPC <http://irpf90.ups-tlse.fr/files/argonne_irpf90.pdf>`__
    | 13/07/2017 ALCF, Argonne, USA
+#. | `Accelerated MR-PT2 with a Hybrid Stochastic/Deterministic Algorithm <http://irpf90.ups-tlse.fr/files/cecam_2017.pdf>`__
+   | 22/05/2017 CECAM Theoretical Chemistry for Extended Systems, Toulouse
 #. | `Accelerated MR-PT2 with a Hybrid Stochastic/Deterministic Algorithm <http://irpf90.ups-tlse.fr/files/cecam_2017.pdf>`__
    | 22/05/2017 CECAM Theoretical Chemistry for Extended Systems, Toulouse
 #. | `Development in wave function methods made easy with IRPF90 and the Quantum Package <http://irpf90.ups-tlse.fr/files/nancy2016.pdf>`__
@@ -210,18 +209,24 @@
 |box_end|
 
 
+.. _papers:
+
+|box_start|
+
+|h2_start| Publication list |h2_end|
+
+.. raw:: html
+   :file: pub_list.html
+
+|box_end|
+
+
+
 .. _teaching:
 
 |box_start| 
 
 |h2_start| Teaching |h2_end|
-
-|h3_start| Tutorials in Theoretical Chemistry |h3_end|
-
-| 2017, Luchon
-
-* `Supercomputing <http://irpf90.ups-tlse.fr/files/lttc17_supercomputing.pdf>`_
-* `Programming for supercomputers <http://irpf90.ups-tlse.fr/files/lttc17_parallelism.pdf>`_
 
 |h3_start| Module HPC ISAE |h3_end|
 
@@ -239,16 +244,6 @@
 * `Source files <http://github.com/scemama/tccm2014>`__
 
  
-|h3_start| CECAM Workshop |h3_end|
-
-| *Atomistic and molecular simulations on massively parallel architectures*
-| 16-19/07/2013, Paris
-
-* `Implementation of parallelism in QMC=Chem <http://qmcchem.ups-tlse.fr/files/scemama/Cecam_parallel.pdf>`__
-* `Easy and effficient programming with IRPF90 <http://irpf90.ups-tlse.fr/files/Cecam_irpf90.pdf>`__
-* `Single core optimization in QMC=Chem <http://qmcchem.ups-tlse.fr/files/scemama/Cecam_single_core.pdf>`__
-* `Exercises <http://qmcchem.ups-tlse.fr/files/scemama/TP_QmcChem_Cecam.pdf>`__
-
 |h3_start| Ecole Développement Logiciel en Chimie Quantique |h3_end|
 
 15-19/04/2013, Paris
@@ -271,16 +266,4 @@
 
 
 |box_end|
-
-.. _papers:
-
-|box_start|
-
-|h2_start| Publication list |h2_end|
-
-.. raw:: html
-   :file: pub_list.html
-
-|box_end|
-
 
