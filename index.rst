@@ -63,6 +63,7 @@
 | ORCID : 0000-0003-4955-7136
 | `@scemama666 <http://twitter.com/scemama666>`__
 | `GitHub profile <https://github.com/scemama>`__
+| `GitLab profile <https://gitlab.com/scemama>`__
 | `ResearchGate profile <https://www.researchgate.net/profile/Anthony_Scemama>`__
 
 .. raw:: html
@@ -82,7 +83,7 @@
 `IRPF90 <http://irpf90.ups-tlse.fr>`__
    Fortran pre-processor helping the development of large scientific codes in Fortran
 
-`EZFIO <http://github.com/scemama/EZFIO>`__
+`EZFIO <http://gitlab.com/scemama/EZFIO>`__
   The Easy Fortran I/O library generator
 
 `QMC=Chem <http://qmcchem.ups-tlse.fr>`__
@@ -105,10 +106,10 @@
   
 |h3_start| Useful tools |h3_end|
 
-`Slater-Condon rules <https://github.com/scemama/slater_condon>`__
+`Slater-Condon rules <https://gitlab.com/scemama/slater_condon>`__
   Computes Slater-Condon rules using SSE4.2 and popcnt for determinant-driven calculations
 
-`Multiuser <https://github.com/scemama/multiuser>`__
+`Multiuser <https://gitlab.com/scemama/multiuser>`__
   Allow multiple users to share the same linux account (for demos, and classes)
 
 `Gists <https://gist.github.com/scemama>`__
