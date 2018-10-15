@@ -123,6 +123,8 @@
 
 |h2_start| Oral presentations |h2_end|
   
+#. | `Chimie quantique vs machines parallèles <http://irpf90.ups-tlse.fr/files/scemama_rctf_2018.pdf>`__
+   | 11/10/2018 RCTF, Toulouse
 #. | `QMC=Chem : Vectorisation efficace sur processeurs scalaires <http://irpf90.ups-tlse.fr/files/vecto_calmip2017.pdf>`__
    | 21/09/2017 CALMIP, Toulouse
 #. | `QMC with large trial wave functions <http://irpf90.ups-tlse.fr/files/telluride2017.pdf>`__
