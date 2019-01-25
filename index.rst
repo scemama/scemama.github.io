@@ -80,17 +80,17 @@
 
 |h2_start| Main Software |h2_end|
   
+`Quantum Package <https://quantumpackage.github.io/qp2>`__
+  A programming environment for wave function methods.
+
+`QMC=Chem <http://qmcchem.ups-tlse.fr>`__
+  Massively parallel general Quantum Monte Carlo code
+
 `IRPF90 <http://irpf90.ups-tlse.fr>`__
    Fortran pre-processor helping the development of large scientific codes in Fortran
 
 `EZFIO <http://gitlab.com/scemama/EZFIO>`__
   The Easy Fortran I/O library generator
-
-`QMC=Chem <http://qmcchem.ups-tlse.fr>`__
-  Massively parallel general Quantum Monte Carlo code
-
-`The Quantum Package <http://github.com/LCPQ/quantum_package>`__
-  A set of libraries and tools to easily write quantum chemistry programs.
 
 `F77_ZMQ <http://github.com/scemama/f77_zmq>`__
   A Fortran77 binding for the ZeroMQ communication library.
