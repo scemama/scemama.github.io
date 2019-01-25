@@ -1,5 +1,5 @@
 TITLE="Anthony Scemama's Web Page"
-RST2HTML=rst2html --link-stylesheet --stylesheet-path="./css/" --stylesheet="css/templatemo_style.css" --template="template.txt" --date --strip-comments --time --generator --title=$(TITLE) --cloak-email-addresses
+RST2HTML=rst2html.py --link-stylesheet --stylesheet-path="./css/" --stylesheet="css/templatemo_style.css" --template="template.txt" --date --strip-comments --time --generator --title=$(TITLE) --cloak-email-addresses
 
 .PHONY: default 
 
