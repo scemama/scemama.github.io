@@ -123,6 +123,7 @@
 
 |h2_start| Oral presentations |h2_end|
   
+#. | `Development in wave function methods made easy with IRPF90 and the Quantum Package <http://irpf90.ups-tlse.fr/files/winter_school2019.pdf>`__
 #. | `Chimie quantique vs machines parallèles <http://irpf90.ups-tlse.fr/files/scemama_rctf_2018.pdf>`__
    | 11/10/2018 RCTF, Toulouse
 #. | `QMC=Chem : Vectorisation efficace sur processeurs scalaires <http://irpf90.ups-tlse.fr/files/vecto_calmip2017.pdf>`__
