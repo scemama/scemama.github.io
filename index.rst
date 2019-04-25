@@ -123,6 +123,8 @@
 
 |h2_start| Oral presentations |h2_end|
   
+#. | `Extreme accuracy for benchmark systems  <http://irpf90.ups-tlse.fr/files/cecam2019.pdf>`__
+   | 25/04/2019 CECAM Workshop Microscopic simulations: forecasting the next two decades, Toulouse
 #. | `Development in wave function methods made easy with IRPF90 and the Quantum Package <http://irpf90.ups-tlse.fr/files/winter_school2019.pdf>`__
    | 07/02/2019 Virtual Winter School on Computational Chemistry
 #. | `Chimie quantique vs machines parallèles <http://irpf90.ups-tlse.fr/files/scemama_rctf_2018.pdf>`__
@@ -133,8 +135,6 @@
    | 19/07/2017 TSRC, Telluride, USA
 #. | `IRPF90: A Fortran code generator for HPC <http://irpf90.ups-tlse.fr/files/argonne_irpf90.pdf>`__
    | 13/07/2017 ALCF, Argonne, USA
-#. | `Accelerated MR-PT2 with a Hybrid Stochastic/Deterministic Algorithm <http://irpf90.ups-tlse.fr/files/cecam_2017.pdf>`__
-   | 22/05/2017 CECAM Theoretical Chemistry for Extended Systems, Toulouse
 #. | `Accelerated MR-PT2 with a Hybrid Stochastic/Deterministic Algorithm <http://irpf90.ups-tlse.fr/files/cecam_2017.pdf>`__
    | 22/05/2017 CECAM Theoretical Chemistry for Extended Systems, Toulouse
 #. | `Development in wave function methods made easy with IRPF90 and the Quantum Package <http://irpf90.ups-tlse.fr/files/nancy2016.pdf>`__
