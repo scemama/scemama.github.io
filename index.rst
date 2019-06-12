@@ -123,7 +123,7 @@
 
 |h2_start| Oral presentations |h2_end|
   
-#. | `Quantum Package 2.0: An Open-Source Determinant-Driven Suite of Programs <<http://irpf90.ups-tlse.fr/files/qp_presentation.pdf>`__
+#. | `Quantum Package 2.0: An Open-Source Determinant-Driven Suite of Programs <http://irpf90.ups-tlse.fr/files/qp_presentation.pdf>`__
    | 12/06/2019 Rencontres Prospectives RFCT 2019 : "Modélisations multi-échelle", Nantes
 #. | `Extreme accuracy for benchmark systems  <http://irpf90.ups-tlse.fr/files/cecam2019.pdf>`__
    | 25/04/2019 CECAM Workshop Microscopic simulations: forecasting the next two decades, Toulouse
