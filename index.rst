@@ -255,13 +255,7 @@
 
 15-19/04/2013, Paris
 
-* | `Bash <http://gdrcorelec.ups-tlse.fr/files/bash.pdf>`__
-  | `Exercise <http://gdrcorelec.ups-tlse.fr/files/TPBash.tgz>`_ `Solution <http://gdrcorelec.ups-tlse.fr/files/spectrum.sh.gz>`__
-* | `Task automation <http://gdrcorelec.ups-tlse.fr/files/task.pdf>`__
-* | `Sphinx <http://gdrcorelec.ups-tlse.fr/files/Sphinx/build/html/index.html>`__
-* | Python
-  | `Exercise: Verlet algorithm <http://gdrcorelec.ups-tlse.fr/files/python_verlet.pdf>`_  `Solution <http://gdrcorelec.ups-tlse.fr/files/python_verlet.py.gz>`__
-  | `Exercise: Symbolic calculation <http://gdrcorelec.ups-tlse.fr/files/python_object.pdf>`_  `Solution <http://gdrcorelec.ups-tlse.fr/files/gaussians.py.gz>`__
+* | `Bash <http://irpf90.ups-tlse.fr/files/bash.pdf>`__
 
 
 |h3_start| Atelier COMPIL |h3_end|
