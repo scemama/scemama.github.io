@@ -123,6 +123,8 @@
 
 |h2_start| Oral presentations |h2_end|
   
+#. | `Some applications of dressing to configuration interaction matrices <http://irpf90.ups-tlse.fr/files/JPM80.pdf>`__
+   | 03/09/2019 Computation and understanding in molecular science, Toulouse.
 #. | `Quantum Package 2.0: An Open-Source Determinant-Driven Suite of Programs <http://irpf90.ups-tlse.fr/files/qp_presentation.pdf>`__
    | 12/06/2019 Rencontres Prospectives RFCT 2019 : "Modélisations multi-échelle", Nantes
 #. | `Extreme accuracy for benchmark systems  <http://irpf90.ups-tlse.fr/files/cecam2019.pdf>`__
