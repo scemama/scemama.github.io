@@ -96,14 +96,6 @@
   A Fortran77 binding for the ZeroMQ communication library.
 
   
-|h3_start| Contributions in |h3_end|
-  
-`Q5Cost <http://q5cost.org>`__
-  Library for a common file format for Quantum Chemistry
-  
-`deMon Nano <http://demon-nano.ups-tlse.fr>`__
-  DFTB branch of deMon
-  
 |h3_start| Useful tools |h3_end|
 
 `Slater-Condon rules <https://gitlab.com/scemama/slater_condon>`__
