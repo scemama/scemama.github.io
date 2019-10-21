@@ -115,6 +115,8 @@
 
 |h2_start| Oral presentations |h2_end|
   
+#. | `A quantum chemistry calculation distributed amongcomputing facilities with Quantum Package <http://irpf90.ups-tlse.fr/files/JCAD2019AScemama.pdf>`__
+   | 10/10/2019 Journées des Calculs et de données, Toulouse.
 #. | `Some applications of dressing to configuration interaction matrices <http://irpf90.ups-tlse.fr/files/JPM80.pdf>`__
    | 03/09/2019 Computation and understanding in molecular science, Toulouse.
 #. | `Quantum Package 2.0: An Open-Source Determinant-Driven Suite of Programs <http://irpf90.ups-tlse.fr/files/qp_presentation.pdf>`__
