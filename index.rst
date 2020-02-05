@@ -96,17 +96,6 @@
   A Fortran77 binding for the ZeroMQ communication library.
 
   
-|h3_start| Useful tools |h3_end|
-
-`Slater-Condon rules <https://gitlab.com/scemama/slater_condon>`__
-  Computes Slater-Condon rules using SSE4.2 and popcnt for determinant-driven calculations
-
-`Multiuser <https://gitlab.com/scemama/multiuser>`__
-  Allow multiple users to share the same linux account (for demos, and classes)
-
-`Gists <https://gist.github.com/scemama>`__
-  Useful bits of code
-
 |box_end|
 
 .. _talks:
