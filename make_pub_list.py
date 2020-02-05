@@ -19,13 +19,13 @@ import json
 
 
 def arxiv(i):
-  return "[<a href='https://arxiv.org/abs/%s'>ArXiv : %s</a>]"%(i,i)
+  return "ArXiv: <a href='https://arxiv.org/abs/%s'>%s</a>"%(i,i)
 
 def doi(i):
-  return "[<a href='https://dx.doi.org/%s'>DOI : %s</a>]"%(i,i)
+  return "DOI: <a href='https://dx.doi.org/%s'>%s</a>"%(i,i)
 
-def pdf(i):
-  return "[<a href='%s'>pdf</a>]"%(i)
+def pdf(doc):
+  return "<a href='%s'>PDF</a> "%(doc["files_s"][0])
 
 
 def main():
@@ -47,19 +47,14 @@ def main():
         l = [ "<span class='author'>%s</span>"%auth for auth in doc["authFullName_s"] ]
         print(", ".join(l))
         print("<br>")
-        print("""<br><table style="width:100%">""")
-        print("""<col width="45%"><col width="45%"><col width="10%">""")
-        print("""<tr>""")
-        print("""<td>"""),
-        if "arxivId_s" in doc:
-            print( arxiv(doc["arxivId_s"])),
-        print("""</td><td>"""),
-        if "doiId_s" in doc:
-            print( doi(doc["doiId_s"])) 
-        print("""</td><td>"""),
+        s = []
         if "files_s" in doc:
-            print( pdf(doc["files_s"][0])),
-        print("""</td></tr></table>""")
+            s += [ pdf(doc) ]
+        if "arxivId_s" in doc:
+            s += [ arxiv(doc["arxivId_s"]) ]
+        if "doiId_s" in doc:
+            s += [ doi(doc["doiId_s"]) ]
+        print(", ".join(s))
         print("<br>")
         print("<br>")
     
