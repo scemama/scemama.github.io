@@ -47,12 +47,20 @@ def main():
         l = [ "<span class='author'>%s</span>"%auth for auth in doc["authFullName_s"] ]
         print(", ".join(l))
         print("<br>")
-        if "files_s" in doc:
-            print( pdf(doc["files_s"][0])) 
+        print("""<br><table style="width:100%">""")
+        print("""<col width="45%"><col width="45%"><col width="10%">""")
+        print("""<tr>""")
+        print("""<td>"""),
         if "arxivId_s" in doc:
-            print( arxiv(doc["arxivId_s"])) 
+            print( arxiv(doc["arxivId_s"])),
+        print("""</td><td>"""),
         if "doiId_s" in doc:
             print( doi(doc["doiId_s"])) 
+        print("""</td><td>"""),
+        if "files_s" in doc:
+            print( pdf(doc["files_s"][0])),
+        print("""</td></tr></table>""")
+        print("<br>")
         print("<br>")
     
 
