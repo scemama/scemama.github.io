@@ -1,849 +1,1535 @@
-<?php header("Content-Type: text/html; charset=UTF-8"); ?>
-
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Docutils 0.14: http://docutils.sourceforge.net/" />
-<title>Anthony Scemama's Web Page</title>
-<link rel="stylesheet" href="css/templatemo_style.css" type="text/css" />
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/jquery.lightbox-0.5.js"></script>
-<link rel="stylesheet" type="text/css" href="css/jquery.lightbox-0.5.css" media="screen" />
+<!-- 2020-06-09 Tue 03:51 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Anthony Scemama's web page</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Anthony Scemama" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/readtheorg/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/readtheorg/js/readtheorg.js"></script>
 <script type="text/javascript">
-$(function() {
-    $('#map a').lightBox();
-});
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
 </script>
 </head>
 <body>
-<div class="document">
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org8084ef4">Projects</a></li>
+<li><a href="#org91a8d4a">Software</a></li>
+<li><a href="#org4fd5cbf">Oral presentations</a></li>
+<li><a href="#org8379c3e">Publications</a>
+<ul>
+<li><a href="#org5d71a56">2020</a></li>
+<li><a href="#org5f2ddd2">2019</a></li>
+<li><a href="#orgfdf9fce">2018</a></li>
+<li><a href="#org5a1e441">2017</a></li>
+<li><a href="#orgc551db4">2016</a></li>
+<li><a href="#org2161e8f">2015</a></li>
+<li><a href="#org77fb061">2014</a></li>
+<li><a href="#orgf0bd09d">2013</a></li>
+<li><a href="#orge363631">2012</a></li>
+<li><a href="#orge8a343d">2011</a></li>
+<li><a href="#org1f6d1b4">2010</a></li>
+<li><a href="#org64e7f11">2009</a></li>
+<li><a href="#orged8cabc">2008</a></li>
+<li><a href="#orgbf4a3b4">2007</a></li>
+<li><a href="#orgd1fc4a5">2006</a></li>
+<li><a href="#orgfd959cb">2005</a></li>
+<li><a href="#orgb056f08">2004</a></li>
+<li><a href="#org50c68a0">2002</a></li>
+<li><a href="#org4b313de">2001</a></li>
+<li><a href="#orgcd694e8">2020</a></li>
+<li><a href="#orgc9e03dc">2019</a></li>
+<li><a href="#org5855e5d">2018</a></li>
+<li><a href="#org62293ea">2017</a></li>
+<li><a href="#org55a99b1">2016</a></li>
+<li><a href="#org28e547d">2015</a></li>
+<li><a href="#org948d186">2014</a></li>
+<li><a href="#orga9eaacc">2013</a></li>
+<li><a href="#org361065b">2012</a></li>
+<li><a href="#orgddc44fa">2011</a></li>
+<li><a href="#org762d7d4">2010</a></li>
+<li><a href="#org7319fe8">2009</a></li>
+<li><a href="#orgd88db5f">2008</a></li>
+<li><a href="#org1a2b99f">2007</a></li>
+<li><a href="#org15d9997">2006</a></li>
+<li><a href="#org807c0cb">2005</a></li>
+<li><a href="#orge70f057">2004</a></li>
+<li><a href="#org830d4d9">2002</a></li>
+<li><a href="#org047165e">2001</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p style="float:left">
+<b>Anthony Scemama</b><br />
+<i>Ingénieur de Recherche CNRS</i><br />
+<a href="https://www.lcpq.ups-tlse.fr" style="float:left">Laboratoire de Chimie et Physique Quantiques</a><br />
+<a href="https://www.irsamc.ups-tlse.fr">IRSAMC</a>, Université Paul Sabatier Toulouse III<br />
+<a href="https://goo.gl/maps/VgrxsMkHd8FWGYxY6">118, route de Narbonne</a><br />
+31062 Toulouse Cedex 4<br />
+scemama at irsamc DOT ups-tlse DOT fr<br />
+ORCID : <a href="https://orcid.org/0000-0003-4955-7136">0000-0003-4955-7136</a><br />
+</p>
 
 
-<span id="top"></span>
-<div id="templatemo_wrapper">
-  <div id="templatemo_header">
-        <div id="site_title">
-            <h1><a href="http://scemama.mooo.com">Anthony Scemama's web page</a></h1>
-        </div>
-        <div id="templatemo_menu">
-            <ul>
-                <li><a href="#software">Software</a></li>
-                <li><a href="#talks">Talks</a></li>
-                <li><a href="#teaching">Teaching</a></li>
-                <li class="last"><a href="#papers">Articles</a></li>
-            </ul>
-        </div> <!-- end of templatemo_menu -->
-  </div> <!-- end of templatemo_header -->
+<div class="figure">
+<p><img src="./images/PhotoScemama2019_3.jpg" alt="PhotoScemama2019_3.jpg" style="margin:0px 0px 0px 20px;" height="200px" /><br />
+</p>
+</div>
 
-<div id="templatemo_main">
-<hr class="docutils" />
-<p><div class="content_box_top"></div>
-<div class="content_box"><p></p>
-<p><div class="cleaner h30"></div><p></p>
-<div class="col_w320 float_r"><img alt="images/Scemama2.jpg" src="images/Scemama2.jpg" style="height: 120px;" />
-<br><iframe width="51" height="24" src="http://corrupt.ch/fartbutton/plugin" frameborder="0"></iframe>
-</div><div class="col_w320 float_l"><div class="line-block">
-<div class="line"><strong>Anthony Scemama</strong></div>
-<div class="line"><em>Ingénieur de Recherche CNRS</em></div>
-<div class="line">Laboratoire de Chimie et Physique Quantiques</div>
-<div class="line">IRSAMC, Université Paul Sabatier Toulouse III</div>
-<div class="line">118, route de Narbonne</div>
-<div class="line">31062 Toulouse Cedex 4</div>
-<div class="line"><a class="reference external" href="mailto:scemama&#37;&#52;&#48;irsamc&#46;ups-tlse&#46;fr">scemama<span>&#64;</span>irsamc<span>&#46;</span>ups-tlse<span>&#46;</span>fr</a></div>
-<div class="line">ORCID : 0000-0003-4955-7136</div>
-<div class="line"><a class="reference external" href="http://twitter.com/scemama666">&#64;scemama666</a></div>
-<div class="line"><a class="reference external" href="https://github.com/scemama">GitHub profile</a></div>
-<div class="line"><a class="reference external" href="https://gitlab.com/scemama">GitLab profile</a></div>
-<div class="line"><a class="reference external" href="https://www.researchgate.net/profile/Anthony_Scemama">ResearchGate profile</a></div>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides" style="center;">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><a href="http://twitter.com/scemama666">Twitter</a></td>
+<td class="org-left"><a href="https://github.com/scemama">GitHub</a></td>
+<td class="org-left"><a href="https://gitlab.com/scemama">GitLab</a></td>
+<td class="org-left"><a href="https://www.researchgate.net/profile/Anthony_Scemama%3E%60__%20%20%20%20%20%20%20%20%20">ResearchGate</a></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<hr />
+<div id="outline-container-org8084ef4" class="outline-2">
+<h2 id="org8084ef4">Projects</h2>
+<div class="outline-text-2" id="text-org8084ef4">
+<ul class="org-ul">
+<li>TREX Center of Excellence<br /></li>
+<li>ERC PTEROSOR<br /></li>
+</ul>
+
+
+<hr />
 </div>
-</div><p><div class="cleaner h30"></div><p></p>
-<p><a class="gototop" href="#top">Go to Top</a>
-<div class="cleaner"></div>
 </div>
-<div class="content_box_bottom"></div><p></p>
-<p id="software"><div class="content_box_top"></div>
-<div class="content_box"><p></p>
-<p><h2><p> Main Software </h2><p></p>
-<dl class="docutils">
-<dt><a class="reference external" href="https://quantumpackage.github.io/qp2">Quantum Package</a></dt>
-<dd>A programming environment for wave function methods.</dd>
-<dt><a class="reference external" href="http://qmcchem.ups-tlse.fr">QMC=Chem</a></dt>
-<dd>Massively parallel general Quantum Monte Carlo code</dd>
-<dt><a class="reference external" href="http://irpf90.ups-tlse.fr">IRPF90</a></dt>
-<dd>Fortran pre-processor helping the development of large scientific codes in Fortran</dd>
-<dt><a class="reference external" href="http://gitlab.com/scemama/EZFIO">EZFIO</a></dt>
-<dd>The Easy Fortran I/O library generator</dd>
-<dt><a class="reference external" href="http://github.com/scemama/f77_zmq">F77_ZMQ</a></dt>
-<dd>A Fortran77 binding for the ZeroMQ communication library.</dd>
-</dl>
-<p><a class="gototop" href="#top">Go to Top</a>
-<div class="cleaner"></div>
+<div id="outline-container-org91a8d4a" class="outline-2">
+<h2 id="org91a8d4a">Software</h2>
+<div class="outline-text-2" id="text-org91a8d4a">
+<ul class="org-ul">
+<li><a href="https://quantumpackage.github.io/qp2">Quantum Package</a> : A programming environment for wave function methods.<br /></li>
+<li><a href="http://qmcchem.ups-tlse.fr">QMC=Chem</a> : Quantum Monte Carlo for Chemistry<br /></li>
+<li><a href="https://gitlab.com/scemama/QCaml">QCaml</a> : Quantum chemistry with OCaml<br /></li>
+<li><a href="http://irpf90.ups-tlse.fr">IRPF90</a> : Fortran pre-processor helping the development of large scientific codes<br /></li>
+<li><a href="http://gitlab.com/scemama/EZFIO">EZFIO</a> : Easy Fortran I/O library generator<br /></li>
+<li><a href="http://github.com/scemama/f77_zmq">F77_ZMQ</a> : Fortran77 binding for the ZeroMQ communication library.<br /></li>
+</ul>
+
+
+<hr />
 </div>
-<div class="content_box_bottom"></div><p></p>
-<p id="talks"><div class="content_box_top"></div>
-<div class="content_box"><p></p>
-<p><h2><p> Oral presentations </h2><p></p>
-<ol class="arabic">
-<li><div class="first line-block">
-<div class="line"><a class="reference external" href="http://irpf90.ups-tlse.fr/files/JCAD2019AScemama.pdf">A quantum chemistry calculation distributed among computing facilities with Quantum Package</a></div>
-<div class="line">10/10/2019 Journées des Calculs et de données, Toulouse. <a class="reference external" href="https://prismes.univ-toulouse.fr/player.php?code=9rW78559&amp;width=100%&amp;height=100%">Watch video</a></div>
 </div>
-</li>
-<li><div class="first line-block">
-<div class="line"><a class="reference external" href="http://irpf90.ups-tlse.fr/files/JPM80.pdf">Some applications of dressing to configuration interaction matrices</a></div>
-<div class="line">03/09/2019 Computation and understanding in molecular science, Toulouse.</div>
-</div>
-</li>
-<li><div class="first line-block">
-<div class="line"><a class="reference external" href="http://irpf90.ups-tlse.fr/files/qp_presentation.pdf">Quantum Package 2.0: An Open-Source Determinant-Driven Suite of Programs</a></div>
-<div class="line">12/06/2019 Rencontres Prospectives RFCT 2019 : &quot;Modélisations multi-échelle&quot;, Nantes</div>
-</div>
-</li>
-<li><div class="first line-block">
-<div class="line"><a class="reference external" href="http://irpf90.ups-tlse.fr/files/cecam2019.pdf">Extreme accuracy for benchmark systems</a></div>
-<div class="line">25/04/2019 CECAM Workshop Microscopic simulations: forecasting the next two decades, Toulouse</div>
-</div>
-</li>
-<li><div class="first line-block">
-<div class="line"><a class="reference external" href="http://irpf90.ups-tlse.fr/files/winter_school2019.pdf">Development in wave function methods made easy with IRPF90 and the Quantum Package</a></div>
-<div class="line">07/02/2019 Virtual Winter School on Computational Chemistry</div>
-</div>
-</li>
-<li><div class="first line-block">
-<div class="line"><a class="reference external" href="http://irpf90.ups-tlse.fr/files/scemama_rctf_2018.pdf">Chimie quantique vs machines parallèles</a></div>
-<div class="line">11/10/2018 RCTF, Toulouse</div>
-</div>
-</li>
-<li><div class="first line-block">
-<div class="line"><a class="reference external" href="http://irpf90.ups-tlse.fr/files/vecto_calmip2017.pdf">QMC=Chem : Vectorisation efficace sur processeurs scalaires</a></div>
-<div class="line">21/09/2017 CALMIP, Toulouse</div>
-</div>
-</li>
-<li><div class="first line-block">
-<div class="line"><a class="reference external" href="http://irpf90.ups-tlse.fr/files/telluride2017.pdf">QMC with large trial wave functions</a></div>
-<div class="line">19/07/2017 TSRC, Telluride, USA</div>
-</div>
-</li>
-<li><div class="first line-block">
-<div class="line"><a class="reference external" href="http://irpf90.ups-tlse.fr/files/argonne_irpf90.pdf">IRPF90: A Fortran code generator for HPC</a></div>
-<div class="line">13/07/2017 ALCF, Argonne, USA</div>
-</div>
-</li>
-<li><div class="first line-block">
-<div class="line"><a class="reference external" href="http://irpf90.ups-tlse.fr/files/cecam_2017.pdf">Accelerated MR-PT2 with a Hybrid Stochastic/Deterministic Algorithm</a></div>
-<div class="line">22/05/2017 CECAM Theoretical Chemistry for Extended Systems, Toulouse</div>
-</div>
-</li>
-<li><div class="first line-block">
-<div class="line"><a class="reference external" href="http://irpf90.ups-tlse.fr/files/nancy2016.pdf">Development in wave function methods made easy with IRPF90 and the Quantum Package</a></div>
-<div class="line">23/03/2016 SRSMC, Nancy</div>
-</div>
-</li>
-<li><div class="first line-block">
-<div class="line"><a class="reference external" href="http://irpf90.ups-tlse.fr/files/pacifichem.pdf">QMC with very large multideterminant expansions</a></div>
-<div class="line">18/12/2015 Pacifichem QMC symposium, Honolulu</div>
-</div>
-</li>
-<li><div class="first line-block">
-<div class="line"><a class="reference external" href="http://irpf90.ups-tlse.fr/files/toucam2015.pdf">Chimie quantique et parallélisme massif</a></div>
-<div class="line">6/11/2015 Réunion TouCAM, Toulouse</div>
-</div>
-</li>
-<li><div class="first line-block">
-<div class="line"><a class="reference external" href="http://irpf90.ups-tlse.fr/files/succes2015.pdf">Retour sur le cloud Challenge France Grilles</a></div>
-<div class="line">5/11/2015 Journées SUCCES, Paris <a class="reference external" href="http://webcast.in2p3.fr/videos-utilisation_hpc_en_chimie_quantique">Watch video</a></div>
-</div>
-</li>
-<li><div class="first line-block">
-<div class="line"><a class="reference external" href="http://irpf90.ups-tlse.fr/files/oslo_zmq.pdf">ZeroMQ for massively parallel codes</a></div>
-<div class="line">8/10/2015 Centre for Theoretical and Computational Chemistry, Oslo</div>
-</div>
-</li>
-<li><div class="first line-block">
-<div class="line"><a class="reference external" href="http://irpf90.ups-tlse.fr/files/oslo_irpf90.pdf">IRPF90 : a Fortran code generator for HPC</a></div>
-<div class="line">7/10/2015 Centre for Theoretical and Computational Chemistry, Oslo</div>
-</div>
-</li>
-<li><div class="first line-block">
-<div class="line"><a class="reference external" href="http://irpf90.ups-tlse.fr/files/gdr_2015.pdf">A convenient solution to the multiple parentage problem: test of a MRCC method and prospects</a></div>
-<div class="line">8/7/2015 Reunion du GDR Correl, Marseille</div>
-</div>
-</li>
-<li><div class="first line-block">
-<div class="line"><a class="reference external" href="http://devlog.cnrs.fr/_media/jdev2015/jdev2015_t5_anthonyscemama_francegrilles_20150702.pdf">Quantum chemistry in the Cloud</a></div>
-<div class="line">2/7/2015 JDev 2015, Bordeaux <a class="reference external" href="https://webcast.in2p3.fr/videos-retour_dexperience_sur_lutilisation_de_services_francegrilles_projet_challenge_fg">Watch video</a></div>
-</div>
-</li>
-<li><div class="first line-block">
-<div class="line"><a class="reference external" href="http://devlog.cnrs.fr/_media/jdev2015/jdev2015_t8_anthonyscemama_irpf90_20150702.pdf">IRPF90 : a Fortran code generator for HPC</a></div>
-<div class="line">2/7/2015 JDev 2015, Bordeaux <a class="reference external" href="https://webcast.in2p3.fr/videos-irpf90">Watch video</a></div>
-</div>
-</li>
-<li><div class="first line-block">
-<div class="line"><a class="reference external" href="http://irpf90.ups-tlse.fr/files/cecam2015.pdf">Chimie quantique et parallélisme massif</a></div>
-<div class="line">13/3/2015 discussion meeting CECAM-Fr-IdF &quot;Développement de codes de chimie théorique dans un environnement HPC&quot;, Orsay</div>
-</div>
-</li>
-<li><div class="first line-block">
-<div class="line"><a class="reference external" href="http://irpf90.ups-tlse.fr/files/hpckp2015.pdf">IRPF90 : a Fortran code generator for HPC</a></div>
-<div class="line">3/2/2015 HPC Knowledge Portal meeting, Barcelona <a class="reference external" href="https://youtu.be/TpMXkBlePSE">Watch video</a></div>
-</div>
-</li>
-<li><div class="first line-block">
-<div class="line"><a class="reference external" href="http://irpf90.ups-tlse.fr/files/pyconf_2014.pdf">IRPF90 : a Fortran code generator for HPC</a></div>
-<div class="line">25/10/2014 Conférence Python PyConFr, Lyon <a class="reference external" href="http://www.infoq.com/fr/presentations/irpf90-fortran-code-generator-hpc">Watch video</a></div>
-</div>
-</li>
-<li><div class="first line-block">
-<div class="line"><a class="reference external" href="http://irpf90.ups-tlse.fr/files/reims2014.pdf">Un algorithme permettant de traiter plus d’un million d’atomes en chimie quantique</a></div>
-<div class="line">30/9/2014 Maison de la simulation de l'Université de Reims Champagne-Ardenne</div>
-</div>
-</li>
-<li><div class="first line-block">
-<div class="line"><a class="reference external" href="http://irpf90.ups-tlse.fr/files/cecam_lausanne.pdf">Millions of atoms in DFTB</a></div>
-<div class="line">23/1/2014 CECAM Workshop on two-dimensional inorganic materials, EPFL, Lausanne (Switzerland)</div>
-</div>
-</li>
-<li><div class="first line-block">
-<div class="line"><a class="reference external" href="http://irpf90.ups-tlse.fr/files/mesochallenge2013.pdf">Un million d'atomes en chimie quantique</a></div>
-<div class="line">20/9/2013 Journée Mésochallenges <a class="reference external" href="mailto:Equip&#37;&#52;&#48;Meso">Equip<span>&#64;</span>Meso</a>, IHP, Paris</div>
-</div>
-</li>
-<li><div class="first line-block">
-<div class="line"><a class="reference external" href="http://irpf90.ups-tlse.fr/files/deMon2013.pdf">A fast Sparse SCF implementation: Application to DFTB</a></div>
-<div class="line">25/6/2013 CECAM deMon Workshop, LCC, Toulouse</div>
-</div>
-</li>
-<li><div class="first line-block">
-<div class="line"><a class="reference external" href="http://irpf90.ups-tlse.fr/files/mds.pdf">Software optimization for petaflops/s scale Quantum Monte Carlo simulations</a></div>
-<div class="line">4/12/2012 Maison de la simulation, Saclay</div>
-</div>
-</li>
-<li><div class="first line-block">
-<div class="line"><a class="reference external" href="http://irpf90.ups-tlse.fr/files/equipatmeso.pdf">Implémentation de simulations QMC  massivement parallèles pourla chimie: Du laboratoire aux calculateurs pétaflopiques en passant par les mésocentres</a></div>
-<div class="line">18/10/2012 Journée scientifique <a class="reference external" href="mailto:Equip&#37;&#52;&#48;Meso">Equip<span>&#64;</span>Meso</a>, Strasbourg, <a class="reference external" href="http://canalc2.u-strasbg.fr/video.asp?idvideo=11473">Watch video</a></div>
-</div>
-</li>
-<li><div class="first line-block">
-<div class="line"><a class="reference external" href="http://irpf90.ups-tlse.fr/files/kobe_talk.pdf">QMC=Chem: a quantum Monte Carlo program for large-scale simulations in chemistry at the petascale level and beyond</a></div>
-<div class="line">18/07/2012  10th International Meeting on High-Performance Computing for Computational Science (VECPAR 2012), Kobe (Japan)</div>
-</div>
-</li>
-<li><div class="first line-block">
-<div class="line"><a class="reference external" href="http://irpf90.ups-tlse.fr/files/teratec.pdf">Quantum Monte Carlo simulations in chemistry at the petascale level and beyond</a></div>
-<div class="line">28/06/2012 Forum Teratec, Ecole Polytechnique, Palaisau</div>
-</div>
-</li>
-<li><div class="first line-block">
-<div class="line"><a class="reference external" href="http://irpf90.ups-tlse.fr/files/isc.pdf">Quantum Monte Carlo simulations for Alzheimer’s disease on the Curie machine : Efficient strategies for extreme parallelism onpetascale platforms and beyond</a></div>
-<div class="line">19/06/2012 International Supercomputing Conference, Intel Theater, Hamburg (Germany)</div>
-</div>
-</li>
-<li><div class="first line-block">
-<div class="line"><a class="reference external" href="http://irpf90.ups-tlse.fr/files/lcc_2012.pdf">Interprétation des liaisons chimiques à partir de fonctions d'ondes de grande précision</a></div>
-<div class="line">15/06/2012 Laboratoire de Chimie de Coordination, Toulouse</div>
-</div>
-</li>
-<li><div class="first line-block">
-<div class="line"><a class="reference external" href="http://irpf90.ups-tlse.fr/files/rocks.pdf">Gestion de clusters de calcul avec Rocks</a></div>
-<div class="line">26/4/2012 Réunion Capitoul, Toulouse</div>
-</div>
-</li>
-<li><div class="first line-block">
-<div class="line"><a class="reference external" href="http://irpf90.ups-tlse.fr/files/sc11.pdf">Quantum chemistry towards exascale with QMC=Chem</a></div>
-<div class="line">17/11/2011 1000 x 0 = 0. Single-node optimisation does matter, Supercomputing conference 2011, Seattle (USA)</div>
-</div>
-</li>
-<li><div class="first line-block">
-<div class="line"><a class="reference external" href="http://irpf90.ups-tlse.fr/files/qmcchem_curie.pdf">QMC=Chem, a massively parallel Quantum Monte Carlo program</a></div>
-<div class="line">27/04/2011 CEA, Bruyères-le-Chatel</div>
-</div>
-</li>
-<li><div class="first line-block">
-<div class="line"><a class="reference external" href="http://irpf90.ups-tlse.fr/files/eplf2011.pdf">Localisation de paires d'électrons avec la fonction EPLF</a></div>
-<div class="line">16/02/2011 LCC, Toulouse</div>
-</div>
-</li>
-<li><div class="first line-block">
-<div class="line"><a class="reference external" href="http://irpf90.ups-tlse.fr/files/eplf.pdf">Localizing electron pairs with the Electron Pair Localization Function</a></div>
-<div class="line">26/06/2010 20 Years ELF, Paris</div>
-</div>
-</li>
-<li><div class="first line-block">
-<div class="line"><a class="reference external" href="http://irpf90.ups-tlse.fr/files/grid.pdf">Large scale QMC calculations on the EGEE grid</a></div>
-<div class="line">14/05/2010 INGRID 2010, Poznan (Poland)</div>
-</div>
-</li>
-<li><div class="first line-block">
-<div class="line"><a class="reference external" href="http://irpf90.ups-tlse.fr/files/aeres09.pdf">Valorisation et diffusion des logiciels de chimie quantique</a></div>
-<div class="line">16/12/2009 IRSAMC, Toulouse</div>
-</div>
-</li>
-<li><div class="first line-block">
-<div class="line"><a class="reference external" href="http://irpf90.ups-tlse.fr/files/irp.08.2.pdf">Présentation de l'outil IRPF90</a></div>
-<div class="line">13/11/2008 IRSAMC, Toulouse</div>
-</div>
-</li>
-<li><div class="first line-block">
-<div class="line"><a class="reference external" href="http://irpf90.ups-tlse.fr/files/irp.08.1.pdf">Programmation facile et robuste en Fortran: Présentation de l'outil IRPF90</a></div>
-<div class="line">21/05/2008 LCT, Paris</div>
-</div>
-</li>
-<li><div class="first line-block">
-<div class="line"><a class="reference external" href="http://irpf90.ups-tlse.fr/files/q5cost08.pdf">Version 1.0 de la bibliothèque Q5Cost</a></div>
-<div class="line">20/11/2008 IRSAMC, Toulouse</div>
-</div>
-</li>
-<li><div class="first line-block">
-<div class="line"><a class="reference external" href="http://irpf90.ups-tlse.fr/files/q5cost08.1.pdf">Version 1.0 of the Q5Cost library</a></div>
-<div class="line">30/06/2008 ICCSA, Perugia (Italy)</div>
-</div>
-</li>
-<li><div class="first line-block">
-<div class="line"><a class="reference external" href="http://irpf90.ups-tlse.fr/files/rctf10.pdf">Description probabiliste de la liaison chimique</a></div>
-<div class="line">12/07/2006 RCTF, Nancy</div>
-</div>
-</li>
-<li><div class="first line-block">
-<div class="line"><a class="reference external" href="http://irpf90.ups-tlse.fr/files/micmac.pdf">Amélioration de l'échantillonnage en QMC</a></div>
-<div class="line">09/02/2006 INRIA, Rocquencourt</div>
-</div>
-</li>
-<li><div class="first line-block">
-<div class="line"><a class="reference external" href="http://irpf90.ups-tlse.fr/files/toulouse05.pdf">MCSCF en presence d'un facteur de corrélation de Jastrow</a></div>
-<div class="line">15/04/2005 IRSAMC, Toulouse</div>
-</div>
-</li>
+<div id="outline-container-org4fd5cbf" class="outline-2">
+<h2 id="org4fd5cbf">Oral presentations</h2>
+<div class="outline-text-2" id="text-org4fd5cbf">
+<ol class="org-ol">
+<li><a href="http://irpf90.ups-tlse.fr/files/JCAD2019AScemama.pdf">A quantum chemistry calculation distributed among computing facilities with Quantum Package</a><br />
+10/10/2019 Journées des Calculs et de données, Toulouse. <a href="https://prismes.univ-toulouse.fr/player.php?code=9rW78559&amp;width=100%&amp;height=100%">Watch video</a><br /></li>
+<li><a href="http://irpf90.ups-tlse.fr/files/JPM80.pdf">Some applications of dressing to configuration interaction matrices</a><br />
+03/09/2019 Computation and understanding in molecular science, Toulouse.<br /></li>
+<li><a href="http://irpf90.ups-tlse.fr/files/qp_presentation.pdf">Quantum Package 2.0: An Open-Source Determinant-Driven Suite of Programs</a><br />
+12/06/2019 Rencontres Prospectives RFCT 2019 : "Modélisations multi-échelle", Nantes<br /></li>
+<li><a href="http://irpf90.ups-tlse.fr/files/cecam2019.pdf">Extreme accuracy for benchmark systems </a><br />
+25/04/2019 CECAM Workshop Microscopic simulations: forecasting the next two decades, Toulouse<br /></li>
+<li><a href="http://irpf90.ups-tlse.fr/files/winter_school2019.pdf">Development in wave function methods made easy with IRPF90 and the Quantum Package</a><br />
+07/02/2019 Virtual Winter School on Computational Chemistry<br /></li>
+<li><a href="http://irpf90.ups-tlse.fr/files/scemama_rctf_2018.pdf">Chimie quantique vs machines parallèles</a><br />
+11/10/2018 RCTF, Toulouse<br /></li>
+<li><a href="http://irpf90.ups-tlse.fr/files/vecto_calmip2017.pdf">QMC=Chem : Vectorisation efficace sur processeurs scalaires</a><br />
+21/09/2017 CALMIP, Toulouse<br /></li>
+<li><a href="http://irpf90.ups-tlse.fr/files/telluride2017.pdf">QMC with large trial wave functions</a><br />
+19/07/2017 TSRC, Telluride, USA<br /></li>
+<li><a href="http://irpf90.ups-tlse.fr/files/argonne_irpf90.pdf">IRPF90: A Fortran code generator for HPC</a><br />
+13/07/2017 ALCF, Argonne, USA<br /></li>
+<li><a href="http://irpf90.ups-tlse.fr/files/cecam_2017.pdf">Accelerated MR-PT2 with a Hybrid Stochastic/Deterministic Algorithm</a><br />
+22/05/2017 CECAM Theoretical Chemistry for Extended Systems, Toulouse<br /></li>
+<li><a href="http://irpf90.ups-tlse.fr/files/nancy2016.pdf">Development in wave function methods made easy with IRPF90 and the Quantum Package</a><br />
+23/03/2016 SRSMC, Nancy<br /></li>
+<li><a href="http://irpf90.ups-tlse.fr/files/pacifichem.pdf">QMC with very large multideterminant expansions</a><br />
+18/12/2015 Pacifichem QMC symposium, Honolulu<br /></li>
+<li><a href="http://irpf90.ups-tlse.fr/files/toucam2015.pdf">Chimie quantique et parallélisme massif</a><br />
+6/11/2015 Réunion TouCAM, Toulouse<br /></li>
+<li><a href="http://irpf90.ups-tlse.fr/files/succes2015.pdf">Retour sur le cloud Challenge France Grilles</a><br />
+5/11/2015 Journées SUCCES, Paris <a href="http://webcast.in2p3.fr/videos-utilisation_hpc_en_chimie_quantique">Watch video</a><br /></li>
+<li><a href="http://irpf90.ups-tlse.fr/files/oslo_zmq.pdf">ZeroMQ for massively parallel codes</a><br />
+8/10/2015 Centre for Theoretical and Computational Chemistry, Oslo<br /></li>
+<li><a href="http://irpf90.ups-tlse.fr/files/oslo_irpf90.pdf">IRPF90 : a Fortran code generator for HPC</a><br />
+7/10/2015 Centre for Theoretical and Computational Chemistry, Oslo<br /></li>
+<li><a href="http://irpf90.ups-tlse.fr/files/gdr_2015.pdf">A convenient solution to the multiple parentage problem: test of a MRCC method and prospects</a><br />
+8/7/2015 Reunion du GDR Correl, Marseille<br /></li>
+<li><a href="http://devlog.cnrs.fr/_media/jdev2015/jdev2015_t5_anthonyscemama_francegrilles_20150702.pdf">Quantum chemistry in the Cloud</a><br />
+2/7/2015 JDev 2015, Bordeaux <a href="https://webcast.in2p3.fr/videos-retour_dexperience_sur_lutilisation_de_services_francegrilles_projet_challenge_fg">Watch video</a><br /></li>
+<li><a href="http://devlog.cnrs.fr/_media/jdev2015/jdev2015_t8_anthonyscemama_irpf90_20150702.pdf">IRPF90 : a Fortran code generator for HPC</a><br />
+2/7/2015 JDev 2015, Bordeaux <a href="https://webcast.in2p3.fr/videos-irpf90">Watch video</a><br /></li>
+<li><a href="http://irpf90.ups-tlse.fr/files/cecam2015.pdf">Chimie quantique et parallélisme massif</a><br />
+13/3/2015 discussion meeting CECAM-Fr-IdF "Développement de codes de chimie théorique dans un environnement HPC", Orsay<br /></li>
+<li><a href="http://irpf90.ups-tlse.fr/files/hpckp2015.pdf">IRPF90 : a Fortran code generator for HPC</a><br />
+3/2/2015 HPC Knowledge Portal meeting, Barcelona <a href="https://youtu.be/TpMXkBlePSE">Watch video</a><br /></li>
+<li><a href="http://irpf90.ups-tlse.fr/files/pyconf_2014.pdf">IRPF90 : a Fortran code generator for HPC</a><br />
+25/10/2014 Conférence Python PyConFr, Lyon <a href="http://www.infoq.com/fr/presentations/irpf90-fortran-code-generator-hpc">Watch video</a><br /></li>
+<li><a href="http://irpf90.ups-tlse.fr/files/reims2014.pdf">Un algorithme permettant de traiter plus d’un million d’atomes en chimie quantique</a><br />
+30/9/2014 Maison de la simulation de l'Université de Reims Champagne-Ardenne<br /></li>
+<li><a href="http://irpf90.ups-tlse.fr/files/cecam_lausanne.pdf">Millions of atoms in DFTB</a><br />
+23/1/2014 CECAM Workshop on two-dimensional inorganic materials, EPFL, Lausanne (Switzerland)<br /></li>
+<li><a href="http://irpf90.ups-tlse.fr/files/mesochallenge2013.pdf">Un million d'atomes en chimie quantique</a><br />
+20/9/2013 Journée Mésochallenges Equip@Meso, IHP, Paris<br /></li>
+<li><a href="http://irpf90.ups-tlse.fr/files/deMon2013.pdf">A fast Sparse SCF implementation: Application to DFTB</a><br />
+25/6/2013 CECAM deMon Workshop, LCC, Toulouse<br /></li>
+<li><a href="http://irpf90.ups-tlse.fr/files/mds.pdf">Software optimization for petaflops/s scale Quantum Monte Carlo simulations</a><br />
+4/12/2012 Maison de la simulation, Saclay<br /></li>
+<li><a href="http://irpf90.ups-tlse.fr/files/equipatmeso.pdf">Implémentation de simulations QMC  massivement parallèles pourla chimie: Du laboratoire aux calculateurs pétaflopiques en passant par les mésocentres</a><br />
+18/10/2012 Journée scientifique Equip@Meso, Strasbourg, <a href="http://canalc2.u-strasbg.fr/video.asp?idvideo=11473">Watch video</a><br /></li>
+<li><a href="http://irpf90.ups-tlse.fr/files/kobe_talk.pdf">QMC=Chem: a quantum Monte Carlo program for large-scale simulations in chemistry at the petascale level and beyond</a><br />
+18/07/2012  10th International Meeting on High-Performance Computing for Computational Science (VECPAR 2012), Kobe (Japan)<br /></li>
+<li><a href="http://irpf90.ups-tlse.fr/files/teratec.pdf">Quantum Monte Carlo simulations in chemistry at the petascale level and beyond</a><br />
+28/06/2012 Forum Teratec, Ecole Polytechnique, Palaisau<br /></li>
+<li><a href="http://irpf90.ups-tlse.fr/files/isc.pdf">Quantum Monte Carlo simulations for Alzheimer’s disease on the Curie machine : Efficient strategies for extreme parallelism onpetascale platforms and beyond</a><br />
+19/06/2012 International Supercomputing Conference, Intel Theater, Hamburg (Germany)<br /></li>
+<li><a href="http://irpf90.ups-tlse.fr/files/lcc_2012.pdf">Interprétation des liaisons chimiques à partir de fonctions d'ondes de grande précision</a><br />
+15/06/2012 Laboratoire de Chimie de Coordination, Toulouse<br /></li>
+<li><a href="http://irpf90.ups-tlse.fr/files/rocks.pdf">Gestion de clusters de calcul avec Rocks</a><br />
+26/4/2012 Réunion Capitoul, Toulouse<br /></li>
+<li><a href="http://irpf90.ups-tlse.fr/files/sc11.pdf">Quantum chemistry towards exascale with QMC=Chem</a><br />
+17/11/2011 1000 x 0 = 0. Single-node optimisation does matter, Supercomputing conference 2011, Seattle (USA)<br /></li>
+<li><a href="http://irpf90.ups-tlse.fr/files/qmcchem_curie.pdf">QMC=Chem, a massively parallel Quantum Monte Carlo program</a><br />
+27/04/2011 CEA, Bruyères-le-Chatel<br /></li>
+<li><a href="http://irpf90.ups-tlse.fr/files/eplf2011.pdf">Localisation de paires d'électrons avec la fonction EPLF</a><br />
+16/02/2011 LCC, Toulouse<br /></li>
+<li><a href="http://irpf90.ups-tlse.fr/files/eplf.pdf">Localizing electron pairs with the Electron Pair Localization Function</a><br />
+26/06/2010 20 Years ELF, Paris<br /></li>
+<li><a href="http://irpf90.ups-tlse.fr/files/grid.pdf">Large scale QMC calculations on the EGEE grid</a><br />
+14/05/2010 INGRID 2010, Poznan (Poland)<br /></li>
+<li><a href="http://irpf90.ups-tlse.fr/files/aeres09.pdf">Valorisation et diffusion des logiciels de chimie quantique</a><br />
+16/12/2009 IRSAMC, Toulouse<br /></li>
+<li><a href="http://irpf90.ups-tlse.fr/files/irp.08.2.pdf">Présentation de l'outil IRPF90</a><br />
+13/11/2008 IRSAMC, Toulouse<br /></li>
+<li><a href="http://irpf90.ups-tlse.fr/files/irp.08.1.pdf">Programmation facile et robuste en Fortran: Présentation de l'outil IRPF90</a><br />
+21/05/2008 LCT, Paris<br /></li>
+<li><a href="http://irpf90.ups-tlse.fr/files/q5cost08.pdf">Version 1.0 de la bibliothèque Q5Cost</a><br />
+20/11/2008 IRSAMC, Toulouse<br /></li>
+<li><a href="http://irpf90.ups-tlse.fr/files/q5cost08.1.pdf">Version 1.0 of the Q5Cost library</a><br />
+30/06/2008 ICCSA, Perugia (Italy)<br /></li>
+<li><a href="http://irpf90.ups-tlse.fr/files/rctf10.pdf">Description probabiliste de la liaison chimique</a><br />
+12/07/2006 RCTF, Nancy<br /></li>
+<li><a href="http://irpf90.ups-tlse.fr/files/micmac.pdf">Amélioration de l'échantillonnage en QMC</a><br />
+09/02/2006 INRIA, Rocquencourt<br /></li>
+<li><a href="http://irpf90.ups-tlse.fr/files/toulouse05.pdf">MCSCF en presence d'un facteur de corrélation de Jastrow</a><br />
+15/04/2005 IRSAMC, Toulouse<br /></li>
 </ol>
-<p><a class="gototop" href="#top">Go to Top</a>
-<div class="cleaner"></div>
+
+
+<hr />
 </div>
-<div class="content_box_bottom"></div><p></p>
-<p id="papers"><div class="content_box_top"></div>
-<div class="content_box"><p></p>
-<p><h2><p> Publication list </h2><p></p>
-<div class="header">2020</div>
-<span class='title'>IRPF90<br></span>
-<span class='author'>Anthony Scemama</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-02462160/file/irpf90.pdf'>PDF</a> 
-<br>
-<br>
-<span class='title'>Spin adaptation with determinant-based selected configuration interaction<br></span>
-<span class='author'>Thomas Applencourt</span>, <span class='author'>Kevin Gasperich</span>, <span class='author'>Anthony Scemama</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-02468242/file/1812.06902.pdf'>PDF</a> , ArXiv: <a href='https://arxiv.org/abs/1812.06902'>1812.06902</a>
-<br>
-<br>
-<span class='title'>A Density-Based Basis-Set Incompleteness Correction for GW Methods<br></span>
-<span class='author'>Pierre-François Loos</span>, <span class='author'>Barthélémy Pradines</span>, <span class='author'>Anthony Scemama</span>, <span class='author'>Emmanuel Giner</span>, <span class='author'>Julien Toulouse</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-02346969/file/1910.12238.pdf'>PDF</a> , ArXiv: <a href='https://arxiv.org/abs/1910.12238'>1910.12238</a>, DOI: <a href='https://dx.doi.org/10.1021/acs.jctc.9b01067'>10.1021/acs.jctc.9b01067</a>
-<br>
-<br>
-<span class='title'>A Mountaineering Strategy to Excited States: Highly-Accurate Energies and Benchmarks for Medium Size Molecules<br></span>
-<span class='author'>Pierre-François Loos</span>, <span class='author'>Filippo Lipparini</span>, <span class='author'>Martial Boggio-Pasqua</span>, <span class='author'>Anthony Scemama</span>, <span class='author'>Denis Jacquemin</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-02403471/file/1912.04173.pdf'>PDF</a> , ArXiv: <a href='https://arxiv.org/abs/1912.04173'>1912.04173</a>, DOI: <a href='https://dx.doi.org/10.1021/acs.jctc.9b01216'>10.1021/acs.jctc.9b01216</a>
-<br>
-<br>
-<span class='title'>A Mountaineering Strategy to Excited States: Highly-Accurate Energies and Benchmarks for Exotic Molecules and Radicals<br></span>
-<span class='author'>Pierre-Francois Loos</span>, <span class='author'>Filippo Lipparini</span>, <span class='author'>Martial Boggio-Pasqua</span>, <span class='author'>Anthony Scemama</span>, <span class='author'>Denis Jacquemin</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-02503507/file/2003.04183.pdf'>PDF</a> , ArXiv: <a href='https://arxiv.org/abs/2003.04183'>2003.04183</a>, DOI: <a href='https://dx.doi.org/10.1021/acs.jctc.0c00227'>10.1021/acs.jctc.0c00227</a>
-<br>
-<br>
-<span class='title'>Variational principles in quantum Monte Carlo: the troubled story of variance minimization<br></span>
-<span class='author'>Alice Cuzzocrea</span>, <span class='author'>Anthony Scemama</span>, <span class='author'>Wim Briels</span>, <span class='author'>Saverio Moroni</span>, <span class='author'>Claudia Filippi</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-02485688/file/2002.05951.pdf'>PDF</a> , ArXiv: <a href='https://arxiv.org/abs/2002.05951'>2002.05951</a>
-<br>
-<br>
-<span class='title'>A basis-set error correction based on density-functional theory for strongly correlated molecular systems<br></span>
-<span class='author'>Emmanuel Giner</span>, <span class='author'>Anthony Scemama</span>, <span class='author'>Pierre-François Loos</span>, <span class='author'>Julien Toulouse</span>
-<br>
-<a href='https://hal.sorbonne-universite.fr/hal-02458920/file/srDFT_SC.pdf'>PDF</a> , ArXiv: <a href='https://arxiv.org/abs/2001.11832'>2001.11832</a>, DOI: <a href='https://dx.doi.org/10.1063/5.0002892'>10.1063/5.0002892</a>
-<br>
-<br>
-<span class='title'>Pros and Cons of the Bethe-Salpeter Formalism for Ground-State Energies<br></span>
-<span class='author'>Pierre-Francois Loos</span>, <span class='author'>Pierre-François Loos</span>, <span class='author'>Anthony Scemama</span>, <span class='author'>Ivan Duchemin</span>, <span class='author'>Denis Jacquemin</span>, <span class='author'>Xavier Blase</span>
-<br>
-<a href='https://hal.sorbonne-universite.fr/hal-02475410/file/2002.04514.pdf'>PDF</a> , ArXiv: <a href='https://arxiv.org/abs/2002.04514'>2002.04514</a>, DOI: <a href='https://dx.doi.org/10.1021/acs.jpclett.0c00460'>10.1021/acs.jpclett.0c00460</a>
-<br>
-<br>
-<span class='title'>The Quest For Highly Accurate Excitation Energies: A Computational Perspective<br></span>
-<span class='author'>Pierre-Francois Loos</span>, <span class='author'>Pierre-François Loos</span>, <span class='author'>Anthony Scemama</span>, <span class='author'>Denis Jacquemin</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-02468226/file/2001.00416.pdf'>PDF</a> , ArXiv: <a href='https://arxiv.org/abs/2001.00416'>2001.00416</a>, DOI: <a href='https://dx.doi.org/10.1021/acs.jpclett.0c00014'>10.1021/acs.jpclett.0c00014</a>
-<br>
-<br>
-<div class="header">2019</div>
-<span class='title'>A Density-Based Basis-Set Correction for Wave Function Theory<br></span>
-<span class='author'>Pierre-François Loos</span>, <span class='author'>Barthélémy Pradines</span>, <span class='author'>Anthony Scemama</span>, <span class='author'>Julien Toulouse</span>, <span class='author'>Emmanuel Giner</span>
-<br>
-DOI: <a href='https://dx.doi.org/10.1021/acs.jpclett.9b01176'>10.1021/acs.jpclett.9b01176</a>
-<br>
-<br>
-<span class='title'>Self-Consistent Electron-Nucleus Cusp Correction for Molecular Orbitals<br></span>
-<span class='author'>Pierre-Francois Loos</span>, <span class='author'>Anthony Scemama</span>, <span class='author'>Michel Caffarel</span>
-<br>
-ArXiv: <a href='https://arxiv.org/abs/1902.03406'>1902.03406</a>, DOI: <a href='https://dx.doi.org/10.1016/bs.aiq.2019.03.003'>10.1016/bs.aiq.2019.03.003</a>
-<br>
-<br>
-<span class='title'>Influence of Pseudopotentials on Excitation Energies From Selected Configuration Interaction and Diffusion Monte Carlo<br></span>
-<span class='author'>Anthony Scemama</span>, <span class='author'>Michel Caffarel</span>, <span class='author'>Anouar Benali</span>, <span class='author'>Denis Jacquemin</span>, <span class='author'>Pierre-Francois Loos</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-02088494/file/1904.00678.pdf'>PDF</a> , ArXiv: <a href='https://arxiv.org/abs/1904.00678'>1904.00678</a>, DOI: <a href='https://dx.doi.org/10.1016/j.rechem.2019.100002'>10.1016/j.rechem.2019.100002</a>
-<br>
-<br>
-<span class='title'>Reference Energies for Double Excitations<br></span>
-<span class='author'>Pierre-François Loos</span>, <span class='author'>Martial Boggio-Pasqua</span>, <span class='author'>Anthony Scemama</span>, <span class='author'>Michel Caffarel</span>, <span class='author'>Denis Jacquemin</span>
-<br>
-<a href='https://hal.sorbonne-universite.fr/hal-01945031/file/1811.12861.pdf'>PDF</a> , ArXiv: <a href='https://arxiv.org/abs/1811.12861'>1811.12861</a>, DOI: <a href='https://dx.doi.org/10.1021/acs.jctc.8b01205'>10.1021/acs.jctc.8b01205</a>
-<br>
-<br>
-<span class='title'>Quantum Package 2.0: An Open-Source Determinant-Driven Suite of Programs<br></span>
-<span class='author'>Yann Garniron</span>, <span class='author'>Thomas Applencourt</span>, <span class='author'>Kevin Gasperich</span>, <span class='author'>Anouar Benali</span>, <span class='author'>Anthony Ferté</span>, <span class='author'>Julien Paquier</span>, <span class='author'>Barthélémy Pradines</span>, <span class='author'>Roland Assaraf</span>, <span class='author'>Peter Reinhardt</span>, <span class='author'>Julien Toulouse</span>, <span class='author'>Pierrette Barbaresco</span>, <span class='author'>Nicolas Renon</span>, <span class='author'>Grégoire David</span>, <span class='author'>Jean-Paul Malrieu</span>, <span class='author'>Mickaël Veril</span>, <span class='author'>Michel Caffarel</span>, <span class='author'>Pierre-Francois Loos</span>, <span class='author'>Emmanuel Giner</span>, <span class='author'>Anthony Scemama</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-02045595/file/1902.08154.pdf'>PDF</a> , ArXiv: <a href='https://arxiv.org/abs/1902.08154'>1902.08154</a>, DOI: <a href='https://dx.doi.org/10.1021/acs.jctc.9b00176'>10.1021/acs.jctc.9b00176</a>
-<br>
-<br>
-<span class='title'>Excited States with Selected Configuration Interaction-Quantum Monte Carlo: Chemically Accurate Excitation Energies and Geometries<br></span>
-<span class='author'>Monika Dash</span>, <span class='author'>Jonas Feldt</span>, <span class='author'>Saverio Moroni</span>, <span class='author'>Anthony Scemama</span>, <span class='author'>Claudia Filippi</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-02308310/file/1905.06737.pdf'>PDF</a> , ArXiv: <a href='https://arxiv.org/abs/1905.06737'>1905.06737</a>, DOI: <a href='https://dx.doi.org/10.1021/acs.jctc.9b00476'>10.1021/acs.jctc.9b00476</a>
-<br>
-<br>
-<span class='title'>Chemically Accurate Excitation Energies With Small Basis Sets<br></span>
-<span class='author'>Emmanuel Giner</span>, <span class='author'>Anthony Scemama</span>, <span class='author'>Julien Toulouse</span>, <span class='author'>Pierre-Francois Loos</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-02289341/file/Ex-srDFT.pdf'>PDF</a> , ArXiv: <a href='https://arxiv.org/abs/1907.01245'>1907.01245</a>, DOI: <a href='https://dx.doi.org/10.1063/1.5122976'>10.1063/1.5122976</a>
-<br>
-<br>
-<div class="header">2018</div>
-<span class='title'>Deterministic construction of nodal surfaces within quantum Monte Carlo: the case of FeS<br></span>
-<span class='author'>Anthony Scemama</span>, <span class='author'>Yann Garniron</span>, <span class='author'>Michel Caffarel</span>, <span class='author'>Pierre-François Loos</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-01679416/file/1712.05034.pdf'>PDF</a> , ArXiv: <a href='https://arxiv.org/abs/1712.05034'>1712.05034</a>, DOI: <a href='https://dx.doi.org/10.1021/acs.jctc.7b01250'>10.1021/acs.jctc.7b01250</a>
-<br>
-<br>
-<span class='title'>Perturbatively Selected Configuration-Interaction Wave Functions for Efficient Geometry Optimization in Quantum Monte Carlo<br></span>
-<span class='author'>Monika Dash</span>, <span class='author'>Saverio Moroni</span>, <span class='author'>Anthony Scemama</span>, <span class='author'>Claudia Filippi</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-01873356/file/1804.09610.pdf'>PDF</a> , ArXiv: <a href='https://arxiv.org/abs/1804.09610'>1804.09610</a>, DOI: <a href='https://dx.doi.org/10.1021/acs.jctc.8b00393'>10.1021/acs.jctc.8b00393</a>
-<br>
-<br>
-<span class='title'>A Mountaineering Strategy to Excited States: Highly Accurate Reference Energies and Benchmarks<br></span>
-<span class='author'>Pierre-Francois Loos</span>, <span class='author'>Anthony Scemama</span>, <span class='author'>Aymeric Blondel</span>, <span class='author'>Yann Garniron</span>, <span class='author'>Michel Caffarel</span>, <span class='author'>Denis Jacquemin</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-01858532/file/1807.02045.pdf'>PDF</a> , DOI: <a href='https://dx.doi.org/10.1021/acs.jctc.8b00406'>10.1021/acs.jctc.8b00406</a>
-<br>
-<br>
-<span class='title'>Selected configuration interaction dressed by perturbation<br></span>
-<span class='author'>Yann Garniron</span>, <span class='author'>Anthony Scemama</span>, <span class='author'>Emmanuel Giner</span>, <span class='author'>Michel Caffarel</span>, <span class='author'>Pierre-François Loos</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-01858534/file/1.5044503.pdf'>PDF</a> , ArXiv: <a href='https://arxiv.org/abs/1806.04970'>1806.04970</a>, DOI: <a href='https://dx.doi.org/10.1063/1.5044503'>10.1063/1.5044503</a>
-<br>
-<br>
-<span class='title'>Excitation energies from diffusion Monte Carlo using selected configuration interaction nodes<br></span>
-<span class='author'>Anthony Scemama</span>, <span class='author'>Anouar Benali</span>, <span class='author'>Denis Jacquemin</span>, <span class='author'>Michel Caffarel</span>, <span class='author'>Pierre-François Loos</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-01858533/file/1.5041327%281%29.pdf'>PDF</a> , DOI: <a href='https://dx.doi.org/10.1063/1.5041327'>10.1063/1.5041327</a>
-<br>
-<br>
-<div class="header">2017</div>
-<span class='title'>Corrélation électronique et parallélisme à grande échelle<br></span>
-<span class='author'>Anthony Scemama</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/tel-01612872/file/hdr_scemama.pdf'>PDF</a> 
-<br>
-<br>
-<span class='title'>Pre-exascale Architectures: OpenPOWER Performance and Usability Assessment for French Scientific Community<br></span>
-<span class='author'>Gabriel Hautreux</span>, <span class='author'>Alfredo Buttari</span>, <span class='author'>Arnaud Beck</span>, <span class='author'>Victor Cameo</span>, <span class='author'>Dimitri Lecas</span>, <span class='author'>Dominique Aubert</span>, <span class='author'>Emeric Brun</span>, <span class='author'>Eric Boyer</span>, <span class='author'>Fausto Malvagi</span>, <span class='author'>Gabriel Staffelbach</span>, <span class='author'>Isabelle D’ast</span>, <span class='author'>Joeffrey Legaux</span>, <span class='author'>Ghislain Lartigue</span>, <span class='author'>Gilles Grasseau</span>, <span class='author'>Guillaume Latu</span>, <span class='author'>Juan Escobar</span>, <span class='author'>Julien Bigot</span>, <span class='author'>Julien Derouillat</span>, <span class='author'>Matthieu Haefele</span>, <span class='author'>Nicolas Renon</span>, <span class='author'>Philippe Parnaudeau</span>, <span class='author'>Philippe Wautelet</span>, <span class='author'>Pierre-François Lavallée</span>, <span class='author'>Pierre Kestener</span>, <span class='author'>Rémi Lacroix</span>, <span class='author'>Stephane Requena</span>, <span class='author'>Anthony Scemama</span>, <span class='author'>Vincent Moureau</span>, <span class='author'>Matthieu Etancelin</span>, <span class='author'>Yann Meurdesoif</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-02129651/file/genci-openpower-assessment.pdf'>PDF</a> , DOI: <a href='https://dx.doi.org/10.1007/978-3-319-67630-2_23'>10.1007/978-3-319-67630-2_23</a>
-<br>
-<br>
-<span class='title'>Orthogonal Valence Bond Hamiltonians incorporating dynamical correlation effects<br></span>
-<span class='author'>Emmanuel Giner</span>, <span class='author'>Celestino Angeli</span>, <span class='author'>Anthony Scemama</span>, <span class='author'>Jean-Paul Malrieu</span>
-<br>
-DOI: <a href='https://dx.doi.org/10.1016/j.comptc.2017.03.001'>10.1016/j.comptc.2017.03.001</a>
-<br>
-<br>
-<span class='title'>Hybrid stochastic-deterministic calculation of the second-order perturbative contribution of multireference perturbation theory<br></span>
-<span class='author'>Yann Garniron</span>, <span class='author'>Anthony Scemama</span>, <span class='author'>Pierre-François Loos</span>, <span class='author'>Michel Caffarel</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-01539064/file/1.4992127.pdf'>PDF</a> , ArXiv: <a href='https://arxiv.org/abs/1703.05347'>1703.05347</a>, DOI: <a href='https://dx.doi.org/10.1063/1.4992127'>10.1063/1.4992127</a>
-<br>
-<br>
-<span class='title'>A Jeziorski-Monkhorst fully uncontracted multi-reference perturbative treatment. I. Principles, second-order versions, and tests on ground state potential energy curves<br></span>
-<span class='author'>Emmanuel Giner</span>, <span class='author'>Celestino Angeli</span>, <span class='author'>Yann Garniron</span>, <span class='author'>Anthony Scemama</span>, <span class='author'>Jean-Paul Malrieu</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-01539065/file/1.4984616.pdf'>PDF</a> , ArXiv: <a href='https://arxiv.org/abs/1702.03133'>1702.03133</a>, DOI: <a href='https://dx.doi.org/10.1063/1.4984616'>10.1063/1.4984616</a>
-<br>
-<br>
-<span class='title'>Alternative definition of excitation amplitudes in multi-reference state-specific coupled cluster<br></span>
-<span class='author'>Yann Garniron</span>, <span class='author'>Emmanuel Giner</span>, <span class='author'>Jean-Paul Malrieu</span>, <span class='author'>Anthony Scemama</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-01522756/file/1.4980034.pdf'>PDF</a> , ArXiv: <a href='https://arxiv.org/abs/1701.04764'>1701.04764</a>, DOI: <a href='https://dx.doi.org/10.1063/1.4980034'>10.1063/1.4980034</a>
-<br>
-<br>
-<div class="header">2016</div>
-<span class='title'>Using CIPSI nodes in diffusion Monte Carlo<br></span>
-<span class='author'>Michel Caffarel</span>, <span class='author'>Thomas Applencourt</span>, <span class='author'>Emmanuel Giner</span>, <span class='author'>Anthony Scemama</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-01539067/file/1607.06742.pdf'>PDF</a> , DOI: <a href='https://dx.doi.org/10.1021/bk-2016-1234.ch002'>10.1021/bk-2016-1234.ch002</a>
-<br>
-<br>
-<span class='title'>Quantum Monte Carlo with very large multideterminant wavefunctions<br></span>
-<span class='author'>Anthony Scemama</span>, <span class='author'>Thomas Applencourt</span>, <span class='author'>Emmanuel Giner</span>, <span class='author'>Michel Caffarel</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-01358981/file/1510.00730.pdf'>PDF</a> , ArXiv: <a href='https://arxiv.org/abs/1510.00730'>1510.00730</a>, DOI: <a href='https://dx.doi.org/10.1002/jcc.24382'>10.1002/jcc.24382</a>
-<br>
-<br>
-<span class='title'>Communication: Toward an improved control of the fixed-node error in quantum Monte Carlo: The case of the water molecule<br></span>
-<span class='author'>Michel Caffarel</span>, <span class='author'>Thomas Applencourt</span>, <span class='author'>Emmanuel Giner</span>, <span class='author'>Anthony Scemama</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-01327039/file/1.4947093.pdf'>PDF</a> , DOI: <a href='https://dx.doi.org/10.1063/1.4947093'>10.1063/1.4947093</a>
-<br>
-<br>
-<span class='title'>A simple approach to the state-specific MR-CC using the intermediate Hamiltonian formalism<br></span>
-<span class='author'>Emmanuel Giner</span>, <span class='author'>Grégoire David</span>, <span class='author'>Anthony Scemama</span>, <span class='author'>Jean-Paul Malrieu</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-01298011/file/1.4940781.pdf'>PDF</a> , DOI: <a href='https://dx.doi.org/10.1063/1.4940781'>10.1063/1.4940781</a>
-<br>
-<br>
-<div class="header">2015</div>
-<span class='title'>Fixed-node diffusion Monte Carlo potential energy curve of the fluorine molecule F2 using selected configuration interaction trial wavefunctions<br></span>
-<span class='author'>Emmanuel Giner</span>, <span class='author'>Anthony Scemama</span>, <span class='author'>Michel Caffarel</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-01136398/file/1.4905528%281%29.pdf'>PDF</a> , ArXiv: <a href='https://arxiv.org/abs/1408.3672'>1408.3672</a>, DOI: <a href='https://dx.doi.org/10.1063/1.4905528'>10.1063/1.4905528</a>
-<br>
-<br>
-<div class="header">2014</div>
-<span class='title'>IRPF90, un generateur de code FORTRAN pour le calcul scientifique<br></span>
-<span class='author'>Anthony Scemama</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-01539068/file/irpf90.pdf'>PDF</a> 
-<br>
-<br>
-<span class='title'>Code interoperability and standard data formats in quantum chemistry and quantum dynamics: The Q5/D5Cost data model<br></span>
-<span class='author'>Elda Rossi</span>, <span class='author'>Stefano Evangelisti</span>, <span class='author'>Antonio Lagana</span>, <span class='author'>Antonio Monari</span>, <span class='author'>Sergio Rampino</span>, <span class='author'>Marco Verdicchio</span>, <span class='author'>Kim K. Baldridge</span>, <span class='author'>Gian Luigi Bendazzoli</span>, <span class='author'>Stefano Borini</span>, <span class='author'>Renzo Cimiraglia</span>, <span class='author'>Celestino Angeli</span>, <span class='author'>Peter Kallay</span>, <span class='author'>Hans P. Lüthi</span>, <span class='author'>Kenneth Ruud</span>, <span class='author'>José Sánchez-Marín</span>, <span class='author'>Anthony Scemama</span>, <span class='author'>Peter Szalay</span>, <span class='author'>Attila Tajti</span>
-<br>
-DOI: <a href='https://dx.doi.org/10.1002/jcc.23492'>10.1002/jcc.23492</a>
-<br>
-<br>
-<span class='title'>A Sparse Self-Consistent Field Algorithm and Its Parallel Implementation: Application to Density-Functional-Based Tight Binding<br></span>
-<span class='author'>Anthony Scemama</span>, <span class='author'>Nicolas Renon</span>, <span class='author'>Mathias Rapacioli</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-00992187/file/1402.2880.pdf'>PDF</a> , DOI: <a href='https://dx.doi.org/10.1021/ct500115v'>10.1021/ct500115v</a>
-<br>
-<br>
-<span class='title'>Spin Density Distribution in Open-Shell Transition Metal Systems: A Comparative Post-Hartree–Fock, Density Functional Theory, and Quantum Monte Carlo Study of the CuCl2 Molecule<br></span>
-<span class='author'>Michel Caffarel</span>, <span class='author'>Emmanuel Giner</span>, <span class='author'>Anthony Scemama</span>, <span class='author'>Alejandro Ramírez-Solís</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-01121580/file/1405.4082.pdf'>PDF</a> , DOI: <a href='https://dx.doi.org/10.1021/ct5004252'>10.1021/ct5004252</a>
-<br>
-<br>
-<span class='title'>Accurate nonrelativistic ground-state energies of 3d transition metal atoms<br></span>
-<span class='author'>Anthony Scemama</span>, <span class='author'>Thomas Applencourt</span>, <span class='author'>Emmanuel Giner</span>, <span class='author'>Michel Caffarel</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-01121736/file/1.4903985.pdf'>PDF</a> , DOI: <a href='https://dx.doi.org/10.1063/1.4903985'>10.1063/1.4903985</a>
-<br>
-<br>
-<div class="header">2013</div>
-<span class='title'>QMC=Chem: A Quantum Monte Carlo Program for Large-Scale Simulations in Chemistry at the Petascale Level and beyond<br></span>
-<span class='author'>Anthony Scemama</span>, <span class='author'>Michel Caffarel</span>, <span class='author'>Emmanuel Oseret</span>, <span class='author'>William Jalby</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-00875637/file/kobe.pdf'>PDF</a> , DOI: <a href='https://dx.doi.org/10.1007/978-3-642-38718-0_14'>10.1007/978-3-642-38718-0_14</a>
-<br>
-<br>
-<span class='title'>An efficient implementation of Slater-Condon rules<br></span>
-<span class='author'>Anthony Scemama</span>, <span class='author'>Emmanuel Giner</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-01539072/file/1311.6244.pdf'>PDF</a> , ArXiv: <a href='https://arxiv.org/abs/1311.6244'>1311.6244</a>
-<br>
-<br>
-<span class='title'>Simulations en chimie : l'approche Monte-Carlo quantique<br></span>
-<span class='author'>Michel Caffarel</span>, <span class='author'>Anthony Scemama</span>
-<br>
-
-<br>
-<br>
-<span class='title'>Simulations en Chimie : Les bénéfices des méthodes Monte-Carlo Quantique<br></span>
-<span class='author'>Michel Caffarel</span>, <span class='author'>Anthony Scemama</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-01539071/file/hpc_mag%20%281%29.pdf'>PDF</a> 
-<br>
-<br>
-<span class='title'>Un million d'atomes en chimie quantique<br></span>
-<span class='author'>Anthony Scemama</span>, <span class='author'>Mathias Rapacioli</span>, <span class='author'>Nicolas Renon</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-01539069/file/hpc_mag.pdf'>PDF</a> 
-<br>
-<br>
-<span class='title'>Quantum Monte Carlo for large chemical systems: Implementing efficient strategies for petascale platforms and beyond<br></span>
-<span class='author'>Anthony Scemama</span>, <span class='author'>Michel Caffarel</span>, <span class='author'>Emmanuel Oseret</span>, <span class='author'>William Jalby</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-00736543/file/p.pdf'>PDF</a> , ArXiv: <a href='https://arxiv.org/abs/1209.6630'>1209.6630</a>, DOI: <a href='https://dx.doi.org/10.1002/jcc.23216'>10.1002/jcc.23216</a>
-<br>
-<br>
-<span class='title'>Simulations in Chemistry: The Quantum Monte Carlo Methods<br></span>
-<span class='author'>Michel Caffarel</span>, <span class='author'>Anthony Scemama</span>
-<br>
-
-<br>
-<br>
-<span class='title'>Using perturbatively selected configuration interaction in quantum Monte Carlo calculations<br></span>
-<span class='author'>Emmanuel Giner</span>, <span class='author'>Anthony Scemama</span>, <span class='author'>Michel Caffarel</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-00992090/file/PDF12434617.pdf'>PDF</a> , DOI: <a href='https://dx.doi.org/10.1139/cjc-2013-0017'>10.1139/cjc-2013-0017</a>
-<br>
-<br>
-<span class='title'>Further refinements of next-generation force fields -- Nonempirical localization of off-centered points in molecules<br></span>
-<span class='author'>Robin Chaudret</span>, <span class='author'>Nohad Gresh</span>, <span class='author'>Andrés Cisneros</span>, <span class='author'>Anthony Scemama</span>, <span class='author'>Jean-Philip Piquemal</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-00875425/file/b6b6ac821f70f5d0bcda994704f0e70bb435.pdf'>PDF</a> , DOI: <a href='https://dx.doi.org/10.1139/cjc-2012-0547'>10.1139/cjc-2012-0547</a>
-<br>
-<br>
-<div class="header">2012</div>
-<span class='title'>Large-Scale Quantum Monte Carlo Electronic Structure Calculations on the EGEE Grid<br></span>
-<span class='author'>Antonio Monari</span>, <span class='author'>Anthony Scemama</span>, <span class='author'>Michel Caffarel</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-00875641/file/papier.pdf'>PDF</a> , DOI: <a href='https://dx.doi.org/10.1007/978-1-4614-0508-5_13'>10.1007/978-1-4614-0508-5_13</a>
-<br>
-<br>
-<span class='title'>Les supercalculateurs décryptent la chimie du vivant<br></span>
-<span class='author'>Michel Caffarel</span>, <span class='author'>Anthony Scemama</span>
-<br>
-
-<br>
-<br>
-<div class="header">2011</div>
-<span class='title'>Modeling Charge Resonance in Cationic Molecular Clusters: Combining DFT-Tight Binding with Configuration Interaction<br></span>
-<span class='author'>Mathias Rapacioli</span>, <span class='author'>Fernand Spiegelman</span>, <span class='author'>Anthony Scemama</span>, <span class='author'>André Mirtschink</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-00844617/file/DFTB%2BCI.pdf'>PDF</a> , DOI: <a href='https://dx.doi.org/10.1021/ct100412f'>10.1021/ct100412f</a>
-<br>
-<br>
-<span class='title'>Electron Pair Localization Function (EPLF) for Density Functional Theory and ab Initio Wave Function-Based Methods: A New Tool for Chemical Interpretation<br></span>
-<span class='author'>Anthony Scemama</span>, <span class='author'>Michel Caffarel</span>, <span class='author'>Robin Chaudret</span>, <span class='author'>Jean-Philip Piquemal</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-00874618/file/eplf.pdf'>PDF</a> , DOI: <a href='https://dx.doi.org/10.1021/ct1005938'>10.1021/ct1005938</a>
-<br>
-<br>
-<span class='title'>On the stability of Be3: A benchmark complete active space self-consistent field + averaged quadratic coupled cluster study<br></span>
-<span class='author'>J. Amaro-Estrada</span>, <span class='author'>Anthony Scemama</span>, <span class='author'>Michel Caffarel</span>, <span class='author'>Alejandro Ramirez-Solis</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-00875418/file/ec0fe8337af45fd057a5b5092c5239c9ca65.pdf'>PDF</a> , DOI: <a href='https://dx.doi.org/10.1063/1.3635403'>10.1063/1.3635403</a>
-<br>
-<br>
-<span class='title'>Spin-driven activation of dioxygen in various metalloenzymes and their inspired models.<br></span>
-<span class='author'>Aurelien de la Lande</span>, <span class='author'>Dennis R Salahub</span>, <span class='author'>Jacques Maddaluno</span>, <span class='author'>Anthony Scemama</span>, <span class='author'>Julien Pilme</span>, <span class='author'>Olivier Parisel</span>, <span class='author'>Helene Gerard</span>, <span class='author'>Michel Caffarel</span>, <span class='author'>Jean-Philip Piquemal</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-00992047/file/adduit-cu2O2-JCC-rev_final.pdf'>PDF</a> , DOI: <a href='https://dx.doi.org/10.1002/jcc.21698'>10.1002/jcc.21698</a>
-<br>
-<br>
-<div class="header">2010</div>
-<span class='title'>Structural and optical properties of a neutral Nickel bisdithiolene complex: density functional versus ab initio methods<br></span>
-<span class='author'>Fabienne Alary</span>, <span class='author'>Jean-Louis Heully</span>, <span class='author'>Anthony Scemama</span>, <span class='author'>Bénédicte Garreau-de Bonneval</span>, <span class='author'>Kathleen Chane-Ching</span>, <span class='author'>Michel Caffarel</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-00834777/file/TCAfinal.pdf'>PDF</a> , DOI: <a href='https://dx.doi.org/10.1007/s00214-009-0679-9'>10.1007/s00214-009-0679-9</a>
-<br>
-<br>
-<span class='title'>The lithium-thiophene interaction: a critical study using highly correlated electronic structure approaches of quantum chemistry<br></span>
-<span class='author'>Michel Caffarel</span>, <span class='author'>Anthony Scemama</span>, <span class='author'>Alejandro Ramírez-Solís</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-00874606/file/lit.pdf'>PDF</a> , DOI: <a href='https://dx.doi.org/10.1007/s00214-009-0713-y'>10.1007/s00214-009-0713-y</a>
-<br>
-<br>
-<div class="header">2009</div>
-<span class='title'>IRPF90: a programming environment for high performance computing<br></span>
-<span class='author'>Anthony Scemama</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-01539073/file/0909.5012.pdf'>PDF</a> , ArXiv: <a href='https://arxiv.org/abs/0909.5012'>0909.5012</a>
-<br>
-<br>
-<span class='title'>Bond breaking and bond making in tetraoxygen: analysis of the O2(X3Sigma(g)-) + O2(X3Sigma(g)-) <==> O4 reaction using the electron pair localization function.<br></span>
-<span class='author'>Michel Caffarel</span>, <span class='author'>Anthony Scemama</span>, <span class='author'>Alejandro Ramírez-Solís</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-00875602/file/o4.pdf'>PDF</a> , DOI: <a href='https://dx.doi.org/10.1021/jp902028g'>10.1021/jp902028g</a>
-<br>
-<br>
-<span class='title'>A theoretical study of linear beryllium chains: full configuration interaction.<br></span>
-<span class='author'>Valentina Vetere</span>, <span class='author'>Antonio Monari</span>, <span class='author'>Anthony Scemama</span>, <span class='author'>Gian Luigi Bendazzoli</span>, <span class='author'>Stefano Evangelisti</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-00875603/file/1.3054709.pdf'>PDF</a> , DOI: <a href='https://dx.doi.org/10.1063/1.3054709'>10.1063/1.3054709</a>
-<br>
-<br>
-<div class="header">2008</div>
-<span class='title'>Common Format for Quantum Chemistry Interoperability: Q5Cost Format and Library<br></span>
-<span class='author'>Anthony Scemama</span>, <span class='author'>Antonio Monari</span>, <span class='author'>Celestino Angeli</span>, <span class='author'>Stefano Borini</span>, <span class='author'>Stefano Evangelisti</span>, <span class='author'>Elda Rossi</span>
-<br>
-DOI: <a href='https://dx.doi.org/10.1007/978-3-540-69839-5_83'>10.1007/978-3-540-69839-5_83</a>
-<br>
-<br>
-<span class='title'>Q5Cost format and library: a tutorial about the common format for quantum chemistry interoperability<br></span>
-<span class='author'>Antonio Monari</span>, <span class='author'>Anthony Scemama</span>, <span class='author'>Stefano Evangelisti</span>, <span class='author'>Elda Rossi</span>, <span class='author'>Stefano Cozzini</span>
-<br>
-
-<br>
-<br>
-<span class='title'>Energies, stability and structure properties of radicals derived from organic sulfides containing an acetyl group after the *OH attack: ab initio and DFT calculations vs experiment.<br></span>
-<span class='author'>Jacqueline Bergès</span>, <span class='author'>Nicolas Varmenot</span>, <span class='author'>Anthony Scemama</span>, <span class='author'>Zohreh Abedinzadeh</span>, <span class='author'>Krzysztof Bobrowski</span>
-<br>
-DOI: <a href='https://dx.doi.org/10.1021/jp711944v'>10.1021/jp711944v</a>
-<br>
-<br>
-<div class="header">2007</div>
-<span class='title'>Maximum probability domains from Quantum Monte Carlo Calculations<br></span>
-<span class='author'>Anthony Scemama</span>, <span class='author'>Michel Caffarel</span>, <span class='author'>Andreas Savin</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-00875618/file/paper.pdf'>PDF</a> , DOI: <a href='https://dx.doi.org/10.1002/jcc.20526'>10.1002/jcc.20526</a>
-<br>
-<br>
-<span class='title'>Improved Monte Carlo estimators for the one-body density.<br></span>
-<span class='author'>Roland Assaraf</span>, <span class='author'>Michel Caffarel</span>, <span class='author'>Anthony Scemama</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-00875613/file/PhysRevE.75.035701.pdf'>PDF</a> , DOI: <a href='https://dx.doi.org/10.1103/PhysRevE.75.035701'>10.1103/PhysRevE.75.035701</a>
-<br>
-<br>
-<span class='title'>Multireference quantum Monte Carlo study of the O4 molecule.<br></span>
-<span class='author'>Michel Caffarel</span>, <span class='author'>Ramón Hernández-Lamoneda</span>, <span class='author'>Anthony Scemama</span>, <span class='author'>Alejandro Ramírez-Solís</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-00875614/file/PhysRevLett.99.153001.pdf'>PDF</a> , DOI: <a href='https://dx.doi.org/10.1103/PhysRevLett.99.153001'>10.1103/PhysRevLett.99.153001</a>
-<br>
-<br>
-<div class="header">2006</div>
-<span class='title'>Efficient Monte Carlo Calculations of the One-Body Density<br></span>
-<span class='author'>Roland Assaraf</span>, <span class='author'>Michel Caffarel</span>, <span class='author'>Anthony Scemama</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-00107403/file/arXiv_Assaraf.pdf'>PDF</a> , ArXiv: <a href='https://arxiv.org/abs/physics/0610132'>physics/0610132</a>
-<br>
-<br>
-<span class='title'>A few aspects of QMC for molecules<br></span>
-<span class='author'>Michel Caffarel</span>, <span class='author'>Roland Assaraf</span>, <span class='author'>Anatole Khelif</span>, <span class='author'>Anthony Scemama</span>, <span class='author'>Alejandro Ramirez-Solis</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-01539075/file/Book_QMC_OberWolfach_2006.pdf'>PDF</a> 
-<br>
-<br>
-<span class='title'>Simple and efficient approach to the optimization of correlated wave functions<br></span>
-<span class='author'>Anthony Scemama</span>, <span class='author'>Claudia Filippi</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-00180167/file/PhysRevB.73.241101.pdf'>PDF</a> 
-<br>
-<br>
-<span class='title'>An efficient sampling algorithm for variational Monte Carlo.<br></span>
-<span class='author'>Anthony Scemama</span>, <span class='author'>Tony Lelièvre</span>, <span class='author'>Gabriel Stoltz</span>, <span class='author'>Eric Cancès</span>, <span class='author'>Michel Caffarel</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-00875620/file/1.2354490.pdf'>PDF</a> , DOI: <a href='https://dx.doi.org/10.1063/1.2354490'>10.1063/1.2354490</a>
-<br>
-<br>
-<div class="header">2005</div>
-<span class='title'>Investigating the volume maximizing the probability of finding ν electrons from variational monte carlo data<br></span>
-<span class='author'>Anthony Scemama</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-02457724/file/algo-volume_revtex.pdf'>PDF</a> , DOI: <a href='https://dx.doi.org/10.1142/S0219633605001581'>10.1142/S0219633605001581</a>
-<br>
-<br>
-<div class="header">2004</div>
-<span class='title'>Réactivité en milieu atmosphérique et analyse Monte Carlo quantique de la localisation électronique<br></span>
-<span class='author'>Anthony Scemama</span>
-<br>
-<a href='https://tel.archives-ouvertes.fr/tel-00518025/file/these_scemama.pdf'>PDF</a> 
-<br>
-<br>
-<span class='title'>Spectral, Kinetic, and Theoretical Studies of Sulfur-Centered Reactive Intermediates Derived from Thioethers Containing an Acetyl Group<br></span>
-<span class='author'>Nicolas Varmenot</span>, <span class='author'>Jacqueline Bergès</span>, <span class='author'>Zohreh Abedinzadeh</span>, <span class='author'>Anthony Scemama</span>, <span class='author'>Grazyna Strzelczak</span>, <span class='author'>Krzysztof Bobrowski</span>
-<br>
-DOI: <a href='https://dx.doi.org/10.1021/jp031159b'>10.1021/jp031159b</a>
-<br>
-<br>
-<span class='title'>Theoretical study of the electrocyclization product of butadiyne: structure, stability and possible formations<br></span>
-<span class='author'>Patrick Chaquin</span>, <span class='author'>Anthony Scemama</span>
-<br>
-DOI: <a href='https://dx.doi.org/10.1016/j.cplett.2004.06.106'>10.1016/j.cplett.2004.06.106</a>
-<br>
-<br>
-<span class='title'>Electron pair localization function: A practical tool to visualize electron localization in molecules from quantum Monte Carlo data<br></span>
-<span class='author'>Anthony Scemama</span>, <span class='author'>Patrick Chaquin</span>, <span class='author'>Michel Caffarel</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-00875621/file/1.1765098.pdf'>PDF</a> , DOI: <a href='https://dx.doi.org/10.1063/1.1765098'>10.1063/1.1765098</a>
-<br>
-<br>
-<div class="header">2002</div>
-<span class='title'>Theoretical Study of the Structure and Properties of Polyynes and Monocyano- and Dicyanopolyynes: Predictions for Long Chain Compounds<br></span>
-<span class='author'>Anthony Scemama</span>, <span class='author'>Patrick Chaquin</span>, <span class='author'>Marie-Claire Gazeau</span>, <span class='author'>Yves Bénilan</span>
-<br>
-DOI: <a href='https://dx.doi.org/10.1021/jp013043q'>10.1021/jp013043q</a>
-<br>
-<br>
-<span class='title'>Semi-empirical calculation of electronic absorption wavelengths of polyynes, monocyano- and dicyanopolyynes. Predictions for long chain compounds and carbon allotrope carbyne<br></span>
-<span class='author'>Anthony Scemama</span>, <span class='author'>Patrick Chaquin</span>, <span class='author'>Marie-Claire Gazeau</span>, <span class='author'>Yves Bénilan</span>
-<br>
-<a href='https://hal.archives-ouvertes.fr/hal-01539078/file/Article-UV.pdf'>PDF</a> , DOI: <a href='https://dx.doi.org/10.1016/S0009-2614(02)00988-0'>10.1016/S0009-2614(02)00988-0</a>
-<br>
-<br>
-<div class="header">2001</div>
-<span class='title'>IR and UV spectroscopic data for polyynes: predictions for long carbon chain compounds in Titan's atmosphere<br></span>
-<span class='author'>Véronique Vuitton</span>, <span class='author'>Anthony Scemama</span>, <span class='author'>Marie-Claire Gazeau</span>, <span class='author'>Patrick Chaquin</span>, <span class='author'>Yves Bénilan</span>
-<br>
-DOI: <a href='https://dx.doi.org/10.1016/S0273-1177(01)00059-X'>10.1016/S0273-1177(01)00059-X</a>
-<br>
-<br>
-<p><a class="gototop" href="#top">Go to Top</a>
-<div class="cleaner"></div>
 </div>
-<div class="content_box_bottom"></div><p></p>
-<p id="teaching"><div class="content_box_top"></div>
-<div class="content_box"><p></p>
-<p><h2><p> Teaching </h2><p></p>
-<p><h3><p> Module HPC ISAE </h3><p></p>
-<div class="line-block">
-<div class="line">2016-, Toulouse</div>
+<div id="outline-container-org8379c3e" class="outline-2">
+<h2 id="org8379c3e">Publications</h2>
+<div class="outline-text-2" id="text-org8379c3e">
 </div>
-<ul class="simple">
-<li><a class="reference external" href="http://irpf90.ups-tlse.fr/files/mpi_pi.pdf">Introduction à MPI : Calcul de Pi</a>, <a class="reference external" href="http://irpf90.ups-tlse.fr/files/pi.tar.gz">fichiers</a></li>
-<li><a class="reference external" href="http://irpf90.ups-tlse.fr/files/poisson.pdf">Problème de Poisson</a>, <a class="reference external" href="http://irpf90.ups-tlse.fr/files/poisson.tar.gz">fichiers</a></li>
-<li><a class="reference external" href="http://irpf90.ups-tlse.fr/files/optimisation.pdf">Optimisation</a></li>
+<div id="outline-container-org5d71a56" class="outline-3">
+<h3 id="org5d71a56">2020</h3>
+<div class="outline-text-3" id="text-org5d71a56">
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-02462160/file/irpf90.pdf"><i>IRPF90</i></a><br />
+Anthony Scemama<br /></li>
 </ul>
-<p><h3><p> Intensive Course of the European Master in Theoretical Chemistry and Computational Modelling (TCCM) </h3><p></p>
-<div class="line-block">
-<div class="line">22-26/09/2014, Toulouse</div>
-</div>
-<ul class="simple">
-<li><a class="reference external" href="http://irpf90.ups-tlse.fr/files/parallel_programming.pdf">Parallel programming</a></li>
-<li><a class="reference external" href="http://github.com/scemama/tccm2014">Source files</a></li>
-</ul>
-<p><h3><p> Ecole Développement Logiciel en Chimie Quantique </h3><p></p>
-<p>15-19/04/2013, Paris</p>
-<ul>
-<li><div class="first line-block">
-<div class="line"><a class="reference external" href="http://irpf90.ups-tlse.fr/files/bash.pdf">Bash</a></div>
-</div>
-</li>
-</ul>
-<p><h3><p> Atelier COMPIL </h3><p></p>
-<p>31/05/2011, Toulouse</p>
-<ul>
-<li><div class="first line-block">
-<div class="line"><a class="reference external" href="http://irpf90.ups-tlse.fr/files/cours_irp1.pdf">Présentation de l’outil IRPF90</a></div>
-<div class="line"><a class="reference external" href="http://irpf90.ups-tlse.fr/files/cours_irp2.pdf">Exercise: Verlet algorithm</a></div>
-</div>
-</li>
-</ul>
-<p><a class="gototop" href="#top">Go to Top</a>
-<div class="cleaner"></div>
-</div>
-<div class="content_box_bottom"></div><p></p>
-</div>
-<div class="footer">
-<hr class="footer" />
-Generated on: 2020-06-04 09:35 UTC.
-Generated by <a class="reference external" href="http://docutils.sourceforge.net/">Docutils</a> from <a class="reference external" href="http://docutils.sourceforge.net/rst.html">reStructuredText</a> source.
 
+
+<ul class="org-ul">
+<li><a href="https://hal.sorbonne-universite.fr/hal-02475410/file/2002.04514.pdf"><i>Pros and Cons of the Bethe-Salpeter Formalism for Ground-State Energies</i></a><br />
+Pierre-Francois Loos, Pierre-François Loos, Anthony Scemama, Ivan Duchemin, Denis Jacquemin, Xavier Blase<br />
+<a href="https://arxiv.org/abs/2002.04514">arXiv:2002.04514</a>     <a href="https://dx.doi.org/10.1021/acs.jpclett.0c00460">doi:10.1021/acs.jpclett.0c00460</a><br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-02468226/file/2001.00416.pdf"><i>The Quest For Highly Accurate Excitation Energies: A Computational Perspective</i></a><br />
+Pierre-Francois Loos, Pierre-François Loos, Anthony Scemama, Denis Jacquemin<br />
+<a href="https://arxiv.org/abs/2001.00416">arXiv:2001.00416</a>     <a href="https://dx.doi.org/10.1021/acs.jpclett.0c00014">doi:10.1021/acs.jpclett.0c00014</a><br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-02468242/file/1812.06902.pdf"><i>Spin adaptation with determinant-based selected configuration interaction</i></a><br />
+Thomas Applencourt, Kevin Gasperich, Anthony Scemama<br />
+<a href="https://arxiv.org/abs/1812.06902">arXiv:1812.06902</a><br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-02346969/file/1910.12238.pdf"><i>A Density-Based Basis-Set Incompleteness Correction for GW Methods</i></a><br />
+Pierre-François Loos, Barthélémy Pradines, Anthony Scemama, Emmanuel Giner, Julien Toulouse<br />
+<a href="https://arxiv.org/abs/1910.12238">arXiv:1910.12238</a>     <a href="https://dx.doi.org/10.1021/acs.jctc.9b01067">doi:10.1021/acs.jctc.9b01067</a><br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-02403471/file/1912.04173.pdf"><i>A Mountaineering Strategy to Excited States: Highly-Accurate Energies and Benchmarks for Medium Size Molecules</i></a><br />
+Pierre-François Loos, Filippo Lipparini, Martial Boggio-Pasqua, Anthony Scemama, Denis Jacquemin<br />
+<a href="https://arxiv.org/abs/1912.04173">arXiv:1912.04173</a>     <a href="https://dx.doi.org/10.1021/acs.jctc.9b01216">doi:10.1021/acs.jctc.9b01216</a><br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-02503507/file/2003.04183.pdf"><i>A Mountaineering Strategy to Excited States: Highly-Accurate Energies and Benchmarks for Exotic Molecules and Radicals</i></a><br />
+Pierre-Francois Loos, Filippo Lipparini, Martial Boggio-Pasqua, Anthony Scemama, Denis Jacquemin<br />
+<a href="https://arxiv.org/abs/2003.04183">arXiv:2003.04183</a>     <a href="https://dx.doi.org/10.1021/acs.jctc.0c00227">doi:10.1021/acs.jctc.0c00227</a><br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-02485688/file/2002.05951.pdf"><i>Variational principles in quantum Monte Carlo: the troubled story of variance minimization</i></a><br />
+Alice Cuzzocrea, Anthony Scemama, Wim Briels, Saverio Moroni, Claudia Filippi<br />
+<a href="https://arxiv.org/abs/2002.05951">arXiv:2002.05951</a><br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.sorbonne-universite.fr/hal-02458920/file/srDFT_SC.pdf"><i>A basis-set error correction based on density-functional theory for strongly correlated molecular systems</i></a><br />
+Emmanuel Giner, Anthony Scemama, Pierre-François Loos, Julien Toulouse<br />
+<a href="https://arxiv.org/abs/2001.11832">arXiv:2001.11832</a>     <a href="https://dx.doi.org/10.1063/5.0002892">doi:10.1063/5.0002892</a><br /></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org5f2ddd2" class="outline-3">
+<h3 id="org5f2ddd2">2019</h3>
+<div class="outline-text-3" id="text-org5f2ddd2">
+<ul class="org-ul">
+<li><a href="https://dx.doi.org/10.1021/acs.jpclett.9b01176"><i>A Density-Based Basis-Set Correction for Wave Function Theory</i></a><br />
+Pierre-François Loos, Barthélémy Pradines, Anthony Scemama, Julien Toulouse, Emmanuel Giner<br />
+<a href="https://dx.doi.org/10.1021/acs.jpclett.9b01176">doi:10.1021/acs.jpclett.9b01176</a><br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://arxiv.org/abs/1902.03406"><i>Self-Consistent Electron-Nucleus Cusp Correction for Molecular Orbitals</i></a><br />
+Pierre-Francois Loos, Anthony Scemama, Michel Caffarel<br />
+<a href="https://arxiv.org/abs/1902.03406">arXiv:1902.03406</a>     <a href="https://dx.doi.org/10.1016/bs.aiq.2019.03.003">doi:10.1016/bs.aiq.2019.03.003</a><br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-02088494/file/1904.00678.pdf"><i>Influence of Pseudopotentials on Excitation Energies From Selected Configuration Interaction and Diffusion Monte Carlo</i></a><br />
+Anthony Scemama, Michel Caffarel, Anouar Benali, Denis Jacquemin, Pierre-Francois Loos<br />
+<a href="https://arxiv.org/abs/1904.00678">arXiv:1904.00678</a>     <a href="https://dx.doi.org/10.1016/j.rechem.2019.100002">doi:10.1016/j.rechem.2019.100002</a><br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.sorbonne-universite.fr/hal-01945031/file/1811.12861.pdf"><i>Reference Energies for Double Excitations</i></a><br />
+Pierre-François Loos, Martial Boggio-Pasqua, Anthony Scemama, Michel Caffarel, Denis Jacquemin<br />
+<a href="https://arxiv.org/abs/1811.12861">arXiv:1811.12861</a>     <a href="https://dx.doi.org/10.1021/acs.jctc.8b01205">doi:10.1021/acs.jctc.8b01205</a><br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-02045595/file/1902.08154.pdf"><i>Quantum Package 2.0: An Open-Source Determinant-Driven Suite of Programs</i></a><br />
+Yann Garniron, Thomas Applencourt, Kevin Gasperich, Anouar Benali, Anthony Ferté, Julien Paquier, Barthélémy Pradines, Roland Assaraf, Peter Reinhardt, Julien Toulouse, Pierrette Barbaresco, Nicolas Renon, Grégoire David, Jean-Paul Malrieu, Mickaël Veril, Michel Caffarel, Pierre-Francois Loos, Emmanuel Giner, Anthony Scemama<br />
+<a href="https://arxiv.org/abs/1902.08154">arXiv:1902.08154</a>     <a href="https://dx.doi.org/10.1021/acs.jctc.9b00176">doi:10.1021/acs.jctc.9b00176</a><br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-02308310/file/1905.06737.pdf"><i>Excited States with Selected Configuration Interaction-Quantum Monte Carlo: Chemically Accurate Excitation Energies and Geometries</i></a><br />
+Monika Dash, Jonas Feldt, Saverio Moroni, Anthony Scemama, Claudia Filippi<br />
+<a href="https://arxiv.org/abs/1905.06737">arXiv:1905.06737</a>     <a href="https://dx.doi.org/10.1021/acs.jctc.9b00476">doi:10.1021/acs.jctc.9b00476</a><br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-02289341/file/Ex-srDFT.pdf"><i>Chemically Accurate Excitation Energies With Small Basis Sets</i></a><br />
+Emmanuel Giner, Anthony Scemama, Julien Toulouse, Pierre-Francois Loos<br />
+<a href="https://arxiv.org/abs/1907.01245">arXiv:1907.01245</a>     <a href="https://dx.doi.org/10.1063/1.5122976">doi:10.1063/1.5122976</a><br /></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgfdf9fce" class="outline-3">
+<h3 id="orgfdf9fce">2018</h3>
+<div class="outline-text-3" id="text-orgfdf9fce">
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-01679416/file/1712.05034.pdf"><i>Deterministic construction of nodal surfaces within quantum Monte Carlo: the case of FeS</i></a><br />
+Anthony Scemama, Yann Garniron, Michel Caffarel, Pierre-François Loos<br />
+<a href="https://arxiv.org/abs/1712.05034">arXiv:1712.05034</a>     <a href="https://dx.doi.org/10.1021/acs.jctc.7b01250">doi:10.1021/acs.jctc.7b01250</a><br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-01873356/file/1804.09610.pdf"><i>Perturbatively Selected Configuration-Interaction Wave Functions for Efficient Geometry Optimization in Quantum Monte Carlo</i></a><br />
+Monika Dash, Saverio Moroni, Anthony Scemama, Claudia Filippi<br />
+<a href="https://arxiv.org/abs/1804.09610">arXiv:1804.09610</a>     <a href="https://dx.doi.org/10.1021/acs.jctc.8b00393">doi:10.1021/acs.jctc.8b00393</a><br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-01858532/file/1807.02045.pdf"><i>A Mountaineering Strategy to Excited States: Highly Accurate Reference Energies and Benchmarks</i></a><br />
+Pierre-Francois Loos, Anthony Scemama, Aymeric Blondel, Yann Garniron, Michel Caffarel, Denis Jacquemin<br />
+<a href="https://dx.doi.org/10.1021/acs.jctc.8b00406">doi:10.1021/acs.jctc.8b00406</a><br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-01858534/file/1.5044503.pdf"><i>Selected configuration interaction dressed by perturbation</i></a><br />
+Yann Garniron, Anthony Scemama, Emmanuel Giner, Michel Caffarel, Pierre-François Loos<br />
+<a href="https://arxiv.org/abs/1806.04970">arXiv:1806.04970</a>     <a href="https://dx.doi.org/10.1063/1.5044503">doi:10.1063/1.5044503</a><br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-01858533/file/1.5041327(1).pdf"><i>Excitation energies from diffusion Monte Carlo using selected configuration interaction nodes</i></a><br />
+Anthony Scemama, Anouar Benali, Denis Jacquemin, Michel Caffarel, Pierre-François Loos<br />
+<a href="https://dx.doi.org/10.1063/1.5041327">doi:10.1063/1.5041327</a><br /></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org5a1e441" class="outline-3">
+<h3 id="org5a1e441">2017</h3>
+<div class="outline-text-3" id="text-org5a1e441">
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/tel-01612872/file/hdr_scemama.pdf"><i>Corrélation électronique et parallélisme à grande échelle</i></a><br />
+Anthony Scemama<br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-01539064/file/1.4992127.pdf"><i>Hybrid stochastic-deterministic calculation of the second-order perturbative contribution of multireference perturbation theory</i></a><br />
+Yann Garniron, Anthony Scemama, Pierre-François Loos, Michel Caffarel<br />
+<a href="https://arxiv.org/abs/1703.05347">arXiv:1703.05347</a>     <a href="https://dx.doi.org/10.1063/1.4992127">doi:10.1063/1.4992127</a><br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-01539065/file/1.4984616.pdf"><i>A Jeziorski-Monkhorst fully uncontracted multi-reference perturbative treatment. I. Principles, second-order versions, and tests on ground state potential energy curves</i></a><br />
+Emmanuel Giner, Celestino Angeli, Yann Garniron, Anthony Scemama, Jean-Paul Malrieu<br />
+<a href="https://arxiv.org/abs/1702.03133">arXiv:1702.03133</a>     <a href="https://dx.doi.org/10.1063/1.4984616">doi:10.1063/1.4984616</a><br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-01522756/file/1.4980034.pdf"><i>Alternative definition of excitation amplitudes in multi-reference state-specific coupled cluster</i></a><br />
+Yann Garniron, Emmanuel Giner, Jean-Paul Malrieu, Anthony Scemama<br />
+<a href="https://arxiv.org/abs/1701.04764">arXiv:1701.04764</a>     <a href="https://dx.doi.org/10.1063/1.4980034">doi:10.1063/1.4980034</a><br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-02129651/file/genci-openpower-assessment.pdf"><i>Pre-exascale Architectures: OpenPOWER Performance and Usability Assessment for French Scientific Community</i></a><br />
+Gabriel Hautreux, Alfredo Buttari, Arnaud Beck, Victor Cameo, Dimitri Lecas, Dominique Aubert, Emeric Brun, Eric Boyer, Fausto Malvagi, Gabriel Staffelbach, Isabelle D’ast, Joeffrey Legaux, Ghislain Lartigue, Gilles Grasseau, Guillaume Latu, Juan Escobar, Julien Bigot, Julien Derouillat, Matthieu Haefele, Nicolas Renon, Philippe Parnaudeau, Philippe Wautelet, Pierre-François Lavallée, Pierre Kestener, Rémi Lacroix, Stephane Requena, Anthony Scemama, Vincent Moureau, Matthieu Etancelin, Yann Meurdesoif<br />
+<a href="https://dx.doi.org/10.1007/978-3-319-67630-2_23">doi:10.1007/978-3-319-67630-2_23</a><br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://dx.doi.org/10.1016/j.comptc.2017.03.001"><i>Orthogonal Valence Bond Hamiltonians incorporating dynamical correlation effects</i></a><br />
+Emmanuel Giner, Celestino Angeli, Anthony Scemama, Jean-Paul Malrieu<br />
+<a href="https://dx.doi.org/10.1016/j.comptc.2017.03.001">doi:10.1016/j.comptc.2017.03.001</a><br /></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgc551db4" class="outline-3">
+<h3 id="orgc551db4">2016</h3>
+<div class="outline-text-3" id="text-orgc551db4">
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-01539067/file/1607.06742.pdf"><i>Using CIPSI nodes in diffusion Monte Carlo</i></a><br />
+Michel Caffarel, Thomas Applencourt, Emmanuel Giner, Anthony Scemama<br />
+<a href="https://dx.doi.org/10.1021/bk-2016-1234.ch002">doi:10.1021/bk-2016-1234.ch002</a><br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-01358981/file/1510.00730.pdf"><i>Quantum Monte Carlo with very large multideterminant wavefunctions</i></a><br />
+Anthony Scemama, Thomas Applencourt, Emmanuel Giner, Michel Caffarel<br />
+<a href="https://arxiv.org/abs/1510.00730">arXiv:1510.00730</a>     <a href="https://dx.doi.org/10.1002/jcc.24382">doi:10.1002/jcc.24382</a><br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-01327039/file/1.4947093.pdf"><i>Communication: Toward an improved control of the fixed-node error in quantum Monte Carlo: The case of the water molecule</i></a><br />
+Michel Caffarel, Thomas Applencourt, Emmanuel Giner, Anthony Scemama<br />
+<a href="https://dx.doi.org/10.1063/1.4947093">doi:10.1063/1.4947093</a><br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-01298011/file/1.4940781.pdf"><i>A simple approach to the state-specific MR-CC using the intermediate Hamiltonian formalism</i></a><br />
+Emmanuel Giner, Grégoire David, Anthony Scemama, Jean-Paul Malrieu<br />
+<a href="https://dx.doi.org/10.1063/1.4940781">doi:10.1063/1.4940781</a><br /></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org2161e8f" class="outline-3">
+<h3 id="org2161e8f">2015</h3>
+<div class="outline-text-3" id="text-org2161e8f">
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-01136398/file/1.4905528(1).pdf"><i>Fixed-node diffusion Monte Carlo potential energy curve of the fluorine molecule F2 using selected configuration interaction trial wavefunctions</i></a><br />
+Emmanuel Giner, Anthony Scemama, Michel Caffarel<br />
+<a href="https://arxiv.org/abs/1408.3672">arXiv:1408.3672</a>     <a href="https://dx.doi.org/10.1063/1.4905528">doi:10.1063/1.4905528</a><br /></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org77fb061" class="outline-3">
+<h3 id="org77fb061">2014</h3>
+<div class="outline-text-3" id="text-org77fb061">
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-01539068/file/irpf90.pdf"><i>IRPF90, un generateur de code FORTRAN pour le calcul scientifique</i></a><br />
+Anthony Scemama<br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://dx.doi.org/10.1002/jcc.23492"><i>Code interoperability and standard data formats in quantum chemistry and quantum dynamics: The Q5/D5Cost data model</i></a><br />
+Elda Rossi, Stefano Evangelisti, Antonio Lagana, Antonio Monari, Sergio Rampino, Marco Verdicchio, Kim K. Baldridge, Gian Luigi Bendazzoli, Stefano Borini, Renzo Cimiraglia, Celestino Angeli, Peter Kallay, Hans P. Lüthi, Kenneth Ruud, José Sánchez-Marín, Anthony Scemama, Peter Szalay, Attila Tajti<br />
+<a href="https://dx.doi.org/10.1002/jcc.23492">doi:10.1002/jcc.23492</a><br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-00992187/file/1402.2880.pdf"><i>A Sparse Self-Consistent Field Algorithm and Its Parallel Implementation: Application to Density-Functional-Based Tight Binding</i></a><br />
+Anthony Scemama, Nicolas Renon, Mathias Rapacioli<br />
+<a href="https://dx.doi.org/10.1021/ct500115v">doi:10.1021/ct500115v</a><br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-01121580/file/1405.4082.pdf"><i>Spin Density Distribution in Open-Shell Transition Metal Systems: A Comparative Post-Hartree–Fock, Density Functional Theory, and Quantum Monte Carlo Study of the CuCl2 Molecule</i></a><br />
+Michel Caffarel, Emmanuel Giner, Anthony Scemama, Alejandro Ramírez-Solís<br />
+<a href="https://dx.doi.org/10.1021/ct5004252">doi:10.1021/ct5004252</a><br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-01121736/file/1.4903985.pdf"><i>Accurate nonrelativistic ground-state energies of 3d transition metal atoms</i></a><br />
+Anthony Scemama, Thomas Applencourt, Emmanuel Giner, Michel Caffarel<br />
+<a href="https://dx.doi.org/10.1063/1.4903985">doi:10.1063/1.4903985</a><br /></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgf0bd09d" class="outline-3">
+<h3 id="orgf0bd09d">2013</h3>
+<div class="outline-text-3" id="text-orgf0bd09d">
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-00875637/file/kobe.pdf"><i>QMC=Chem: A Quantum Monte Carlo Program for Large-Scale Simulations in Chemistry at the Petascale Level and beyond</i></a><br />
+Anthony Scemama, Michel Caffarel, Emmanuel Oseret, William Jalby<br />
+<a href="https://dx.doi.org/10.1007/978-3-642-38718-0_14">doi:10.1007/978-3-642-38718-0_14</a><br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-01539072/file/1311.6244.pdf"><i>An efficient implementation of Slater-Condon rules</i></a><br />
+Anthony Scemama, Emmanuel Giner<br />
+<a href="https://arxiv.org/abs/1311.6244">arXiv:1311.6244</a><br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><i>Simulations en chimie : l'approche Monte-Carlo quantique</i><br />
+Michel Caffarel, Anthony Scemama<br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-01539071/file/hpc_mag%20(1).pdf"><i>Simulations en Chimie : Les bénéfices des méthodes Monte-Carlo Quantique</i></a><br />
+Michel Caffarel, Anthony Scemama<br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-01539069/file/hpc_mag.pdf"><i>Un million d'atomes en chimie quantique</i></a><br />
+Anthony Scemama, Mathias Rapacioli, Nicolas Renon<br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-00736543/file/p.pdf"><i>Quantum Monte Carlo for large chemical systems: Implementing efficient strategies for petascale platforms and beyond</i></a><br />
+Anthony Scemama, Michel Caffarel, Emmanuel Oseret, William Jalby<br />
+<a href="https://arxiv.org/abs/1209.6630">arXiv:1209.6630</a>     <a href="https://dx.doi.org/10.1002/jcc.23216">doi:10.1002/jcc.23216</a><br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><i>Simulations in Chemistry: The Quantum Monte Carlo Methods</i><br />
+Michel Caffarel, Anthony Scemama<br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-00875425/file/b6b6ac821f70f5d0bcda994704f0e70bb435.pdf"><i>Further refinements of next-generation force fields &#x2013; Nonempirical localization of off-centered points in molecules</i></a><br />
+Robin Chaudret, Nohad Gresh, Andrés Cisneros, Anthony Scemama, Jean-Philip Piquemal<br />
+<a href="https://dx.doi.org/10.1139/cjc-2012-0547">doi:10.1139/cjc-2012-0547</a><br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-00992090/file/PDF12434617.pdf"><i>Using perturbatively selected configuration interaction in quantum Monte Carlo calculations</i></a><br />
+Emmanuel Giner, Anthony Scemama, Michel Caffarel<br />
+<a href="https://dx.doi.org/10.1139/cjc-2013-0017">doi:10.1139/cjc-2013-0017</a><br /></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orge363631" class="outline-3">
+<h3 id="orge363631">2012</h3>
+<div class="outline-text-3" id="text-orge363631">
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-00875641/file/papier.pdf"><i>Large-Scale Quantum Monte Carlo Electronic Structure Calculations on the EGEE Grid</i></a><br />
+Antonio Monari, Anthony Scemama, Michel Caffarel<br />
+<a href="https://dx.doi.org/10.1007/978-1-4614-0508-5_13">doi:10.1007/978-1-4614-0508-5_13</a><br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><i>Les supercalculateurs décryptent la chimie du vivant</i><br />
+Michel Caffarel, Anthony Scemama<br /></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orge8a343d" class="outline-3">
+<h3 id="orge8a343d">2011</h3>
+<div class="outline-text-3" id="text-orge8a343d">
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-00844617/file/DFTB+CI.pdf"><i>Modeling Charge Resonance in Cationic Molecular Clusters: Combining DFT-Tight Binding with Configuration Interaction</i></a><br />
+Mathias Rapacioli, Fernand Spiegelman, Anthony Scemama, André Mirtschink<br />
+<a href="https://dx.doi.org/10.1021/ct100412f">doi:10.1021/ct100412f</a><br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-00874618/file/eplf.pdf"><i>Electron Pair Localization Function (EPLF) for Density Functional Theory and ab Initio Wave Function-Based Methods: A New Tool for Chemical Interpretation</i></a><br />
+Anthony Scemama, Michel Caffarel, Robin Chaudret, Jean-Philip Piquemal<br />
+<a href="https://dx.doi.org/10.1021/ct1005938">doi:10.1021/ct1005938</a><br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-00875418/file/ec0fe8337af45fd057a5b5092c5239c9ca65.pdf"><i>On the stability of Be3: A benchmark complete active space self-consistent field + averaged quadratic coupled cluster study</i></a><br />
+J. Amaro-Estrada, Anthony Scemama, Michel Caffarel, Alejandro Ramirez-Solis<br />
+<a href="https://dx.doi.org/10.1063/1.3635403">doi:10.1063/1.3635403</a><br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-00992047/file/adduit-cu2O2-JCC-rev_final.pdf"><i>Spin-driven activation of dioxygen in various metalloenzymes and their inspired models.</i></a><br />
+Aurelien de la Lande, Dennis R Salahub, Jacques Maddaluno, Anthony Scemama, Julien Pilme, Olivier Parisel, Helene Gerard, Michel Caffarel, Jean-Philip Piquemal<br />
+<a href="https://dx.doi.org/10.1002/jcc.21698">doi:10.1002/jcc.21698</a><br /></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org1f6d1b4" class="outline-3">
+<h3 id="org1f6d1b4">2010</h3>
+<div class="outline-text-3" id="text-org1f6d1b4">
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-00834777/file/TCAfinal.pdf"><i>Structural and optical properties of a neutral Nickel bisdithiolene complex: density functional versus ab initio methods</i></a><br />
+Fabienne Alary, Jean-Louis Heully, Anthony Scemama, Bénédicte Garreau-de Bonneval, Kathleen Chane-Ching, Michel Caffarel<br />
+<a href="https://dx.doi.org/10.1007/s00214-009-0679-9">doi:10.1007/s00214-009-0679-9</a><br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-00874606/file/lit.pdf"><i>The lithium-thiophene interaction: a critical study using highly correlated electronic structure approaches of quantum chemistry</i></a><br />
+Michel Caffarel, Anthony Scemama, Alejandro Ramírez-Solís<br />
+<a href="https://dx.doi.org/10.1007/s00214-009-0713-y">doi:10.1007/s00214-009-0713-y</a><br /></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org64e7f11" class="outline-3">
+<h3 id="org64e7f11">2009</h3>
+<div class="outline-text-3" id="text-org64e7f11">
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-01539073/file/0909.5012.pdf"><i>IRPF90: a programming environment for high performance computing</i></a><br />
+Anthony Scemama<br />
+<a href="https://arxiv.org/abs/0909.5012">arXiv:0909.5012</a><br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-00875603/file/1.3054709.pdf"><i>A theoretical study of linear beryllium chains: full configuration interaction.</i></a><br />
+Valentina Vetere, Antonio Monari, Anthony Scemama, Gian Luigi Bendazzoli, Stefano Evangelisti<br />
+<a href="https://dx.doi.org/10.1063/1.3054709">doi:10.1063/1.3054709</a><br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-00875602/file/o4.pdf"><i>Bond breaking and bond making in tetraoxygen: analysis of the O2(X3Sigma(g)-) + O2(X3Sigma(g)-) &lt;==&gt; O4 reaction using the electron pair localization function.</i></a><br />
+Michel Caffarel, Anthony Scemama, Alejandro Ramírez-Solís<br />
+<a href="https://dx.doi.org/10.1021/jp902028g">doi:10.1021/jp902028g</a><br /></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orged8cabc" class="outline-3">
+<h3 id="orged8cabc">2008</h3>
+<div class="outline-text-3" id="text-orged8cabc">
+<ul class="org-ul">
+<li><a href="https://dx.doi.org/10.1007/978-3-540-69839-5_83"><i>Common Format for Quantum Chemistry Interoperability: Q5Cost Format and Library</i></a><br />
+Anthony Scemama, Antonio Monari, Celestino Angeli, Stefano Borini, Stefano Evangelisti, Elda Rossi<br />
+<a href="https://dx.doi.org/10.1007/978-3-540-69839-5_83">doi:10.1007/978-3-540-69839-5_83</a><br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><i>Q5Cost format and library: a tutorial about the common format for quantum chemistry interoperability</i><br />
+Antonio Monari, Anthony Scemama, Stefano Evangelisti, Elda Rossi, Stefano Cozzini<br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://dx.doi.org/10.1021/jp711944v"><i>Energies, stability and structure properties of radicals derived from organic sulfides containing an acetyl group after the *OH attack: ab initio and DFT calculations vs experiment.</i></a><br />
+Jacqueline Bergès, Nicolas Varmenot, Anthony Scemama, Zohreh Abedinzadeh, Krzysztof Bobrowski<br />
+<a href="https://dx.doi.org/10.1021/jp711944v">doi:10.1021/jp711944v</a><br /></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgbf4a3b4" class="outline-3">
+<h3 id="orgbf4a3b4">2007</h3>
+<div class="outline-text-3" id="text-orgbf4a3b4">
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-00875618/file/paper.pdf"><i>Maximum probability domains from Quantum Monte Carlo Calculations</i></a><br />
+Anthony Scemama, Michel Caffarel, Andreas Savin<br />
+<a href="https://dx.doi.org/10.1002/jcc.20526">doi:10.1002/jcc.20526</a><br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-00875613/file/PhysRevE.75.035701.pdf"><i>Improved Monte Carlo estimators for the one-body density.</i></a><br />
+Roland Assaraf, Michel Caffarel, Anthony Scemama<br />
+<a href="https://dx.doi.org/10.1103/PhysRevE.75.035701">doi:10.1103/PhysRevE.75.035701</a><br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-00875614/file/PhysRevLett.99.153001.pdf"><i>Multireference quantum Monte Carlo study of the O4 molecule.</i></a><br />
+Michel Caffarel, Ramón Hernández-Lamoneda, Anthony Scemama, Alejandro Ramírez-Solís<br />
+<a href="https://dx.doi.org/10.1103/PhysRevLett.99.153001">doi:10.1103/PhysRevLett.99.153001</a><br /></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgd1fc4a5" class="outline-3">
+<h3 id="orgd1fc4a5">2006</h3>
+<div class="outline-text-3" id="text-orgd1fc4a5">
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-00107403/file/arXiv_Assaraf.pdf"><i>Efficient Monte Carlo Calculations of the One-Body Density</i></a><br />
+Roland Assaraf, Michel Caffarel, Anthony Scemama<br />
+<a href="https://arxiv.org/abs/physics/0610132">arXiv:physics/0610132</a><br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-00875620/file/1.2354490.pdf"><i>An efficient sampling algorithm for variational Monte Carlo.</i></a><br />
+Anthony Scemama, Tony Lelièvre, Gabriel Stoltz, Eric Cancès, Michel Caffarel<br />
+<a href="https://dx.doi.org/10.1063/1.2354490">doi:10.1063/1.2354490</a><br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-01539075/file/Book_QMC_OberWolfach_2006.pdf"><i>A few aspects of QMC for molecules</i></a><br />
+Michel Caffarel, Roland Assaraf, Anatole Khelif, Anthony Scemama, Alejandro Ramirez-Solis<br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-00180167/file/PhysRevB.73.241101.pdf"><i>Simple and efficient approach to the optimization of correlated wave functions</i></a><br />
+Anthony Scemama, Claudia Filippi<br /></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgfd959cb" class="outline-3">
+<h3 id="orgfd959cb">2005</h3>
+<div class="outline-text-3" id="text-orgfd959cb">
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-02457724/file/algo-volume_revtex.pdf"><i>Investigating the volume maximizing the probability of finding ν electrons from variational monte carlo data</i></a><br />
+Anthony Scemama<br />
+<a href="https://dx.doi.org/10.1142/S0219633605001581">doi:10.1142/S0219633605001581</a><br /></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgb056f08" class="outline-3">
+<h3 id="orgb056f08">2004</h3>
+<div class="outline-text-3" id="text-orgb056f08">
+<ul class="org-ul">
+<li><a href="https://dx.doi.org/10.1016/j.cplett.2004.06.106"><i>Theoretical study of the electrocyclization product of butadiyne: structure, stability and possible formations</i></a><br />
+Patrick Chaquin, Anthony Scemama<br />
+<a href="https://dx.doi.org/10.1016/j.cplett.2004.06.106">doi:10.1016/j.cplett.2004.06.106</a><br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://tel.archives-ouvertes.fr/tel-00518025/file/these_scemama.pdf"><i>Réactivité en milieu atmosphérique et analyse Monte Carlo quantique de la localisation électronique</i></a><br />
+Anthony Scemama<br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-00875621/file/1.1765098.pdf"><i>Electron pair localization function: A practical tool to visualize electron localization in molecules from quantum Monte Carlo data</i></a><br />
+Anthony Scemama, Patrick Chaquin, Michel Caffarel<br />
+<a href="https://dx.doi.org/10.1063/1.1765098">doi:10.1063/1.1765098</a><br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://dx.doi.org/10.1021/jp031159b"><i>Spectral, Kinetic, and Theoretical Studies of Sulfur-Centered Reactive Intermediates Derived from Thioethers Containing an Acetyl Group</i></a><br />
+Nicolas Varmenot, Jacqueline Bergès, Zohreh Abedinzadeh, Anthony Scemama, Grazyna Strzelczak, Krzysztof Bobrowski<br />
+<a href="https://dx.doi.org/10.1021/jp031159b">doi:10.1021/jp031159b</a><br /></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org50c68a0" class="outline-3">
+<h3 id="org50c68a0">2002</h3>
+<div class="outline-text-3" id="text-org50c68a0">
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-01539078/file/Article-UV.pdf"><i>Semi-empirical calculation of electronic absorption wavelengths of polyynes, monocyano- and dicyanopolyynes. Predictions for long chain compounds and carbon allotrope carbyne</i></a><br />
+Anthony Scemama, Patrick Chaquin, Marie-Claire Gazeau, Yves Bénilan<br />
+<a href="https://dx.doi.org/10.1016/S0009-2614(02)00988-0">doi:10.1016/S0009-2614(02)00988-0</a><br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://dx.doi.org/10.1021/jp013043q"><i>Theoretical Study of the Structure and Properties of Polyynes and Monocyano- and Dicyanopolyynes: Predictions for Long Chain Compounds</i></a><br />
+Anthony Scemama, Patrick Chaquin, Marie-Claire Gazeau, Yves Bénilan<br />
+<a href="https://dx.doi.org/10.1021/jp013043q">doi:10.1021/jp013043q</a><br /></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org4b313de" class="outline-3">
+<h3 id="org4b313de">2001</h3>
+<div class="outline-text-3" id="text-org4b313de">
+<ul class="org-ul">
+<li><a href="https://dx.doi.org/10.1016/S0273-1177(01)00059-X"><i>IR and UV spectroscopic data for polyynes: predictions for long carbon chain compounds in Titan's atmosphere</i></a><br />
+Véronique Vuitton, Anthony Scemama, Marie-Claire Gazeau, Patrick Chaquin, Yves Bénilan<br />
+<a href="https://dx.doi.org/10.1016/S0273-1177(01)00059-X">doi:10.1016/S0273-1177(01)00059-X</a><br /></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgcd694e8" class="outline-3">
+<h3 id="orgcd694e8">2020</h3>
+<div class="outline-text-3" id="text-orgcd694e8">
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-02462160/file/irpf90.pdf"><i>IRPF90</i></a><br />
+Anthony Scemama<br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.sorbonne-universite.fr/hal-02475410/file/2002.04514.pdf"><i>Pros and Cons of the Bethe-Salpeter Formalism for Ground-State Energies</i></a><br />
+Pierre-Francois Loos, Pierre-François Loos, Anthony Scemama, Ivan Duchemin, Denis Jacquemin, Xavier Blase<br />
+<a href="https://arxiv.org/abs/2002.04514">arXiv:2002.04514</a>     <a href="https://dx.doi.org/10.1021/acs.jpclett.0c00460">doi:10.1021/acs.jpclett.0c00460</a><br /></li>
+
+<li><a href="https://hal.archives-ouvertes.fr/hal-02468226/file/2001.00416.pdf"><i>The Quest For Highly Accurate Excitation Energies: A Computational Perspective</i></a><br />
+Pierre-Francois Loos, Pierre-François Loos, Anthony Scemama, Denis Jacquemin<br />
+<a href="https://arxiv.org/abs/2001.00416">arXiv:2001.00416</a>     <a href="https://dx.doi.org/10.1021/acs.jpclett.0c00014">doi:10.1021/acs.jpclett.0c00014</a><br /></li>
+
+<li><a href="https://hal.archives-ouvertes.fr/hal-02468242/file/1812.06902.pdf"><i>Spin adaptation with determinant-based selected configuration interaction</i></a><br />
+Thomas Applencourt, Kevin Gasperich, Anthony Scemama<br />
+<a href="https://arxiv.org/abs/1812.06902">arXiv:1812.06902</a><br /></li>
+
+<li><a href="https://hal.archives-ouvertes.fr/hal-02346969/file/1910.12238.pdf"><i>A Density-Based Basis-Set Incompleteness Correction for GW Methods</i></a><br />
+Pierre-François Loos, Barthélémy Pradines, Anthony Scemama, Emmanuel Giner, Julien Toulouse<br />
+<a href="https://arxiv.org/abs/1910.12238">arXiv:1910.12238</a>     <a href="https://dx.doi.org/10.1021/acs.jctc.9b01067">doi:10.1021/acs.jctc.9b01067</a><br /></li>
+
+<li><a href="https://hal.archives-ouvertes.fr/hal-02403471/file/1912.04173.pdf"><i>A Mountaineering Strategy to Excited States: Highly-Accurate Energies and Benchmarks for Medium Size Molecules</i></a><br />
+Pierre-François Loos, Filippo Lipparini, Martial Boggio-Pasqua, Anthony Scemama, Denis Jacquemin<br />
+<a href="https://arxiv.org/abs/1912.04173">arXiv:1912.04173</a>     <a href="https://dx.doi.org/10.1021/acs.jctc.9b01216">doi:10.1021/acs.jctc.9b01216</a><br /></li>
+
+<li><a href="https://hal.archives-ouvertes.fr/hal-02503507/file/2003.04183.pdf"><i>A Mountaineering Strategy to Excited States: Highly-Accurate Energies and Benchmarks for Exotic Molecules and Radicals</i></a><br />
+Pierre-Francois Loos, Filippo Lipparini, Martial Boggio-Pasqua, Anthony Scemama, Denis Jacquemin<br />
+<a href="https://arxiv.org/abs/2003.04183">arXiv:2003.04183</a>     <a href="https://dx.doi.org/10.1021/acs.jctc.0c00227">doi:10.1021/acs.jctc.0c00227</a><br /></li>
+
+<li><a href="https://hal.archives-ouvertes.fr/hal-02485688/file/2002.05951.pdf"><i>Variational principles in quantum Monte Carlo: the troubled story of variance minimization</i></a><br />
+Alice Cuzzocrea, Anthony Scemama, Wim Briels, Saverio Moroni, Claudia Filippi<br />
+<a href="https://arxiv.org/abs/2002.05951">arXiv:2002.05951</a><br /></li>
+
+<li><a href="https://hal.sorbonne-universite.fr/hal-02458920/file/srDFT_SC.pdf"><i>A basis-set error correction based on density-functional theory for strongly correlated molecular systems</i></a><br />
+Emmanuel Giner, Anthony Scemama, Pierre-François Loos, Julien Toulouse<br />
+<a href="https://arxiv.org/abs/2001.11832">arXiv:2001.11832</a>     <a href="https://dx.doi.org/10.1063/5.0002892">doi:10.1063/5.0002892</a><br /></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgc9e03dc" class="outline-3">
+<h3 id="orgc9e03dc">2019</h3>
+<div class="outline-text-3" id="text-orgc9e03dc">
+<ul class="org-ul">
+<li><a href="https://dx.doi.org/10.1021/acs.jpclett.9b01176"><i>A Density-Based Basis-Set Correction for Wave Function Theory</i></a><br />
+Pierre-François Loos, Barthélémy Pradines, Anthony Scemama, Julien Toulouse, Emmanuel Giner<br />
+<a href="https://dx.doi.org/10.1021/acs.jpclett.9b01176">doi:10.1021/acs.jpclett.9b01176</a><br /></li>
+
+<li><a href="https://arxiv.org/abs/1902.03406"><i>Self-Consistent Electron-Nucleus Cusp Correction for Molecular Orbitals</i></a><br />
+Pierre-Francois Loos, Anthony Scemama, Michel Caffarel<br />
+<a href="https://arxiv.org/abs/1902.03406">arXiv:1902.03406</a>     <a href="https://dx.doi.org/10.1016/bs.aiq.2019.03.003">doi:10.1016/bs.aiq.2019.03.003</a><br /></li>
+
+<li><a href="https://hal.archives-ouvertes.fr/hal-02088494/file/1904.00678.pdf"><i>Influence of Pseudopotentials on Excitation Energies From Selected Configuration Interaction and Diffusion Monte Carlo</i></a><br />
+Anthony Scemama, Michel Caffarel, Anouar Benali, Denis Jacquemin, Pierre-Francois Loos<br />
+<a href="https://arxiv.org/abs/1904.00678">arXiv:1904.00678</a>     <a href="https://dx.doi.org/10.1016/j.rechem.2019.100002">doi:10.1016/j.rechem.2019.100002</a><br /></li>
+
+<li><a href="https://hal.sorbonne-universite.fr/hal-01945031/file/1811.12861.pdf"><i>Reference Energies for Double Excitations</i></a><br />
+Pierre-François Loos, Martial Boggio-Pasqua, Anthony Scemama, Michel Caffarel, Denis Jacquemin<br />
+<a href="https://arxiv.org/abs/1811.12861">arXiv:1811.12861</a>     <a href="https://dx.doi.org/10.1021/acs.jctc.8b01205">doi:10.1021/acs.jctc.8b01205</a><br /></li>
+
+<li><a href="https://hal.archives-ouvertes.fr/hal-02045595/file/1902.08154.pdf"><i>Quantum Package 2.0: An Open-Source Determinant-Driven Suite of Programs</i></a><br />
+Yann Garniron, Thomas Applencourt, Kevin Gasperich, Anouar Benali, Anthony Ferté, Julien Paquier, Barthélémy Pradines, Roland Assaraf, Peter Reinhardt, Julien Toulouse, Pierrette Barbaresco, Nicolas Renon, Grégoire David, Jean-Paul Malrieu, Mickaël Veril, Michel Caffarel, Pierre-Francois Loos, Emmanuel Giner, Anthony Scemama<br />
+<a href="https://arxiv.org/abs/1902.08154">arXiv:1902.08154</a>     <a href="https://dx.doi.org/10.1021/acs.jctc.9b00176">doi:10.1021/acs.jctc.9b00176</a><br /></li>
+
+<li><a href="https://hal.archives-ouvertes.fr/hal-02308310/file/1905.06737.pdf"><i>Excited States with Selected Configuration Interaction-Quantum Monte Carlo: Chemically Accurate Excitation Energies and Geometries</i></a><br />
+Monika Dash, Jonas Feldt, Saverio Moroni, Anthony Scemama, Claudia Filippi<br />
+<a href="https://arxiv.org/abs/1905.06737">arXiv:1905.06737</a>     <a href="https://dx.doi.org/10.1021/acs.jctc.9b00476">doi:10.1021/acs.jctc.9b00476</a><br /></li>
+
+<li><a href="https://hal.archives-ouvertes.fr/hal-02289341/file/Ex-srDFT.pdf"><i>Chemically Accurate Excitation Energies With Small Basis Sets</i></a><br />
+Emmanuel Giner, Anthony Scemama, Julien Toulouse, Pierre-Francois Loos<br />
+<a href="https://arxiv.org/abs/1907.01245">arXiv:1907.01245</a>     <a href="https://dx.doi.org/10.1063/1.5122976">doi:10.1063/1.5122976</a><br /></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org5855e5d" class="outline-3">
+<h3 id="org5855e5d">2018</h3>
+<div class="outline-text-3" id="text-org5855e5d">
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-01679416/file/1712.05034.pdf"><i>Deterministic construction of nodal surfaces within quantum Monte Carlo: the case of FeS</i></a><br />
+Anthony Scemama, Yann Garniron, Michel Caffarel, Pierre-François Loos<br />
+<a href="https://arxiv.org/abs/1712.05034">arXiv:1712.05034</a>     <a href="https://dx.doi.org/10.1021/acs.jctc.7b01250">doi:10.1021/acs.jctc.7b01250</a><br /></li>
+
+<li><a href="https://hal.archives-ouvertes.fr/hal-01873356/file/1804.09610.pdf"><i>Perturbatively Selected Configuration-Interaction Wave Functions for Efficient Geometry Optimization in Quantum Monte Carlo</i></a><br />
+Monika Dash, Saverio Moroni, Anthony Scemama, Claudia Filippi<br />
+<a href="https://arxiv.org/abs/1804.09610">arXiv:1804.09610</a>     <a href="https://dx.doi.org/10.1021/acs.jctc.8b00393">doi:10.1021/acs.jctc.8b00393</a><br /></li>
+
+<li><a href="https://hal.archives-ouvertes.fr/hal-01858532/file/1807.02045.pdf"><i>A Mountaineering Strategy to Excited States: Highly Accurate Reference Energies and Benchmarks</i></a><br />
+Pierre-Francois Loos, Anthony Scemama, Aymeric Blondel, Yann Garniron, Michel Caffarel, Denis Jacquemin<br />
+<a href="https://dx.doi.org/10.1021/acs.jctc.8b00406">doi:10.1021/acs.jctc.8b00406</a><br /></li>
+
+<li><a href="https://hal.archives-ouvertes.fr/hal-01858534/file/1.5044503.pdf"><i>Selected configuration interaction dressed by perturbation</i></a><br />
+Yann Garniron, Anthony Scemama, Emmanuel Giner, Michel Caffarel, Pierre-François Loos<br />
+<a href="https://arxiv.org/abs/1806.04970">arXiv:1806.04970</a>     <a href="https://dx.doi.org/10.1063/1.5044503">doi:10.1063/1.5044503</a><br /></li>
+
+<li><a href="https://hal.archives-ouvertes.fr/hal-01858533/file/1.5041327(1).pdf"><i>Excitation energies from diffusion Monte Carlo using selected configuration interaction nodes</i></a><br />
+Anthony Scemama, Anouar Benali, Denis Jacquemin, Michel Caffarel, Pierre-François Loos<br />
+<a href="https://dx.doi.org/10.1063/1.5041327">doi:10.1063/1.5041327</a><br /></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org62293ea" class="outline-3">
+<h3 id="org62293ea">2017</h3>
+<div class="outline-text-3" id="text-org62293ea">
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/tel-01612872/file/hdr_scemama.pdf"><i>Corrélation électronique et parallélisme à grande échelle</i></a><br />
+Anthony Scemama<br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-01539064/file/1.4992127.pdf"><i>Hybrid stochastic-deterministic calculation of the second-order perturbative contribution of multireference perturbation theory</i></a><br />
+Yann Garniron, Anthony Scemama, Pierre-François Loos, Michel Caffarel<br />
+<a href="https://arxiv.org/abs/1703.05347">arXiv:1703.05347</a>     <a href="https://dx.doi.org/10.1063/1.4992127">doi:10.1063/1.4992127</a><br /></li>
+
+<li><a href="https://hal.archives-ouvertes.fr/hal-01539065/file/1.4984616.pdf"><i>A Jeziorski-Monkhorst fully uncontracted multi-reference perturbative treatment. I. Principles, second-order versions, and tests on ground state potential energy curves</i></a><br />
+Emmanuel Giner, Celestino Angeli, Yann Garniron, Anthony Scemama, Jean-Paul Malrieu<br />
+<a href="https://arxiv.org/abs/1702.03133">arXiv:1702.03133</a>     <a href="https://dx.doi.org/10.1063/1.4984616">doi:10.1063/1.4984616</a><br /></li>
+
+<li><a href="https://hal.archives-ouvertes.fr/hal-01522756/file/1.4980034.pdf"><i>Alternative definition of excitation amplitudes in multi-reference state-specific coupled cluster</i></a><br />
+Yann Garniron, Emmanuel Giner, Jean-Paul Malrieu, Anthony Scemama<br />
+<a href="https://arxiv.org/abs/1701.04764">arXiv:1701.04764</a>     <a href="https://dx.doi.org/10.1063/1.4980034">doi:10.1063/1.4980034</a><br /></li>
+
+<li><a href="https://hal.archives-ouvertes.fr/hal-02129651/file/genci-openpower-assessment.pdf"><i>Pre-exascale Architectures: OpenPOWER Performance and Usability Assessment for French Scientific Community</i></a><br />
+Gabriel Hautreux, Alfredo Buttari, Arnaud Beck, Victor Cameo, Dimitri Lecas, Dominique Aubert, Emeric Brun, Eric Boyer, Fausto Malvagi, Gabriel Staffelbach, Isabelle D’ast, Joeffrey Legaux, Ghislain Lartigue, Gilles Grasseau, Guillaume Latu, Juan Escobar, Julien Bigot, Julien Derouillat, Matthieu Haefele, Nicolas Renon, Philippe Parnaudeau, Philippe Wautelet, Pierre-François Lavallée, Pierre Kestener, Rémi Lacroix, Stephane Requena, Anthony Scemama, Vincent Moureau, Matthieu Etancelin, Yann Meurdesoif<br />
+<a href="https://dx.doi.org/10.1007/978-3-319-67630-2_23">doi:10.1007/978-3-319-67630-2_23</a><br /></li>
+
+<li><a href="https://dx.doi.org/10.1016/j.comptc.2017.03.001"><i>Orthogonal Valence Bond Hamiltonians incorporating dynamical correlation effects</i></a><br />
+Emmanuel Giner, Celestino Angeli, Anthony Scemama, Jean-Paul Malrieu<br />
+<a href="https://dx.doi.org/10.1016/j.comptc.2017.03.001">doi:10.1016/j.comptc.2017.03.001</a><br /></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org55a99b1" class="outline-3">
+<h3 id="org55a99b1">2016</h3>
+<div class="outline-text-3" id="text-org55a99b1">
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-01539067/file/1607.06742.pdf"><i>Using CIPSI nodes in diffusion Monte Carlo</i></a><br />
+Michel Caffarel, Thomas Applencourt, Emmanuel Giner, Anthony Scemama<br />
+<a href="https://dx.doi.org/10.1021/bk-2016-1234.ch002">doi:10.1021/bk-2016-1234.ch002</a><br /></li>
+
+<li><a href="https://hal.archives-ouvertes.fr/hal-01358981/file/1510.00730.pdf"><i>Quantum Monte Carlo with very large multideterminant wavefunctions</i></a><br />
+Anthony Scemama, Thomas Applencourt, Emmanuel Giner, Michel Caffarel<br />
+<a href="https://arxiv.org/abs/1510.00730">arXiv:1510.00730</a>     <a href="https://dx.doi.org/10.1002/jcc.24382">doi:10.1002/jcc.24382</a><br /></li>
+
+<li><a href="https://hal.archives-ouvertes.fr/hal-01327039/file/1.4947093.pdf"><i>Communication: Toward an improved control of the fixed-node error in quantum Monte Carlo: The case of the water molecule</i></a><br />
+Michel Caffarel, Thomas Applencourt, Emmanuel Giner, Anthony Scemama<br />
+<a href="https://dx.doi.org/10.1063/1.4947093">doi:10.1063/1.4947093</a><br /></li>
+
+<li><a href="https://hal.archives-ouvertes.fr/hal-01298011/file/1.4940781.pdf"><i>A simple approach to the state-specific MR-CC using the intermediate Hamiltonian formalism</i></a><br />
+Emmanuel Giner, Grégoire David, Anthony Scemama, Jean-Paul Malrieu<br />
+<a href="https://dx.doi.org/10.1063/1.4940781">doi:10.1063/1.4940781</a><br /></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org28e547d" class="outline-3">
+<h3 id="org28e547d">2015</h3>
+<div class="outline-text-3" id="text-org28e547d">
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-01136398/file/1.4905528(1).pdf"><i>Fixed-node diffusion Monte Carlo potential energy curve of the fluorine molecule F2 using selected configuration interaction trial wavefunctions</i></a><br />
+Emmanuel Giner, Anthony Scemama, Michel Caffarel<br />
+<a href="https://arxiv.org/abs/1408.3672">arXiv:1408.3672</a>     <a href="https://dx.doi.org/10.1063/1.4905528">doi:10.1063/1.4905528</a><br /></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org948d186" class="outline-3">
+<h3 id="org948d186">2014</h3>
+<div class="outline-text-3" id="text-org948d186">
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-01539068/file/irpf90.pdf"><i>IRPF90, un generateur de code FORTRAN pour le calcul scientifique</i></a><br />
+Anthony Scemama<br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://dx.doi.org/10.1002/jcc.23492"><i>Code interoperability and standard data formats in quantum chemistry and quantum dynamics: The Q5/D5Cost data model</i></a><br />
+Elda Rossi, Stefano Evangelisti, Antonio Lagana, Antonio Monari, Sergio Rampino, Marco Verdicchio, Kim K. Baldridge, Gian Luigi Bendazzoli, Stefano Borini, Renzo Cimiraglia, Celestino Angeli, Peter Kallay, Hans P. Lüthi, Kenneth Ruud, José Sánchez-Marín, Anthony Scemama, Peter Szalay, Attila Tajti<br />
+<a href="https://dx.doi.org/10.1002/jcc.23492">doi:10.1002/jcc.23492</a><br /></li>
+
+<li><a href="https://hal.archives-ouvertes.fr/hal-00992187/file/1402.2880.pdf"><i>A Sparse Self-Consistent Field Algorithm and Its Parallel Implementation: Application to Density-Functional-Based Tight Binding</i></a><br />
+Anthony Scemama, Nicolas Renon, Mathias Rapacioli<br />
+<a href="https://dx.doi.org/10.1021/ct500115v">doi:10.1021/ct500115v</a><br /></li>
+
+<li><a href="https://hal.archives-ouvertes.fr/hal-01121580/file/1405.4082.pdf"><i>Spin Density Distribution in Open-Shell Transition Metal Systems: A Comparative Post-Hartree–Fock, Density Functional Theory, and Quantum Monte Carlo Study of the CuCl2 Molecule</i></a><br />
+Michel Caffarel, Emmanuel Giner, Anthony Scemama, Alejandro Ramírez-Solís<br />
+<a href="https://dx.doi.org/10.1021/ct5004252">doi:10.1021/ct5004252</a><br /></li>
+
+<li><a href="https://hal.archives-ouvertes.fr/hal-01121736/file/1.4903985.pdf"><i>Accurate nonrelativistic ground-state energies of 3d transition metal atoms</i></a><br />
+Anthony Scemama, Thomas Applencourt, Emmanuel Giner, Michel Caffarel<br />
+<a href="https://dx.doi.org/10.1063/1.4903985">doi:10.1063/1.4903985</a><br /></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga9eaacc" class="outline-3">
+<h3 id="orga9eaacc">2013</h3>
+<div class="outline-text-3" id="text-orga9eaacc">
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-00875637/file/kobe.pdf"><i>QMC=Chem: A Quantum Monte Carlo Program for Large-Scale Simulations in Chemistry at the Petascale Level and beyond</i></a><br />
+Anthony Scemama, Michel Caffarel, Emmanuel Oseret, William Jalby<br />
+<a href="https://dx.doi.org/10.1007/978-3-642-38718-0_14">doi:10.1007/978-3-642-38718-0_14</a><br /></li>
+
+<li><a href="https://hal.archives-ouvertes.fr/hal-01539072/file/1311.6244.pdf"><i>An efficient implementation of Slater-Condon rules</i></a><br />
+Anthony Scemama, Emmanuel Giner<br />
+<a href="https://arxiv.org/abs/1311.6244">arXiv:1311.6244</a><br /></li>
+
+<li><i>Simulations en chimie : l'approche Monte-Carlo quantique</i><br />
+Michel Caffarel, Anthony Scemama<br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-01539071/file/hpc_mag%20(1).pdf"><i>Simulations en Chimie : Les bénéfices des méthodes Monte-Carlo Quantique</i></a><br />
+Michel Caffarel, Anthony Scemama<br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-01539069/file/hpc_mag.pdf"><i>Un million d'atomes en chimie quantique</i></a><br />
+Anthony Scemama, Mathias Rapacioli, Nicolas Renon<br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-00736543/file/p.pdf"><i>Quantum Monte Carlo for large chemical systems: Implementing efficient strategies for petascale platforms and beyond</i></a><br />
+Anthony Scemama, Michel Caffarel, Emmanuel Oseret, William Jalby<br />
+<a href="https://arxiv.org/abs/1209.6630">arXiv:1209.6630</a>     <a href="https://dx.doi.org/10.1002/jcc.23216">doi:10.1002/jcc.23216</a><br /></li>
+
+<li><i>Simulations in Chemistry: The Quantum Monte Carlo Methods</i><br />
+Michel Caffarel, Anthony Scemama<br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-00875425/file/b6b6ac821f70f5d0bcda994704f0e70bb435.pdf"><i>Further refinements of next-generation force fields &#x2013; Nonempirical localization of off-centered points in molecules</i></a><br />
+Robin Chaudret, Nohad Gresh, Andrés Cisneros, Anthony Scemama, Jean-Philip Piquemal<br />
+<a href="https://dx.doi.org/10.1139/cjc-2012-0547">doi:10.1139/cjc-2012-0547</a><br /></li>
+
+<li><a href="https://hal.archives-ouvertes.fr/hal-00992090/file/PDF12434617.pdf"><i>Using perturbatively selected configuration interaction in quantum Monte Carlo calculations</i></a><br />
+Emmanuel Giner, Anthony Scemama, Michel Caffarel<br />
+<a href="https://dx.doi.org/10.1139/cjc-2013-0017">doi:10.1139/cjc-2013-0017</a><br /></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org361065b" class="outline-3">
+<h3 id="org361065b">2012</h3>
+<div class="outline-text-3" id="text-org361065b">
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-00875641/file/papier.pdf"><i>Large-Scale Quantum Monte Carlo Electronic Structure Calculations on the EGEE Grid</i></a><br />
+Antonio Monari, Anthony Scemama, Michel Caffarel<br />
+<a href="https://dx.doi.org/10.1007/978-1-4614-0508-5_13">doi:10.1007/978-1-4614-0508-5_13</a><br /></li>
+
+<li><i>Les supercalculateurs décryptent la chimie du vivant</i><br />
+Michel Caffarel, Anthony Scemama<br /></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgddc44fa" class="outline-3">
+<h3 id="orgddc44fa">2011</h3>
+<div class="outline-text-3" id="text-orgddc44fa">
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-00844617/file/DFTB+CI.pdf"><i>Modeling Charge Resonance in Cationic Molecular Clusters: Combining DFT-Tight Binding with Configuration Interaction</i></a><br />
+Mathias Rapacioli, Fernand Spiegelman, Anthony Scemama, André Mirtschink<br />
+<a href="https://dx.doi.org/10.1021/ct100412f">doi:10.1021/ct100412f</a><br /></li>
+
+<li><a href="https://hal.archives-ouvertes.fr/hal-00874618/file/eplf.pdf"><i>Electron Pair Localization Function (EPLF) for Density Functional Theory and ab Initio Wave Function-Based Methods: A New Tool for Chemical Interpretation</i></a><br />
+Anthony Scemama, Michel Caffarel, Robin Chaudret, Jean-Philip Piquemal<br />
+<a href="https://dx.doi.org/10.1021/ct1005938">doi:10.1021/ct1005938</a><br /></li>
+
+<li><a href="https://hal.archives-ouvertes.fr/hal-00875418/file/ec0fe8337af45fd057a5b5092c5239c9ca65.pdf"><i>On the stability of Be3: A benchmark complete active space self-consistent field + averaged quadratic coupled cluster study</i></a><br />
+J. Amaro-Estrada, Anthony Scemama, Michel Caffarel, Alejandro Ramirez-Solis<br />
+<a href="https://dx.doi.org/10.1063/1.3635403">doi:10.1063/1.3635403</a><br /></li>
+
+<li><a href="https://hal.archives-ouvertes.fr/hal-00992047/file/adduit-cu2O2-JCC-rev_final.pdf"><i>Spin-driven activation of dioxygen in various metalloenzymes and their inspired models.</i></a><br />
+Aurelien de la Lande, Dennis R Salahub, Jacques Maddaluno, Anthony Scemama, Julien Pilme, Olivier Parisel, Helene Gerard, Michel Caffarel, Jean-Philip Piquemal<br />
+<a href="https://dx.doi.org/10.1002/jcc.21698">doi:10.1002/jcc.21698</a><br /></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org762d7d4" class="outline-3">
+<h3 id="org762d7d4">2010</h3>
+<div class="outline-text-3" id="text-org762d7d4">
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-00834777/file/TCAfinal.pdf"><i>Structural and optical properties of a neutral Nickel bisdithiolene complex: density functional versus ab initio methods</i></a><br />
+Fabienne Alary, Jean-Louis Heully, Anthony Scemama, Bénédicte Garreau-de Bonneval, Kathleen Chane-Ching, Michel Caffarel<br />
+<a href="https://dx.doi.org/10.1007/s00214-009-0679-9">doi:10.1007/s00214-009-0679-9</a><br /></li>
+
+<li><a href="https://hal.archives-ouvertes.fr/hal-00874606/file/lit.pdf"><i>The lithium-thiophene interaction: a critical study using highly correlated electronic structure approaches of quantum chemistry</i></a><br />
+Michel Caffarel, Anthony Scemama, Alejandro Ramírez-Solís<br />
+<a href="https://dx.doi.org/10.1007/s00214-009-0713-y">doi:10.1007/s00214-009-0713-y</a><br /></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org7319fe8" class="outline-3">
+<h3 id="org7319fe8">2009</h3>
+<div class="outline-text-3" id="text-org7319fe8">
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-01539073/file/0909.5012.pdf"><i>IRPF90: a programming environment for high performance computing</i></a><br />
+Anthony Scemama<br />
+<a href="https://arxiv.org/abs/0909.5012">arXiv:0909.5012</a><br /></li>
+
+<li><a href="https://hal.archives-ouvertes.fr/hal-00875603/file/1.3054709.pdf"><i>A theoretical study of linear beryllium chains: full configuration interaction.</i></a><br />
+Valentina Vetere, Antonio Monari, Anthony Scemama, Gian Luigi Bendazzoli, Stefano Evangelisti<br />
+<a href="https://dx.doi.org/10.1063/1.3054709">doi:10.1063/1.3054709</a><br /></li>
+
+<li><a href="https://hal.archives-ouvertes.fr/hal-00875602/file/o4.pdf"><i>Bond breaking and bond making in tetraoxygen: analysis of the O2(X3Sigma(g)-) + O2(X3Sigma(g)-) &lt;==&gt; O4 reaction using the electron pair localization function.</i></a><br />
+Michel Caffarel, Anthony Scemama, Alejandro Ramírez-Solís<br />
+<a href="https://dx.doi.org/10.1021/jp902028g">doi:10.1021/jp902028g</a><br /></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgd88db5f" class="outline-3">
+<h3 id="orgd88db5f">2008</h3>
+<div class="outline-text-3" id="text-orgd88db5f">
+<ul class="org-ul">
+<li><a href="https://dx.doi.org/10.1007/978-3-540-69839-5_83"><i>Common Format for Quantum Chemistry Interoperability: Q5Cost Format and Library</i></a><br />
+Anthony Scemama, Antonio Monari, Celestino Angeli, Stefano Borini, Stefano Evangelisti, Elda Rossi<br />
+<a href="https://dx.doi.org/10.1007/978-3-540-69839-5_83">doi:10.1007/978-3-540-69839-5_83</a><br /></li>
+
+<li><i>Q5Cost format and library: a tutorial about the common format for quantum chemistry interoperability</i><br />
+Antonio Monari, Anthony Scemama, Stefano Evangelisti, Elda Rossi, Stefano Cozzini<br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://dx.doi.org/10.1021/jp711944v"><i>Energies, stability and structure properties of radicals derived from organic sulfides containing an acetyl group after the *OH attack: ab initio and DFT calculations vs experiment.</i></a><br />
+Jacqueline Bergès, Nicolas Varmenot, Anthony Scemama, Zohreh Abedinzadeh, Krzysztof Bobrowski<br />
+<a href="https://dx.doi.org/10.1021/jp711944v">doi:10.1021/jp711944v</a><br /></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org1a2b99f" class="outline-3">
+<h3 id="org1a2b99f">2007</h3>
+<div class="outline-text-3" id="text-org1a2b99f">
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-00875618/file/paper.pdf"><i>Maximum probability domains from Quantum Monte Carlo Calculations</i></a><br />
+Anthony Scemama, Michel Caffarel, Andreas Savin<br />
+<a href="https://dx.doi.org/10.1002/jcc.20526">doi:10.1002/jcc.20526</a><br /></li>
+
+<li><a href="https://hal.archives-ouvertes.fr/hal-00875613/file/PhysRevE.75.035701.pdf"><i>Improved Monte Carlo estimators for the one-body density.</i></a><br />
+Roland Assaraf, Michel Caffarel, Anthony Scemama<br />
+<a href="https://dx.doi.org/10.1103/PhysRevE.75.035701">doi:10.1103/PhysRevE.75.035701</a><br /></li>
+
+<li><a href="https://hal.archives-ouvertes.fr/hal-00875614/file/PhysRevLett.99.153001.pdf"><i>Multireference quantum Monte Carlo study of the O4 molecule.</i></a><br />
+Michel Caffarel, Ramón Hernández-Lamoneda, Anthony Scemama, Alejandro Ramírez-Solís<br />
+<a href="https://dx.doi.org/10.1103/PhysRevLett.99.153001">doi:10.1103/PhysRevLett.99.153001</a><br /></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org15d9997" class="outline-3">
+<h3 id="org15d9997">2006</h3>
+<div class="outline-text-3" id="text-org15d9997">
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-00107403/file/arXiv_Assaraf.pdf"><i>Efficient Monte Carlo Calculations of the One-Body Density</i></a><br />
+Roland Assaraf, Michel Caffarel, Anthony Scemama<br />
+<a href="https://arxiv.org/abs/physics/0610132">arXiv:physics/0610132</a><br /></li>
+
+<li><a href="https://hal.archives-ouvertes.fr/hal-00875620/file/1.2354490.pdf"><i>An efficient sampling algorithm for variational Monte Carlo.</i></a><br />
+Anthony Scemama, Tony Lelièvre, Gabriel Stoltz, Eric Cancès, Michel Caffarel<br />
+<a href="https://dx.doi.org/10.1063/1.2354490">doi:10.1063/1.2354490</a><br /></li>
+
+<li><a href="https://hal.archives-ouvertes.fr/hal-01539075/file/Book_QMC_OberWolfach_2006.pdf"><i>A few aspects of QMC for molecules</i></a><br />
+Michel Caffarel, Roland Assaraf, Anatole Khelif, Anthony Scemama, Alejandro Ramirez-Solis<br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-00180167/file/PhysRevB.73.241101.pdf"><i>Simple and efficient approach to the optimization of correlated wave functions</i></a><br />
+Anthony Scemama, Claudia Filippi<br /></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org807c0cb" class="outline-3">
+<h3 id="org807c0cb">2005</h3>
+<div class="outline-text-3" id="text-org807c0cb">
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-02457724/file/algo-volume_revtex.pdf"><i>Investigating the volume maximizing the probability of finding ν electrons from variational monte carlo data</i></a><br />
+Anthony Scemama<br />
+<a href="https://dx.doi.org/10.1142/S0219633605001581">doi:10.1142/S0219633605001581</a><br /></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge70f057" class="outline-3">
+<h3 id="orge70f057">2004</h3>
+<div class="outline-text-3" id="text-orge70f057">
+<ul class="org-ul">
+<li><a href="https://dx.doi.org/10.1016/j.cplett.2004.06.106"><i>Theoretical study of the electrocyclization product of butadiyne: structure, stability and possible formations</i></a><br />
+Patrick Chaquin, Anthony Scemama<br />
+<a href="https://dx.doi.org/10.1016/j.cplett.2004.06.106">doi:10.1016/j.cplett.2004.06.106</a><br /></li>
+
+<li><a href="https://tel.archives-ouvertes.fr/tel-00518025/file/these_scemama.pdf"><i>Réactivité en milieu atmosphérique et analyse Monte Carlo quantique de la localisation électronique</i></a><br />
+Anthony Scemama<br /></li>
+</ul>
+
+
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-00875621/file/1.1765098.pdf"><i>Electron pair localization function: A practical tool to visualize electron localization in molecules from quantum Monte Carlo data</i></a><br />
+Anthony Scemama, Patrick Chaquin, Michel Caffarel<br />
+<a href="https://dx.doi.org/10.1063/1.1765098">doi:10.1063/1.1765098</a><br /></li>
+
+<li><a href="https://dx.doi.org/10.1021/jp031159b"><i>Spectral, Kinetic, and Theoretical Studies of Sulfur-Centered Reactive Intermediates Derived from Thioethers Containing an Acetyl Group</i></a><br />
+Nicolas Varmenot, Jacqueline Bergès, Zohreh Abedinzadeh, Anthony Scemama, Grazyna Strzelczak, Krzysztof Bobrowski<br />
+<a href="https://dx.doi.org/10.1021/jp031159b">doi:10.1021/jp031159b</a><br /></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org830d4d9" class="outline-3">
+<h3 id="org830d4d9">2002</h3>
+<div class="outline-text-3" id="text-org830d4d9">
+<ul class="org-ul">
+<li><a href="https://hal.archives-ouvertes.fr/hal-01539078/file/Article-UV.pdf"><i>Semi-empirical calculation of electronic absorption wavelengths of polyynes, monocyano- and dicyanopolyynes. Predictions for long chain compounds and carbon allotrope carbyne</i></a><br />
+Anthony Scemama, Patrick Chaquin, Marie-Claire Gazeau, Yves Bénilan<br />
+<a href="https://dx.doi.org/10.1016/S0009-2614(02)00988-0">doi:10.1016/S0009-2614(02)00988-0</a><br /></li>
+
+<li><a href="https://dx.doi.org/10.1021/jp013043q"><i>Theoretical Study of the Structure and Properties of Polyynes and Monocyano- and Dicyanopolyynes: Predictions for Long Chain Compounds</i></a><br />
+Anthony Scemama, Patrick Chaquin, Marie-Claire Gazeau, Yves Bénilan<br />
+<a href="https://dx.doi.org/10.1021/jp013043q">doi:10.1021/jp013043q</a><br /></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org047165e" class="outline-3">
+<h3 id="org047165e">2001</h3>
+<div class="outline-text-3" id="text-org047165e">
+<ul class="org-ul">
+<li><a href="https://dx.doi.org/10.1016/S0273-1177(01)00059-X"><i>IR and UV spectroscopic data for polyynes: predictions for long carbon chain compounds in Titan's atmosphere</i></a><br />
+Véronique Vuitton, Anthony Scemama, Marie-Claire Gazeau, Patrick Chaquin, Yves Bénilan<br />
+<a href="https://dx.doi.org/10.1016/S0273-1177(01)00059-X">doi:10.1016/S0273-1177(01)00059-X</a><br /></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Anthony Scemama</p>
+<p class="date">Created: 2020-06-09 Tue 03:51</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
 </html>
