@@ -231,19 +231,19 @@ main()
   [[https://arxiv.org/abs/2001.00416][arXiv:2001.00416]]  @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@  [[https://dx.doi.org/10.1021/acs.jpclett.0c00014][doi:10.1021/acs.jpclett.0c00014]]   
 
 
-- [[https://hal.sorbonne-universite.fr/hal-02475410/file/2002.04514.pdf][/Pros and Cons of the Bethe-Salpeter Formalism for Ground-State Energies/]]
-  Pierre-François Loos, Anthony Scemama, Ivan Duchemin, Denis Jacquemin, Xavier Blase
-  [[https://arxiv.org/abs/2002.04514][arXiv:2002.04514]]  @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@  [[https://dx.doi.org/10.1021/acs.jpclett.0c00460][doi:10.1021/acs.jpclett.0c00460]]   
+- [[https://hal.archives-ouvertes.fr/hal-02921286/file/2008.10088.pdf][/Taming the fixed-node error in diffusion Monte Carlo via range separation/]]
+  Anthony Scemama, Emmanuel Giner, Anouar Benali, Pierre-Francois Loos
+  [[https://arxiv.org/abs/2008.10088][arXiv:2008.10088]]  @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@  [[https://dx.doi.org/10.1063/5.0026324][doi:10.1063/5.0026324]]   
+
+
+- [[https://hal.archives-ouvertes.fr/hal-02922278/file/2008.11145.pdf][/Note: The performance of CIPSI on the ground state electronic energy of benzene/]]
+  Pierre-Francois Loos, Yann Damour, Anthony Scemama
+  [[https://arxiv.org/abs/2008.11145][arXiv:2008.11145]]  @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@  [[https://dx.doi.org/10.1063/5.0027617][doi:10.1063/5.0027617]]   
 
 
 - [[https://arxiv.org/abs/2007.11673][/Towards a Systematic Improvement of the Fixed-Node Approximation in Diffusion Monte Carlo for Solids/]]
   Anouar Benali, Kevin Gasperich, Kenneth D. Jordan, Thomas Applencourt, Ye Luo, M. Chandler Bennett, Jaron T. Krogel, Luke Shulenburger, Paul R. C. Kent, Pierre-Francois Loos, Anthony Scemama, Michel Caffarel
-  [[https://arxiv.org/abs/2007.11673][arXiv:2007.11673]]   
-
-
-- [[https://hal.archives-ouvertes.fr/hal-02921286/file/2008.10088.pdf][/Taming the fixed-node error in diffusion Monte Carlo via range separation/]]
-  Anthony Scemama, Emmanuel Giner, Anouar Benali, Pierre-Francois Loos
-  [[https://arxiv.org/abs/2008.10088][arXiv:2008.10088]]   
+  [[https://arxiv.org/abs/2007.11673][arXiv:2007.11673]]  @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@   doi:10.1063/5.0021036
 
 
 - [[https://hal.archives-ouvertes.fr/hal-02485688/file/2002.05951.pdf][/Variational principles in quantum Monte Carlo: the troubled story of variance minimization/]]
@@ -266,9 +266,9 @@ main()
   [[https://arxiv.org/abs/1912.04173][arXiv:1912.04173]]  @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@  [[https://dx.doi.org/10.1021/acs.jctc.9b01216][doi:10.1021/acs.jctc.9b01216]]   
 
 
-- [[https://hal.archives-ouvertes.fr/hal-02922278/file/2008.11145.pdf][/Note: The performance of CIPSI on the ground state electronic energy of benzene/]]
-  Pierre-Francois Loos, Yann Damour, Anthony Scemama
-  [[https://arxiv.org/abs/2008.11145][arXiv:2008.11145]]   
+- [[https://hal.sorbonne-universite.fr/hal-02475410/file/2002.04514.pdf][/Pros and Cons of the Bethe-Salpeter Formalism for Ground-State Energies/]]
+  Pierre-François Loos, Anthony Scemama, Ivan Duchemin, Denis Jacquemin, Xavier Blase
+  [[https://arxiv.org/abs/2002.04514][arXiv:2002.04514]]  @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@  [[https://dx.doi.org/10.1021/acs.jpclett.0c00460][doi:10.1021/acs.jpclett.0c00460]]   
 
 
 ** 2019
@@ -423,14 +423,14 @@ main()
   [[https://dx.doi.org/10.1021/ct500115v][doi:10.1021/ct500115v]]   
 
 
-- [[https://dx.doi.org/10.1002/jcc.23492][/Code interoperability and standard data formats in quantum chemistry and quantum dynamics: The Q5/D5Cost data model/]]
-  Elda Rossi, Stefano Evangelisti, Antonio Lagana, Antonio Monari, Sergio Rampino, Marco Verdicchio, Kim K. Baldridge, Gian Luigi Bendazzoli, Stefano Borini, Renzo Cimiraglia, Celestino Angeli, Peter Kallay, Hans P. Lüthi, Kenneth Ruud, José Sánchez-Marín, Anthony Scemama, Peter Szalay, Attila Tajti
-  [[https://dx.doi.org/10.1002/jcc.23492][doi:10.1002/jcc.23492]]   
-
-
 - [[https://hal.archives-ouvertes.fr/hal-01121736/file/1.4903985.pdf][/Accurate nonrelativistic ground-state energies of 3d transition metal atoms/]]
   Anthony Scemama, Thomas Applencourt, Emmanuel Giner, Michel Caffarel
   [[https://dx.doi.org/10.1063/1.4903985][doi:10.1063/1.4903985]]   
+
+
+- [[https://dx.doi.org/10.1002/jcc.23492][/Code interoperability and standard data formats in quantum chemistry and quantum dynamics: The Q5/D5Cost data model/]]
+  Elda Rossi, Stefano Evangelisti, Antonio Lagana, Antonio Monari, Sergio Rampino, Marco Verdicchio, Kim K. Baldridge, Gian Luigi Bendazzoli, Stefano Borini, Renzo Cimiraglia, Celestino Angeli, Peter Kallay, Hans P. Lüthi, Kenneth Ruud, José Sánchez-Marín, Anthony Scemama, Peter Szalay, Attila Tajti
+  [[https://dx.doi.org/10.1002/jcc.23492][doi:10.1002/jcc.23492]]   
 
 
 ** 2013
@@ -545,11 +545,6 @@ main()
 
 ** 2008
 
-- /Q5Cost format and library: a tutorial about the common format for quantum chemistry interoperability/
-  Antonio Monari, Anthony Scemama, Stefano Evangelisti, Elda Rossi, Stefano Cozzini
- 
-
-
 - [[https://dx.doi.org/10.1021/jp711944v][/Energies, stability and structure properties of radicals derived from organic sulfides containing an acetyl group after the *OH attack: ab initio and DFT calculations vs experiment./]]
   Jacqueline Bergès, Nicolas Varmenot, Anthony Scemama, Zohreh Abedinzadeh, Krzysztof Bobrowski
   [[https://dx.doi.org/10.1021/jp711944v][doi:10.1021/jp711944v]]   
@@ -558,6 +553,11 @@ main()
 - [[https://dx.doi.org/10.1007/978-3-540-69839-5_83][/Common Format for Quantum Chemistry Interoperability: Q5Cost Format and Library/]]
   Anthony Scemama, Antonio Monari, Celestino Angeli, Stefano Borini, Stefano Evangelisti, Elda Rossi
   [[https://dx.doi.org/10.1007/978-3-540-69839-5_83][doi:10.1007/978-3-540-69839-5_83]]   
+
+
+- /Q5Cost format and library: a tutorial about the common format for quantum chemistry interoperability/
+  Antonio Monari, Anthony Scemama, Stefano Evangelisti, Elda Rossi, Stefano Cozzini
+ 
 
 
 ** 2007
