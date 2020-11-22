@@ -4,7 +4,7 @@
 #+OPTIONS:    tags:not-in-toc num:nil ^:{} \n:t title:nil
 #+STARTUP:    align fold nodlcheck hidestars oddeven lognotestate
 #+LANGUAGE:   en
-#+SETUPFILE:  https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup
+#+SETUPFILE:  org-html-themes/org/theme-readtheorg-local.setup                                                                                                                                                  
 
 
 #+attr_html: :style float:left
@@ -24,7 +24,6 @@ ORCID : [[https://orcid.org/0000-0003-4955-7136][0000-0003-4955-7136]]
 | [[http://twitter.com/scemama666][Twitter]] | [[https://github.com/scemama][GitHub]] | [[https://gitlab.com/scemama][GitLab]] | [[https://www.researchgate.net/profile/Anthony_Scemama>`__         ][ResearchGate]] |
 
 
-                       
 
 -----
 * Projects
@@ -241,11 +240,6 @@ main()
   [[https://arxiv.org/abs/2008.11145][arXiv:2008.11145]]  @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@  [[https://dx.doi.org/10.1063/5.0027617][doi:10.1063/5.0027617]]   
 
 
-- [[https://arxiv.org/abs/2007.11673][/Towards a Systematic Improvement of the Fixed-Node Approximation in Diffusion Monte Carlo for Solids/]]
-  Anouar Benali, Kevin Gasperich, Kenneth D. Jordan, Thomas Applencourt, Ye Luo, M. Chandler Bennett, Jaron T. Krogel, Luke Shulenburger, Paul R. C. Kent, Pierre-Francois Loos, Anthony Scemama, Michel Caffarel
-  [[https://arxiv.org/abs/2007.11673][arXiv:2007.11673]]  @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@   doi:10.1063/5.0021036
-
-
 - [[https://hal.archives-ouvertes.fr/hal-02485688/file/2002.05951.pdf][/Variational principles in quantum Monte Carlo: the troubled story of variance minimization/]]
   Alice Cuzzocrea, Anthony Scemama, Wim Briels, Saverio Moroni, Claudia Filippi
   [[https://arxiv.org/abs/2002.05951][arXiv:2002.05951]]  @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@  [[https://dx.doi.org/10.1021/acs.jctc.0c00147][doi:10.1021/acs.jctc.0c00147]]   
@@ -266,9 +260,19 @@ main()
   [[https://arxiv.org/abs/1912.04173][arXiv:1912.04173]]  @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@  [[https://dx.doi.org/10.1021/acs.jctc.9b01216][doi:10.1021/acs.jctc.9b01216]]   
 
 
+- [[https://arxiv.org/abs/2007.11673][/Towards a Systematic Improvement of the Fixed-Node Approximation in Diffusion Monte Carlo for Solids/]]
+  Anouar Benali, Kevin Gasperich, Kenneth D. Jordan, Thomas Applencourt, Ye Luo, M. Chandler Bennett, Jaron T. Krogel, Luke Shulenburger, Paul R. C. Kent, Pierre-Francois Loos, Anthony Scemama, Michel Caffarel
+  [[https://arxiv.org/abs/2007.11673][arXiv:2007.11673]]  @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@  [[https://dx.doi.org/10.1063/5.0021036][doi:10.1063/5.0021036]]   
+
+
 - [[https://hal.sorbonne-universite.fr/hal-02475410/file/2002.04514.pdf][/Pros and Cons of the Bethe-Salpeter Formalism for Ground-State Energies/]]
   Pierre-François Loos, Anthony Scemama, Ivan Duchemin, Denis Jacquemin, Xavier Blase
   [[https://arxiv.org/abs/2002.04514][arXiv:2002.04514]]  @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@  [[https://dx.doi.org/10.1021/acs.jpclett.0c00460][doi:10.1021/acs.jpclett.0c00460]]   
+
+
+- [[https://dx.doi.org/10.1021/acs.jctc.0c00227][/Mountaineering Strategy to Excited States: Highly Accurate Energies and Benchmarks for Exotic Molecules and Radicals/]]
+  Pierre-Francois Loos, Anthony Scemama, Martial Boggio-Pasqua, Denis Jacquemin
+  [[https://dx.doi.org/10.1021/acs.jctc.0c00227][doi:10.1021/acs.jctc.0c00227]]   
 
 
 ** 2019
