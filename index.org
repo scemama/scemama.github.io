@@ -153,7 +153,7 @@ URL="&".join( [
   "https://api.archives-ouvertes.fr/search/?wt=json",
   "q=authId_i:(138649+OR+217193+OR+767210+OR+860806+OR+902463+OR+1023500)",
   "indent=true",
-  "fl=label_s,arxivId_s,files_s,title_s,author_s,authFullName_s,journal_s,label_bibtex,doiId_s,publicationDateY_i",
+  "fl=label_s,arxivId_s,files_s,title_s,author_s,authFullName_s,journal_s,label_bibtex,doiId_s,publicationDateY_i,researchData_s",
   "group=false",
   "start=0",
   "rows=10000",
@@ -210,6 +210,8 @@ def main():
             s += [ "  [[%s][arXiv:%s]]  "%(arxiv(doc),doc["arxivId_s"]) ]
         if "doiId_s" in doc:
             s += [ "  [[%s][doi:%s]]  "%(doi(doc),doc["doiId_s"]) ]
+        if "researchData_s" in doc:
+            s += [ "  [[doi:%s][Data]]  "%(doc["researchData_s"][0]) ]
         s = ["@@html:&nbsp;&nbsp;&nbsp;&nbsp;@@".join(s)]
         if s == []:
             s = ["\n"]
@@ -225,19 +227,14 @@ main()
 #+RESULTS:
 ** 2020
 
+- [[https://hal.archives-ouvertes.fr/hal-03011529/file/2003.04183.pdf][/Mountaineering Strategy to Excited States: Highly Accurate Energies and Benchmarks for Exotic Molecules and Radicals/]]
+  Pierre-Francois Loos, Anthony Scemama, Martial Boggio-Pasqua, Denis Jacquemin
+  [[https://dx.doi.org/10.1021/acs.jctc.0c00227][doi:10.1021/acs.jctc.0c00227]]   
+
+
 - [[https://hal.archives-ouvertes.fr/hal-02468226/file/2001.00416.pdf][/The Quest For Highly Accurate Excitation Energies: A Computational Perspective/]]
   Pierre-Francois Loos, Pierre-François Loos, Anthony Scemama, Denis Jacquemin
   [[https://arxiv.org/abs/2001.00416][arXiv:2001.00416]]  @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@  [[https://dx.doi.org/10.1021/acs.jpclett.0c00014][doi:10.1021/acs.jpclett.0c00014]]   
-
-
-- [[https://hal.archives-ouvertes.fr/hal-02921286/file/2008.10088.pdf][/Taming the fixed-node error in diffusion Monte Carlo via range separation/]]
-  Anthony Scemama, Emmanuel Giner, Anouar Benali, Pierre-Francois Loos
-  [[https://arxiv.org/abs/2008.10088][arXiv:2008.10088]]  @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@  [[https://dx.doi.org/10.1063/5.0026324][doi:10.1063/5.0026324]]   
-
-
-- [[https://hal.archives-ouvertes.fr/hal-02922278/file/2008.11145.pdf][/Note: The performance of CIPSI on the ground state electronic energy of benzene/]]
-  Pierre-Francois Loos, Yann Damour, Anthony Scemama
-  [[https://arxiv.org/abs/2008.11145][arXiv:2008.11145]]  @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@  [[https://dx.doi.org/10.1063/5.0027617][doi:10.1063/5.0027617]]   
 
 
 - [[https://hal.archives-ouvertes.fr/hal-02485688/file/2002.05951.pdf][/Variational principles in quantum Monte Carlo: the troubled story of variance minimization/]]
@@ -248,6 +245,21 @@ main()
 - [[https://hal.sorbonne-universite.fr/hal-02458920/file/srDFT_SC.pdf][/A basis-set error correction based on density-functional theory for strongly correlated molecular systems/]]
   Emmanuel Giner, Anthony Scemama, Pierre-François Loos, Julien Toulouse
   [[https://arxiv.org/abs/2001.11832][arXiv:2001.11832]]  @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@  [[https://dx.doi.org/10.1063/5.0002892][doi:10.1063/5.0002892]]   
+
+
+- [[https://hal.sorbonne-universite.fr/hal-02475410/file/2002.04514.pdf][/Pros and Cons of the Bethe-Salpeter Formalism for Ground-State Energies/]]
+  Pierre-François Loos, Anthony Scemama, Ivan Duchemin, Denis Jacquemin, Xavier Blase
+  [[https://arxiv.org/abs/2002.04514][arXiv:2002.04514]]  @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@  [[https://dx.doi.org/10.1021/acs.jpclett.0c00460][doi:10.1021/acs.jpclett.0c00460]]   
+
+
+- [[https://hal.archives-ouvertes.fr/hal-02922278/file/2008.11145.pdf][/The performance of CIPSI on the ground state electronic energy of benzene/]]
+  Pierre-Francois Loos, Yann Damour, Anthony Scemama
+  [[https://arxiv.org/abs/2008.11145][arXiv:2008.11145]]  @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@  [[https://dx.doi.org/10.1063/5.0027617][doi:10.1063/5.0027617]]  @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@  [[doi:10.5281/zenodo.4075286][Data]]   
+
+
+- [[https://hal.archives-ouvertes.fr/hal-02921286/file/2008.10088.pdf][/Taming the fixed-node error in diffusion Monte Carlo via range separation/]]
+  Anthony Scemama, Emmanuel Giner, Anouar Benali, Pierre-Francois Loos
+  [[https://arxiv.org/abs/2008.10088][arXiv:2008.10088]]  @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@  [[https://dx.doi.org/10.1063/5.0026324][doi:10.1063/5.0026324]]  @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@  [[doi:10.5281/zenodo.3996568][Data]]   
 
 
 - [[https://hal.archives-ouvertes.fr/hal-02346969/file/1910.12238.pdf][/A Density-Based Basis-Set Incompleteness Correction for GW Methods/]]
@@ -263,16 +275,6 @@ main()
 - [[https://arxiv.org/abs/2007.11673][/Towards a Systematic Improvement of the Fixed-Node Approximation in Diffusion Monte Carlo for Solids/]]
   Anouar Benali, Kevin Gasperich, Kenneth D. Jordan, Thomas Applencourt, Ye Luo, M. Chandler Bennett, Jaron T. Krogel, Luke Shulenburger, Paul R. C. Kent, Pierre-Francois Loos, Anthony Scemama, Michel Caffarel
   [[https://arxiv.org/abs/2007.11673][arXiv:2007.11673]]  @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@  [[https://dx.doi.org/10.1063/5.0021036][doi:10.1063/5.0021036]]   
-
-
-- [[https://hal.sorbonne-universite.fr/hal-02475410/file/2002.04514.pdf][/Pros and Cons of the Bethe-Salpeter Formalism for Ground-State Energies/]]
-  Pierre-François Loos, Anthony Scemama, Ivan Duchemin, Denis Jacquemin, Xavier Blase
-  [[https://arxiv.org/abs/2002.04514][arXiv:2002.04514]]  @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@  [[https://dx.doi.org/10.1021/acs.jpclett.0c00460][doi:10.1021/acs.jpclett.0c00460]]   
-
-
-- [[https://dx.doi.org/10.1021/acs.jctc.0c00227][/Mountaineering Strategy to Excited States: Highly Accurate Energies and Benchmarks for Exotic Molecules and Radicals/]]
-  Pierre-Francois Loos, Anthony Scemama, Martial Boggio-Pasqua, Denis Jacquemin
-  [[https://dx.doi.org/10.1021/acs.jctc.0c00227][doi:10.1021/acs.jctc.0c00227]]   
 
 
 ** 2019
@@ -649,7 +651,6 @@ main()
 - [[https://dx.doi.org/10.1016/S0273-1177(01)00059-X][/IR and UV spectroscopic data for polyynes: predictions for long carbon chain compounds in Titan's atmosphere/]]
   Véronique Vuitton, Anthony Scemama, Marie-Claire Gazeau, Patrick Chaquin, Yves Bénilan
   [[https://dx.doi.org/10.1016/S0273-1177(01)00059-X][doi:10.1016/S0273-1177(01)00059-X]]   
-
 
 
 
