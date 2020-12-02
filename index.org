@@ -4,7 +4,7 @@
 #+OPTIONS:    tags:not-in-toc num:nil ^:{} \n:t title:nil
 #+STARTUP:    align fold nodlcheck hidestars oddeven lognotestate
 #+LANGUAGE:   en
-#+SETUPFILE:  org/theme-readtheorg-local.setup                                                                                                                                                  
+#+SETUPFILE:  org/theme-readtheorg-local.setup
 
 @@html:
 <style>
@@ -36,7 +36,7 @@ ORCID : [[https://orcid.org/0000-0003-4955-7136][0000-0003-4955-7136]]
 * Projects
 
     - [[https://trex-coe.eu][TREX Center of Excellence]]
-    - ERC PTEROSOR
+    - [[https://lcpq.github.io/PTEROSOR][ERC PTEROSOR]]
 
 
 -----
@@ -152,601 +152,231 @@ ORCID : [[https://orcid.org/0000-0003-4955-7136][0000-0003-4955-7136]]
 -----
 * Publications
 
+#+BEGIN_EXPORT html
+<div id=publications>
+<script>
+    window.onload = async function () {
+        var thisYear = 2020;
 
+        /* Get list of publication */
+        pub = await fetch('https://api.archives-ouvertes.fr/search/?q=authId_i:(138649+OR+217193+OR+767210+OR+860806+OR+902463+OR+1023500)&indent=true&fl=citationRef_s,arxivId_s,files_s,title_s,s,authFullName_s,label_bibtex,doiId_s,publicationDateY_i,publicationDate_tdate&group=false&start=0&rows=10000&fq=docType_s:(ART+OR+COMM+OR+OUV+OR+COUV+OR+DOUV+OR+OTHER+OR+UNDEFINED+OR+REPORT+OR+THESE+OR+HDR)&sort=publicationDate_tdate%20desc').then(function (response) {
+            return response.json();
+        }).then(function (response) {
+            return response.response.docs;
+        });
+
+
+        /* Display list of publications */
+        var count = [];
+        for (year = 2001 ; year <= thisYear ; year++) {
+            listContainer = document.getElementById(year+'-div')
+            listContainer.className = "outline-text-2";
+            listElement = document.createElement('ol');
+            listElement.id = year+'-ol';
+            listElement.className = "org-ol";
+            listContainer.appendChild(listElement);
+            count[year] = 0;
+        }
+
+        for (i in pub) {
+            title = pub[i].title_s;
+            arXivId  = "";
+            year = pub[i].publicationDateY_i;
+            count[year] += 1;
+            listElement = document.getElementById(year+'-ol');
+            if (pub[i].arxivId_s) {
+                arXivId  = pub[i].arxivId_s;
+                arXivId  = ", <a href=\"https://arxiv.org/abs/" + arXivId +
+                    "\">arXiv:" + arXivId + "</a>";
+            }
+
+            citationRef = pub[i].citationRef_s;
+            try {
+                url = pub[i].files_s[0];
+            } catch (error) {
+                url = ""
+            };
+
+            authors = pub[i].authFullName_s[0];
+            for (j=1 ; j < pub[i].authFullName_s.length ; j++) {
+                authors += ", " + pub[i].authFullName_s[j];
+            }
+
+            listItem = document.createElement('li');
+            listItem.innerHTML =
+                "<a href=\"" + url + "\">" + title + "</a><br>"
+                + "<div><p>" + authors + "</div>"
+                + "<div><p> " + citationRef
+                + arXivId + "</div>";
+            listElement.appendChild(listItem);
+
+        }
+        var start = 0;
+        for (year = thisYear; year >= 2001 ; year--) {
+            start += count[year];
+        }
+
+        for (year = thisYear; year >= 2001 ; year--) {
+            listElement = document.getElementById(year+'-ol')
+            listElement.start = start;
+            listElement.reversed = true;
+            start = start - count[year];
+        }
+    }
+</script>
+</di>
+#+END_EXPORT
+
+    
 #+begin_src python :exports none :results output raw
+for i in range(2020,2000,-1):
+    print ( f"""** {i}
 
-# requires pip install requests
+#+BEGIN_EXPORT html
+  <div id="{i}-div" />
+#+END_EXPORT 
 
-URL="&".join( [
-  "https://api.archives-ouvertes.fr/search/?wt=json",
-  "q=authId_i:(138649+OR+217193+OR+767210+OR+860806+OR+902463+OR+1023500)",
-  "indent=true",
-  "fl=label_s,arxivId_s,files_s,title_s,author_s,authFullName_s,journal_s,label_bibtex,doiId_s,publicationDateY_i,researchData_s",
-  "group=false",
-  "start=0",
-  "rows=10000",
-  "fq=docType_s:(ART+OR+COMM+OR+OUV+OR+COUV+OR+DOUV+OR+OTHER+OR+UNDEFINED+OR+REPORT+OR+THESE+OR+HDR)",
-  "sort=publicationDateY_i desc"
-  ] )
-
-import requests
-import json
-
-
-def arxiv(doc):
-  x = doc["arxivId_s"]
-  return f"https://arxiv.org/abs/{x}"
-
-def doi(doc):
-  x = doc["doiId_s"]
-  return f"https://dx.doi.org/{x}"
-
-def data(doc):
-  x = doc["researchData_s"][0]
-  return f"https://dx.doi.org/{x}"
-
-def pdf(doc):
-  return doc["files_s"][0].replace("'","")
-
-
-style = "?style=social"
-def arxiv_badge(doc):
-  x = doc["arxivId_s"]
-  y = x.replace("-","--")
-  return f' @@html:<a href="https://arxiv.org/abs/{x}"><img src="https://img.shields.io/badge/arXiv-{y}-B31B1B{style}"></a>@@ '
-
-def doi_badge(doc):
-  x = doc["doiId_s"]
-  y = x.replace("-","--")
-  return f' @@html:<a href="https://dx.doi.org/{x}"><img src="https://img.shields.io/badge/doi-{y}-blueviolet{style}"></a>@@ '
-
-def data_badge(doc):
-  x = doc["researchData_s"][0]
-  y = x.replace("-","--")
-  return f' @@html:<a href="https://dx.doi.org/{x}"><img src="https://img.shields.io/badge/doi-{y}-blue{style}"></a>@@ '
-
-
-def main():
-    r = requests.get(URL)
-    data = json.loads(r.content)["response"]
-    with open('data.json','wb') as f:
-       f.write(r.content)
-    with open('data.json','rb') as f:
-      data = json.load(f)["response"]["docs"]
-
-    prev_year = 0
-    for doc in data:
-        year = doc["publicationDateY_i"]
-        if year != prev_year:
-            prev_year = year
-            print("""** %d\n"""%(year))
-
-        if "files_s" in doc:
-            link = pdf(doc)
-        elif "arxivId_s" in doc:
-            link = arxiv(doc)
-        elif "doiId_s" in doc:
-            link = doi(doc)
-        else:
-            link = None
-
-        if link is None:
-            print("""-\n | *%s* |"""%(doc["title_s"][0]))
-        else:
-            print("""-\n | [[%s][*%s*]] |"""%(link,doc["title_s"][0]))
-        l = [ "/%s/"%auth for auth in doc["authFullName_s"] ]
-        print(" |  "+", ".join(l)+" |")
-        s = []
-        if "arxivId_s" in doc:
-            s += [ arxiv_badge(doc) ]
-        if "doiId_s" in doc:
-            s += [ doi_badge(doc) ]
-        if "researchData_s" in doc:
-            s += [ data_badge(doc) ]
-        s = [" |", "@@html:&nbsp;&nbsp;&nbsp;&nbsp;@@".join(s)]
-        if s == [" |", ""] :
-            s = ["\n"]
-        else:
-            s += [" |\n\n"]
-        print(" ".join(s))
-
-
-main()
-
+""")
 #+end_src
 
-#+RESULTS:
 ** 2020
 
--
- | [[https://hal.archives-ouvertes.fr/hal-02468226/file/2001.00416.pdf][*The Quest For Highly Accurate Excitation Energies: A Computational Perspective*]] |
- |  /Pierre-Francois Loos/, /Pierre-François Loos/, /Anthony Scemama/, /Denis Jacquemin/ |
- |  @@html:<a href="https://arxiv.org/abs/2001.00416"><img src="https://img.shields.io/badge/arXiv-2001.00416-B31B1B?style=social"></a>@@ @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@ @@html:<a href="https://dx.doi.org/10.1021/acs.jpclett.0c00014"><img src="https://img.shields.io/badge/doi-10.1021/acs.jpclett.0c00014-blueviolet?style=social"></a>@@   |
-
-
--
- | [[https://hal.archives-ouvertes.fr/hal-02485688/file/2002.05951.pdf][*Variational principles in quantum Monte Carlo: the troubled story of variance minimization*]] |
- |  /Alice Cuzzocrea/, /Anthony Scemama/, /Wim Briels/, /Saverio Moroni/, /Claudia Filippi/ |
- |  @@html:<a href="https://arxiv.org/abs/2002.05951"><img src="https://img.shields.io/badge/arXiv-2002.05951-B31B1B?style=social"></a>@@ @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@ @@html:<a href="https://dx.doi.org/10.1021/acs.jctc.0c00147"><img src="https://img.shields.io/badge/doi-10.1021/acs.jctc.0c00147-blueviolet?style=social"></a>@@   |
-
-
--
- | [[https://hal.sorbonne-universite.fr/hal-02458920/file/srDFT_SC.pdf][*A basis-set error correction based on density-functional theory for strongly correlated molecular systems*]] |
- |  /Emmanuel Giner/, /Anthony Scemama/, /Pierre-François Loos/, /Julien Toulouse/ |
- |  @@html:<a href="https://arxiv.org/abs/2001.11832"><img src="https://img.shields.io/badge/arXiv-2001.11832-B31B1B?style=social"></a>@@ @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@ @@html:<a href="https://dx.doi.org/10.1063/5.0002892"><img src="https://img.shields.io/badge/doi-10.1063/5.0002892-blueviolet?style=social"></a>@@   |
-
-
--
- | [[https://hal.sorbonne-universite.fr/hal-02475410/file/2002.04514.pdf][*Pros and Cons of the Bethe-Salpeter Formalism for Ground-State Energies*]] |
- |  /Pierre-François Loos/, /Anthony Scemama/, /Ivan Duchemin/, /Denis Jacquemin/, /Xavier Blase/ |
- |  @@html:<a href="https://arxiv.org/abs/2002.04514"><img src="https://img.shields.io/badge/arXiv-2002.04514-B31B1B?style=social"></a>@@ @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@ @@html:<a href="https://dx.doi.org/10.1021/acs.jpclett.0c00460"><img src="https://img.shields.io/badge/doi-10.1021/acs.jpclett.0c00460-blueviolet?style=social"></a>@@   |
-
-
--
- | [[https://hal.archives-ouvertes.fr/hal-02922278/file/2008.11145.pdf][*The performance of CIPSI on the ground state electronic energy of benzene*]] |
- |  /Pierre-Francois Loos/, /Yann Damour/, /Anthony Scemama/ |
- |  @@html:<a href="https://arxiv.org/abs/2008.11145"><img src="https://img.shields.io/badge/arXiv-2008.11145-B31B1B?style=social"></a>@@ @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@ @@html:<a href="https://dx.doi.org/10.1063/5.0027617"><img src="https://img.shields.io/badge/doi-10.1063/5.0027617-blueviolet?style=social"></a>@@ @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@ @@html:<a href="https://dx.doi.org/10.5281/zenodo.4075286"><img src="https://img.shields.io/badge/doi-10.5281/zenodo.4075286-blue?style=social"></a>@@   |
-
-
--
- | [[https://hal.archives-ouvertes.fr/hal-02921286/file/2008.10088.pdf][*Taming the fixed-node error in diffusion Monte Carlo via range separation*]] |
- |  /Anthony Scemama/, /Emmanuel Giner/, /Anouar Benali/, /Pierre-Francois Loos/ |
- |  @@html:<a href="https://arxiv.org/abs/2008.10088"><img src="https://img.shields.io/badge/arXiv-2008.10088-B31B1B?style=social"></a>@@ @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@ @@html:<a href="https://dx.doi.org/10.1063/5.0026324"><img src="https://img.shields.io/badge/doi-10.1063/5.0026324-blueviolet?style=social"></a>@@ @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@ @@html:<a href="https://dx.doi.org/10.5281/zenodo.3996568"><img src="https://img.shields.io/badge/doi-10.5281/zenodo.3996568-blue?style=social"></a>@@   |
-
-
--
- | [[https://hal.archives-ouvertes.fr/hal-02346969/file/1910.12238.pdf][*A Density-Based Basis-Set Incompleteness Correction for GW Methods*]] |
- |  /Pierre-François Loos/, /Barthélémy Pradines/, /Anthony Scemama/, /Emmanuel Giner/, /Julien Toulouse/ |
- |  @@html:<a href="https://arxiv.org/abs/1910.12238"><img src="https://img.shields.io/badge/arXiv-1910.12238-B31B1B?style=social"></a>@@ @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@ @@html:<a href="https://dx.doi.org/10.1021/acs.jctc.9b01067"><img src="https://img.shields.io/badge/doi-10.1021/acs.jctc.9b01067-blueviolet?style=social"></a>@@   |
-
-
--
- | [[https://hal.archives-ouvertes.fr/hal-02403471/file/1912.04173.pdf][*A Mountaineering Strategy to Excited States: Highly-Accurate Energies and Benchmarks for Medium Size Molecules*]] |
- |  /Pierre-François Loos/, /Filippo Lipparini/, /Martial Boggio-Pasqua/, /Anthony Scemama/, /Denis Jacquemin/ |
- |  @@html:<a href="https://arxiv.org/abs/1912.04173"><img src="https://img.shields.io/badge/arXiv-1912.04173-B31B1B?style=social"></a>@@ @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@ @@html:<a href="https://dx.doi.org/10.1021/acs.jctc.9b01216"><img src="https://img.shields.io/badge/doi-10.1021/acs.jctc.9b01216-blueviolet?style=social"></a>@@   |
-
-
--
- | [[https://arxiv.org/abs/2007.11673][*Towards a Systematic Improvement of the Fixed-Node Approximation in Diffusion Monte Carlo for Solids*]] |
- |  /Anouar Benali/, /Kevin Gasperich/, /Kenneth D. Jordan/, /Thomas Applencourt/, /Ye Luo/, /M. Chandler Bennett/, /Jaron T. Krogel/, /Luke Shulenburger/, /Paul R. C. Kent/, /Pierre-Francois Loos/, /Anthony Scemama/, /Michel Caffarel/ |
- |  @@html:<a href="https://arxiv.org/abs/2007.11673"><img src="https://img.shields.io/badge/arXiv-2007.11673-B31B1B?style=social"></a>@@ @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@ @@html:<a href="https://dx.doi.org/10.1063/5.0021036"><img src="https://img.shields.io/badge/doi-10.1063/5.0021036-blueviolet?style=social"></a>@@   |
-
-
--
- | [[https://hal.archives-ouvertes.fr/hal-03011529/file/2003.04183.pdf][*Mountaineering Strategy to Excited States: Highly Accurate Energies and Benchmarks for Exotic Molecules and Radicals*]] |
- |  /Pierre-Francois Loos/, /Anthony Scemama/, /Martial Boggio-Pasqua/, /Denis Jacquemin/ |
- |  @@html:<a href="https://arxiv.org/abs/2003.04183"><img src="https://img.shields.io/badge/arXiv-2003.04183-B31B1B?style=social"></a>@@ @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@ @@html:<a href="https://dx.doi.org/10.1021/acs.jctc.0c00227"><img src="https://img.shields.io/badge/doi-10.1021/acs.jctc.0c00227-blueviolet?style=social"></a>@@   |
+#+BEGIN_EXPORT html
+  <div id="2020-div" />
+#+END_EXPORT 
 
 
 ** 2019
 
--
- | [[https://arxiv.org/abs/1902.03406][*Self-Consistent Electron-Nucleus Cusp Correction for Molecular Orbitals*]] |
- |  /Pierre-Francois Loos/, /Anthony Scemama/, /Michel Caffarel/ |
- |  @@html:<a href="https://arxiv.org/abs/1902.03406"><img src="https://img.shields.io/badge/arXiv-1902.03406-B31B1B?style=social"></a>@@ @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@ @@html:<a href="https://dx.doi.org/10.1016/bs.aiq.2019.03.003"><img src="https://img.shields.io/badge/doi-10.1016/bs.aiq.2019.03.003-blueviolet?style=social"></a>@@   |
-
-
--
- | [[https://hal.archives-ouvertes.fr/hal-02088494/file/1904.00678.pdf][*Influence of Pseudopotentials on Excitation Energies From Selected Configuration Interaction and Diffusion Monte Carlo*]] |
- |  /Anthony Scemama/, /Michel Caffarel/, /Anouar Benali/, /Denis Jacquemin/, /Pierre-Francois Loos/ |
- |  @@html:<a href="https://arxiv.org/abs/1904.00678"><img src="https://img.shields.io/badge/arXiv-1904.00678-B31B1B?style=social"></a>@@ @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@ @@html:<a href="https://dx.doi.org/10.1016/j.rechem.2019.100002"><img src="https://img.shields.io/badge/doi-10.1016/j.rechem.2019.100002-blueviolet?style=social"></a>@@   |
-
-
--
- | [[https://dx.doi.org/10.1021/acs.jpclett.9b01176][*A Density-Based Basis-Set Correction for Wave Function Theory*]] |
- |  /Pierre-François Loos/, /Barthélémy Pradines/, /Anthony Scemama/, /Julien Toulouse/, /Emmanuel Giner/ |
- |  @@html:<a href="https://dx.doi.org/10.1021/acs.jpclett.9b01176"><img src="https://img.shields.io/badge/doi-10.1021/acs.jpclett.9b01176-blueviolet?style=social"></a>@@   |
-
-
--
- | [[https://hal.sorbonne-universite.fr/hal-01945031/file/1811.12861.pdf][*Reference Energies for Double Excitations*]] |
- |  /Pierre-François Loos/, /Martial Boggio-Pasqua/, /Anthony Scemama/, /Michel Caffarel/, /Denis Jacquemin/ |
- |  @@html:<a href="https://arxiv.org/abs/1811.12861"><img src="https://img.shields.io/badge/arXiv-1811.12861-B31B1B?style=social"></a>@@ @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@ @@html:<a href="https://dx.doi.org/10.1021/acs.jctc.8b01205"><img src="https://img.shields.io/badge/doi-10.1021/acs.jctc.8b01205-blueviolet?style=social"></a>@@   |
-
-
--
- | [[https://hal.archives-ouvertes.fr/hal-02308310/file/1905.06737.pdf][*Excited States with Selected Configuration Interaction-Quantum Monte Carlo: Chemically Accurate Excitation Energies and Geometries*]] |
- |  /Monika Dash/, /Jonas Feldt/, /Saverio Moroni/, /Anthony Scemama/, /Claudia Filippi/ |
- |  @@html:<a href="https://arxiv.org/abs/1905.06737"><img src="https://img.shields.io/badge/arXiv-1905.06737-B31B1B?style=social"></a>@@ @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@ @@html:<a href="https://dx.doi.org/10.1021/acs.jctc.9b00476"><img src="https://img.shields.io/badge/doi-10.1021/acs.jctc.9b00476-blueviolet?style=social"></a>@@   |
-
-
--
- | [[https://hal.archives-ouvertes.fr/hal-02045595/file/1902.08154.pdf][*Quantum Package 2.0: An Open-Source Determinant-Driven Suite of Programs*]] |
- |  /Yann Garniron/, /Thomas Applencourt/, /Kevin Gasperich/, /Anouar Benali/, /Anthony Ferté/, /Julien Paquier/, /Barthélémy Pradines/, /Roland Assaraf/, /Peter Reinhardt/, /Julien Toulouse/, /Pierrette Barbaresco/, /Nicolas Renon/, /Grégoire David/, /Jean-Paul Malrieu/, /Mickaël Veril/, /Michel Caffarel/, /Pierre-Francois Loos/, /Emmanuel Giner/, /Anthony Scemama/ |
- |  @@html:<a href="https://arxiv.org/abs/1902.08154"><img src="https://img.shields.io/badge/arXiv-1902.08154-B31B1B?style=social"></a>@@ @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@ @@html:<a href="https://dx.doi.org/10.1021/acs.jctc.9b00176"><img src="https://img.shields.io/badge/doi-10.1021/acs.jctc.9b00176-blueviolet?style=social"></a>@@   |
-
-
--
- | [[https://hal.archives-ouvertes.fr/hal-02289341/file/Ex-srDFT.pdf][*Chemically Accurate Excitation Energies With Small Basis Sets*]] |
- |  /Emmanuel Giner/, /Anthony Scemama/, /Julien Toulouse/, /Pierre-Francois Loos/ |
- |  @@html:<a href="https://arxiv.org/abs/1907.01245"><img src="https://img.shields.io/badge/arXiv-1907.01245-B31B1B?style=social"></a>@@ @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@ @@html:<a href="https://dx.doi.org/10.1063/1.5122976"><img src="https://img.shields.io/badge/doi-10.1063/1.5122976-blueviolet?style=social"></a>@@   |
+#+BEGIN_EXPORT html
+  <div id="2019-div" />
+#+END_EXPORT 
 
 
 ** 2018
 
--
- | [[https://hal.archives-ouvertes.fr/hal-02462160/file/irpf90.pdf][*IRPF90*]] |
- |  /Anthony Scemama/ |
-
-
--
- | [[https://hal.archives-ouvertes.fr/hal-02468242/file/1812.06902.pdf][*Spin adaptation with determinant-based selected configuration interaction*]] |
- |  /Thomas Applencourt/, /Kevin Gasperich/, /Anthony Scemama/ |
- |  @@html:<a href="https://arxiv.org/abs/1812.06902"><img src="https://img.shields.io/badge/arXiv-1812.06902-B31B1B?style=social"></a>@@   |
-
-
--
- | [[https://hal.archives-ouvertes.fr/hal-01873356/file/1804.09610.pdf][*Perturbatively Selected Configuration-Interaction Wave Functions for Efficient Geometry Optimization in Quantum Monte Carlo*]] |
- |  /Monika Dash/, /Saverio Moroni/, /Anthony Scemama/, /Claudia Filippi/ |
- |  @@html:<a href="https://arxiv.org/abs/1804.09610"><img src="https://img.shields.io/badge/arXiv-1804.09610-B31B1B?style=social"></a>@@ @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@ @@html:<a href="https://dx.doi.org/10.1021/acs.jctc.8b00393"><img src="https://img.shields.io/badge/doi-10.1021/acs.jctc.8b00393-blueviolet?style=social"></a>@@   |
-
-
--
- | [[https://hal.archives-ouvertes.fr/hal-01858532/file/1807.02045.pdf][*A Mountaineering Strategy to Excited States: Highly Accurate Reference Energies and Benchmarks*]] |
- |  /Pierre-Francois Loos/, /Anthony Scemama/, /Aymeric Blondel/, /Yann Garniron/, /Michel Caffarel/, /Denis Jacquemin/ |
- |  @@html:<a href="https://dx.doi.org/10.1021/acs.jctc.8b00406"><img src="https://img.shields.io/badge/doi-10.1021/acs.jctc.8b00406-blueviolet?style=social"></a>@@   |
-
-
--
- | [[https://hal.archives-ouvertes.fr/hal-01858534/file/1.5044503.pdf][*Selected configuration interaction dressed by perturbation*]] |
- |  /Yann Garniron/, /Anthony Scemama/, /Emmanuel Giner/, /Michel Caffarel/, /Pierre-François Loos/ |
- |  @@html:<a href="https://arxiv.org/abs/1806.04970"><img src="https://img.shields.io/badge/arXiv-1806.04970-B31B1B?style=social"></a>@@ @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@ @@html:<a href="https://dx.doi.org/10.1063/1.5044503"><img src="https://img.shields.io/badge/doi-10.1063/1.5044503-blueviolet?style=social"></a>@@   |
-
-
--
- | [[https://hal.archives-ouvertes.fr/hal-01858533/file/1.5041327%281%29.pdf][*Excitation energies from diffusion Monte Carlo using selected configuration interaction nodes*]] |
- |  /Anthony Scemama/, /Anouar Benali/, /Denis Jacquemin/, /Michel Caffarel/, /Pierre-François Loos/ |
- |  @@html:<a href="https://dx.doi.org/10.1063/1.5041327"><img src="https://img.shields.io/badge/doi-10.1063/1.5041327-blueviolet?style=social"></a>@@   |
-
-
--
- | [[https://hal.archives-ouvertes.fr/hal-01679416/file/1712.05034.pdf][*Deterministic construction of nodal surfaces within quantum Monte Carlo: the case of FeS*]] |
- |  /Anthony Scemama/, /Yann Garniron/, /Michel Caffarel/, /Pierre-François Loos/ |
- |  @@html:<a href="https://arxiv.org/abs/1712.05034"><img src="https://img.shields.io/badge/arXiv-1712.05034-B31B1B?style=social"></a>@@ @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@ @@html:<a href="https://dx.doi.org/10.1021/acs.jctc.7b01250"><img src="https://img.shields.io/badge/doi-10.1021/acs.jctc.7b01250-blueviolet?style=social"></a>@@   |
+#+BEGIN_EXPORT html
+  <div id="2018-div" />
+#+END_EXPORT 
 
 
 ** 2017
 
--
- | [[https://hal.archives-ouvertes.fr/hal-02129651/file/genci-openpower-assessment.pdf][*Pre-exascale Architectures: OpenPOWER Performance and Usability Assessment for French Scientific Community*]] |
- |  /Gabriel Hautreux/, /Alfredo Buttari/, /Arnaud Beck/, /Victor Cameo/, /Dimitri Lecas/, /Dominique Aubert/, /Emeric Brun/, /Eric Boyer/, /Fausto Malvagi/, /Gabriel Staffelbach/, /Isabelle D’ast/, /Joeffrey Legaux/, /Ghislain Lartigue/, /Gilles Grasseau/, /Guillaume Latu/, /Juan Escobar/, /Julien Bigot/, /Julien Derouillat/, /Matthieu Haefele/, /Nicolas Renon/, /Philippe Parnaudeau/, /Philippe Wautelet/, /Pierre-François Lavallée/, /Pierre Kestener/, /Rémi Lacroix/, /Stephane Requena/, /Anthony Scemama/, /Vincent Moureau/, /Matthieu Etancelin/, /Yann Meurdesoif/ |
- |  @@html:<a href="https://dx.doi.org/10.1007/978-3-319-67630-2_23"><img src="https://img.shields.io/badge/doi-10.1007/978--3--319--67630--2_23-blueviolet?style=social"></a>@@   |
-
-
--
- | [[https://dx.doi.org/10.1016/j.comptc.2017.03.001][*Orthogonal Valence Bond Hamiltonians incorporating dynamical correlation effects*]] |
- |  /Emmanuel Giner/, /Celestino Angeli/, /Anthony Scemama/, /Jean-Paul Malrieu/ |
- |  @@html:<a href="https://dx.doi.org/10.1016/j.comptc.2017.03.001"><img src="https://img.shields.io/badge/doi-10.1016/j.comptc.2017.03.001-blueviolet?style=social"></a>@@   |
-
-
--
- | [[https://hal.archives-ouvertes.fr/hal-01522756/file/1.4980034.pdf][*Alternative definition of excitation amplitudes in multi-reference state-specific coupled cluster*]] |
- |  /Yann Garniron/, /Emmanuel Giner/, /Jean-Paul Malrieu/, /Anthony Scemama/ |
- |  @@html:<a href="https://arxiv.org/abs/1701.04764"><img src="https://img.shields.io/badge/arXiv-1701.04764-B31B1B?style=social"></a>@@ @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@ @@html:<a href="https://dx.doi.org/10.1063/1.4980034"><img src="https://img.shields.io/badge/doi-10.1063/1.4980034-blueviolet?style=social"></a>@@   |
-
-
--
- | [[https://hal.archives-ouvertes.fr/hal-01539065/file/1.4984616.pdf][*A Jeziorski-Monkhorst fully uncontracted multi-reference perturbative treatment. I. Principles, second-order versions, and tests on ground state potential energy curves*]] |
- |  /Emmanuel Giner/, /Celestino Angeli/, /Yann Garniron/, /Anthony Scemama/, /Jean-Paul Malrieu/ |
- |  @@html:<a href="https://arxiv.org/abs/1702.03133"><img src="https://img.shields.io/badge/arXiv-1702.03133-B31B1B?style=social"></a>@@ @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@ @@html:<a href="https://dx.doi.org/10.1063/1.4984616"><img src="https://img.shields.io/badge/doi-10.1063/1.4984616-blueviolet?style=social"></a>@@   |
-
-
--
- | [[https://hal.archives-ouvertes.fr/hal-01539064/file/1.4992127.pdf][*Hybrid stochastic-deterministic calculation of the second-order perturbative contribution of multireference perturbation theory*]] |
- |  /Yann Garniron/, /Anthony Scemama/, /Pierre-François Loos/, /Michel Caffarel/ |
- |  @@html:<a href="https://arxiv.org/abs/1703.05347"><img src="https://img.shields.io/badge/arXiv-1703.05347-B31B1B?style=social"></a>@@ @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@ @@html:<a href="https://dx.doi.org/10.1063/1.4992127"><img src="https://img.shields.io/badge/doi-10.1063/1.4992127-blueviolet?style=social"></a>@@   |
-
-
--
- | [[https://hal.archives-ouvertes.fr/tel-01612872/file/hdr_scemama.pdf][*Corrélation électronique et parallélisme à grande échelle*]] |
- |  /Anthony Scemama/ |
+#+BEGIN_EXPORT html
+  <div id="2017-div" />
+#+END_EXPORT 
 
 
 ** 2016
 
--
- | [[https://hal.archives-ouvertes.fr/hal-01539067/file/1607.06742.pdf][*Using CIPSI nodes in diffusion Monte Carlo*]] |
- |  /Michel Caffarel/, /Thomas Applencourt/, /Emmanuel Giner/, /Anthony Scemama/ |
- |  @@html:<a href="https://dx.doi.org/10.1021/bk-2016-1234.ch002"><img src="https://img.shields.io/badge/doi-10.1021/bk--2016--1234.ch002-blueviolet?style=social"></a>@@   |
-
-
--
- | [[https://hal.archives-ouvertes.fr/hal-01358981/file/1510.00730.pdf][*Quantum Monte Carlo with very large multideterminant wavefunctions*]] |
- |  /Anthony Scemama/, /Thomas Applencourt/, /Emmanuel Giner/, /Michel Caffarel/ |
- |  @@html:<a href="https://arxiv.org/abs/1510.00730"><img src="https://img.shields.io/badge/arXiv-1510.00730-B31B1B?style=social"></a>@@ @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@ @@html:<a href="https://dx.doi.org/10.1002/jcc.24382"><img src="https://img.shields.io/badge/doi-10.1002/jcc.24382-blueviolet?style=social"></a>@@   |
-
-
--
- | [[https://hal.archives-ouvertes.fr/hal-01327039/file/1.4947093.pdf][*Communication: Toward an improved control of the fixed-node error in quantum Monte Carlo: The case of the water molecule*]] |
- |  /Michel Caffarel/, /Thomas Applencourt/, /Emmanuel Giner/, /Anthony Scemama/ |
- |  @@html:<a href="https://dx.doi.org/10.1063/1.4947093"><img src="https://img.shields.io/badge/doi-10.1063/1.4947093-blueviolet?style=social"></a>@@   |
-
-
--
- | [[https://hal.archives-ouvertes.fr/hal-01298011/file/1.4940781.pdf][*A simple approach to the state-specific MR-CC using the intermediate Hamiltonian formalism*]] |
- |  /Emmanuel Giner/, /Grégoire David/, /Anthony Scemama/, /Jean-Paul Malrieu/ |
- |  @@html:<a href="https://dx.doi.org/10.1063/1.4940781"><img src="https://img.shields.io/badge/doi-10.1063/1.4940781-blueviolet?style=social"></a>@@   |
+#+BEGIN_EXPORT html
+  <div id="2016-div" />
+#+END_EXPORT 
 
 
 ** 2015
 
--
- | [[https://hal.archives-ouvertes.fr/hal-01136398/file/1.4905528%281%29.pdf][*Fixed-node diffusion Monte Carlo potential energy curve of the fluorine molecule F2 using selected configuration interaction trial wavefunctions*]] |
- |  /Emmanuel Giner/, /Anthony Scemama/, /Michel Caffarel/ |
- |  @@html:<a href="https://arxiv.org/abs/1408.3672"><img src="https://img.shields.io/badge/arXiv-1408.3672-B31B1B?style=social"></a>@@ @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@ @@html:<a href="https://dx.doi.org/10.1063/1.4905528"><img src="https://img.shields.io/badge/doi-10.1063/1.4905528-blueviolet?style=social"></a>@@   |
+#+BEGIN_EXPORT html
+  <div id="2015-div" />
+#+END_EXPORT 
 
 
 ** 2014
 
--
- | [[https://hal.archives-ouvertes.fr/hal-01539068/file/irpf90.pdf][*IRPF90, un generateur de code FORTRAN pour le calcul scientifique*]] |
- |  /Anthony Scemama/ |
-
-
--
- | [[https://hal.archives-ouvertes.fr/hal-01121580/file/1405.4082.pdf][*Spin Density Distribution in Open-Shell Transition Metal Systems: A Comparative Post-Hartree–Fock, Density Functional Theory, and Quantum Monte Carlo Study of the CuCl2 Molecule*]] |
- |  /Michel Caffarel/, /Emmanuel Giner/, /Anthony Scemama/, /Alejandro Ramírez-Solís/ |
- |  @@html:<a href="https://dx.doi.org/10.1021/ct5004252"><img src="https://img.shields.io/badge/doi-10.1021/ct5004252-blueviolet?style=social"></a>@@   |
-
-
--
- | [[https://hal.archives-ouvertes.fr/hal-00992187/file/1402.2880.pdf][*A Sparse Self-Consistent Field Algorithm and Its Parallel Implementation: Application to Density-Functional-Based Tight Binding*]] |
- |  /Anthony Scemama/, /Nicolas Renon/, /Mathias Rapacioli/ |
- |  @@html:<a href="https://dx.doi.org/10.1021/ct500115v"><img src="https://img.shields.io/badge/doi-10.1021/ct500115v-blueviolet?style=social"></a>@@   |
-
-
--
- | [[https://hal.archives-ouvertes.fr/hal-01121736/file/1.4903985.pdf][*Accurate nonrelativistic ground-state energies of 3d transition metal atoms*]] |
- |  /Anthony Scemama/, /Thomas Applencourt/, /Emmanuel Giner/, /Michel Caffarel/ |
- |  @@html:<a href="https://dx.doi.org/10.1063/1.4903985"><img src="https://img.shields.io/badge/doi-10.1063/1.4903985-blueviolet?style=social"></a>@@   |
-
-
--
- | [[https://dx.doi.org/10.1002/jcc.23492][*Code interoperability and standard data formats in quantum chemistry and quantum dynamics: The Q5/D5Cost data model*]] |
- |  /Elda Rossi/, /Stefano Evangelisti/, /Antonio Lagana/, /Antonio Monari/, /Sergio Rampino/, /Marco Verdicchio/, /Kim K. Baldridge/, /Gian Luigi Bendazzoli/, /Stefano Borini/, /Renzo Cimiraglia/, /Celestino Angeli/, /Peter Kallay/, /Hans P. Lüthi/, /Kenneth Ruud/, /José Sánchez-Marín/, /Anthony Scemama/, /Peter Szalay/, /Attila Tajti/ |
- |  @@html:<a href="https://dx.doi.org/10.1002/jcc.23492"><img src="https://img.shields.io/badge/doi-10.1002/jcc.23492-blueviolet?style=social"></a>@@   |
+#+BEGIN_EXPORT html
+  <div id="2014-div" />
+#+END_EXPORT 
 
 
 ** 2013
 
--
- | *Simulations in Chemistry: The Quantum Monte Carlo Methods* |
- |  /Michel Caffarel/, /Anthony Scemama/ |
-
-
--
- | [[https://hal.archives-ouvertes.fr/hal-00992090/file/PDF12434617.pdf][*Using perturbatively selected configuration interaction in quantum Monte Carlo calculations*]] |
- |  /Emmanuel Giner/, /Anthony Scemama/, /Michel Caffarel/ |
- |  @@html:<a href="https://dx.doi.org/10.1139/cjc-2013-0017"><img src="https://img.shields.io/badge/doi-10.1139/cjc--2013--0017-blueviolet?style=social"></a>@@   |
-
-
--
- | [[https://hal.archives-ouvertes.fr/hal-00875425/file/b6b6ac821f70f5d0bcda994704f0e70bb435.pdf][*Further refinements of next-generation force fields -- Nonempirical localization of off-centered points in molecules*]] |
- |  /Robin Chaudret/, /Nohad Gresh/, /Andrés Cisneros/, /Anthony Scemama/, /Jean-Philip Piquemal/ |
- |  @@html:<a href="https://dx.doi.org/10.1139/cjc-2012-0547"><img src="https://img.shields.io/badge/doi-10.1139/cjc--2012--0547-blueviolet?style=social"></a>@@   |
-
-
--
- | [[https://hal.archives-ouvertes.fr/hal-01539069/file/hpc_mag.pdf][*Un million d'atomes en chimie quantique*]] |
- |  /Anthony Scemama/, /Mathias Rapacioli/, /Nicolas Renon/ |
-
-
--
- | [[https://hal.archives-ouvertes.fr/hal-01539072/file/1311.6244.pdf][*An efficient implementation of Slater-Condon rules*]] |
- |  /Anthony Scemama/, /Emmanuel Giner/ |
- |  @@html:<a href="https://arxiv.org/abs/1311.6244"><img src="https://img.shields.io/badge/arXiv-1311.6244-B31B1B?style=social"></a>@@   |
-
-
--
- | [[https://hal.archives-ouvertes.fr/hal-00875637/file/kobe.pdf][*QMC=Chem: A Quantum Monte Carlo Program for Large-Scale Simulations in Chemistry at the Petascale Level and beyond*]] |
- |  /Anthony Scemama/, /Michel Caffarel/, /Emmanuel Oseret/, /William Jalby/ |
- |  @@html:<a href="https://dx.doi.org/10.1007/978-3-642-38718-0_14"><img src="https://img.shields.io/badge/doi-10.1007/978--3--642--38718--0_14-blueviolet?style=social"></a>@@   |
-
-
--
- | [[https://hal.archives-ouvertes.fr/hal-01539071/file/hpc_mag%20%281%29.pdf][*Simulations en Chimie : Les bénéfices des méthodes Monte-Carlo Quantique*]] |
- |  /Michel Caffarel/, /Anthony Scemama/ |
-
-
--
- | *Simulations en chimie : l'approche Monte-Carlo quantique* |
- |  /Michel Caffarel/, /Anthony Scemama/ |
-
-
--
- | [[https://hal.archives-ouvertes.fr/hal-00736543/file/p.pdf][*Quantum Monte Carlo for large chemical systems: Implementing efficient strategies for petascale platforms and beyond*]] |
- |  /Anthony Scemama/, /Michel Caffarel/, /Emmanuel Oseret/, /William Jalby/ |
- |  @@html:<a href="https://arxiv.org/abs/1209.6630"><img src="https://img.shields.io/badge/arXiv-1209.6630-B31B1B?style=social"></a>@@ @@html:&nbsp;&nbsp;&nbsp;&nbsp;@@ @@html:<a href="https://dx.doi.org/10.1002/jcc.23216"><img src="https://img.shields.io/badge/doi-10.1002/jcc.23216-blueviolet?style=social"></a>@@   |
+#+BEGIN_EXPORT html
+  <div id="2013-div" />
+#+END_EXPORT 
 
 
 ** 2012
 
--
- | [[https://hal.archives-ouvertes.fr/hal-00875641/file/papier.pdf][*Large-Scale Quantum Monte Carlo Electronic Structure Calculations on the EGEE Grid*]] |
- |  /Antonio Monari/, /Anthony Scemama/, /Michel Caffarel/ |
- |  @@html:<a href="https://dx.doi.org/10.1007/978-1-4614-0508-5_13"><img src="https://img.shields.io/badge/doi-10.1007/978--1--4614--0508--5_13-blueviolet?style=social"></a>@@   |
-
-
--
- | *Les supercalculateurs décryptent la chimie du vivant* |
- |  /Michel Caffarel/, /Anthony Scemama/ |
+#+BEGIN_EXPORT html
+  <div id="2012-div" />
+#+END_EXPORT 
 
 
 ** 2011
 
--
- | [[https://hal.archives-ouvertes.fr/hal-00844617/file/DFTB%2BCI.pdf][*Modeling Charge Resonance in Cationic Molecular Clusters: Combining DFT-Tight Binding with Configuration Interaction*]] |
- |  /Mathias Rapacioli/, /Fernand Spiegelman/, /Anthony Scemama/, /André Mirtschink/ |
- |  @@html:<a href="https://dx.doi.org/10.1021/ct100412f"><img src="https://img.shields.io/badge/doi-10.1021/ct100412f-blueviolet?style=social"></a>@@   |
-
-
--
- | [[https://hal.archives-ouvertes.fr/hal-00874618/file/eplf.pdf][*Electron Pair Localization Function (EPLF) for Density Functional Theory and ab Initio Wave Function-Based Methods: A New Tool for Chemical Interpretation*]] |
- |  /Anthony Scemama/, /Michel Caffarel/, /Robin Chaudret/, /Jean-Philip Piquemal/ |
- |  @@html:<a href="https://dx.doi.org/10.1021/ct1005938"><img src="https://img.shields.io/badge/doi-10.1021/ct1005938-blueviolet?style=social"></a>@@   |
-
-
--
- | [[https://hal.archives-ouvertes.fr/hal-00992047/file/adduit-cu2O2-JCC-rev_final.pdf][*Spin-driven activation of dioxygen in various metalloenzymes and their inspired models.*]] |
- |  /Aurelien de la Lande/, /Dennis R Salahub/, /Jacques Maddaluno/, /Anthony Scemama/, /Julien Pilme/, /Olivier Parisel/, /Helene Gerard/, /Michel Caffarel/, /Jean-Philip Piquemal/ |
- |  @@html:<a href="https://dx.doi.org/10.1002/jcc.21698"><img src="https://img.shields.io/badge/doi-10.1002/jcc.21698-blueviolet?style=social"></a>@@   |
-
-
--
- | [[https://hal.archives-ouvertes.fr/hal-00875418/file/ec0fe8337af45fd057a5b5092c5239c9ca65.pdf][*On the stability of Be3: A benchmark complete active space self-consistent field + averaged quadratic coupled cluster study*]] |
- |  /J. Amaro-Estrada/, /Anthony Scemama/, /Michel Caffarel/, /Alejandro Ramirez-Solis/ |
- |  @@html:<a href="https://dx.doi.org/10.1063/1.3635403"><img src="https://img.shields.io/badge/doi-10.1063/1.3635403-blueviolet?style=social"></a>@@   |
+#+BEGIN_EXPORT html
+  <div id="2011-div" />
+#+END_EXPORT 
 
 
 ** 2010
 
--
- | [[https://hal.archives-ouvertes.fr/hal-00874606/file/lit.pdf][*The lithium-thiophene interaction: a critical study using highly correlated electronic structure approaches of quantum chemistry*]] |
- |  /Michel Caffarel/, /Anthony Scemama/, /Alejandro Ramírez-Solís/ |
- |  @@html:<a href="https://dx.doi.org/10.1007/s00214-009-0713-y"><img src="https://img.shields.io/badge/doi-10.1007/s00214--009--0713--y-blueviolet?style=social"></a>@@   |
-
-
--
- | [[https://hal.archives-ouvertes.fr/hal-00834777/file/TCAfinal.pdf][*Structural and optical properties of a neutral Nickel bisdithiolene complex: density functional versus ab initio methods*]] |
- |  /Fabienne Alary/, /Jean-Louis Heully/, /Anthony Scemama/, /Bénédicte Garreau-de Bonneval/, /Kathleen Chane-Ching/, /Michel Caffarel/ |
- |  @@html:<a href="https://dx.doi.org/10.1007/s00214-009-0679-9"><img src="https://img.shields.io/badge/doi-10.1007/s00214--009--0679--9-blueviolet?style=social"></a>@@   |
+#+BEGIN_EXPORT html
+  <div id="2010-div" />
+#+END_EXPORT 
 
 
 ** 2009
 
--
- | [[https://hal.archives-ouvertes.fr/hal-01539073/file/0909.5012.pdf][*IRPF90: a programming environment for high performance computing*]] |
- |  /Anthony Scemama/ |
- |  @@html:<a href="https://arxiv.org/abs/0909.5012"><img src="https://img.shields.io/badge/arXiv-0909.5012-B31B1B?style=social"></a>@@   |
-
-
--
- | [[https://hal.archives-ouvertes.fr/hal-00875602/file/o4.pdf][*Bond breaking and bond making in tetraoxygen: analysis of the O2(X3Sigma(g)-) + O2(X3Sigma(g)-) <==> O4 reaction using the electron pair localization function.*]] |
- |  /Michel Caffarel/, /Anthony Scemama/, /Alejandro Ramírez-Solís/ |
- |  @@html:<a href="https://dx.doi.org/10.1021/jp902028g"><img src="https://img.shields.io/badge/doi-10.1021/jp902028g-blueviolet?style=social"></a>@@   |
-
-
--
- | [[https://hal.archives-ouvertes.fr/hal-00875603/file/1.3054709.pdf][*A theoretical study of linear beryllium chains: full configuration interaction.*]] |
- |  /Valentina Vetere/, /Antonio Monari/, /Anthony Scemama/, /Gian Luigi Bendazzoli/, /Stefano Evangelisti/ |
- |  @@html:<a href="https://dx.doi.org/10.1063/1.3054709"><img src="https://img.shields.io/badge/doi-10.1063/1.3054709-blueviolet?style=social"></a>@@   |
+#+BEGIN_EXPORT html
+  <div id="2009-div" />
+#+END_EXPORT 
 
 
 ** 2008
 
--
- | [[https://dx.doi.org/10.1021/jp711944v][*Energies, stability and structure properties of radicals derived from organic sulfides containing an acetyl group after the *OH attack: ab initio and DFT calculations vs experiment.*]] |
- |  /Jacqueline Bergès/, /Nicolas Varmenot/, /Anthony Scemama/, /Zohreh Abedinzadeh/, /Krzysztof Bobrowski/ |
- |  @@html:<a href="https://dx.doi.org/10.1021/jp711944v"><img src="https://img.shields.io/badge/doi-10.1021/jp711944v-blueviolet?style=social"></a>@@   |
-
-
--
- | [[https://dx.doi.org/10.1007/978-3-540-69839-5_83][*Common Format for Quantum Chemistry Interoperability: Q5Cost Format and Library*]] |
- |  /Anthony Scemama/, /Antonio Monari/, /Celestino Angeli/, /Stefano Borini/, /Stefano Evangelisti/, /Elda Rossi/ |
- |  @@html:<a href="https://dx.doi.org/10.1007/978-3-540-69839-5_83"><img src="https://img.shields.io/badge/doi-10.1007/978--3--540--69839--5_83-blueviolet?style=social"></a>@@   |
-
-
--
- | *Q5Cost format and library: a tutorial about the common format for quantum chemistry interoperability* |
- |  /Antonio Monari/, /Anthony Scemama/, /Stefano Evangelisti/, /Elda Rossi/, /Stefano Cozzini/ |
+#+BEGIN_EXPORT html
+  <div id="2008-div" />
+#+END_EXPORT 
 
 
 ** 2007
 
--
- | [[https://hal.archives-ouvertes.fr/hal-00875613/file/PhysRevE.75.035701.pdf][*Improved Monte Carlo estimators for the one-body density.*]] |
- |  /Roland Assaraf/, /Michel Caffarel/, /Anthony Scemama/ |
- |  @@html:<a href="https://dx.doi.org/10.1103/PhysRevE.75.035701"><img src="https://img.shields.io/badge/doi-10.1103/PhysRevE.75.035701-blueviolet?style=social"></a>@@   |
-
-
--
- | [[https://hal.archives-ouvertes.fr/hal-00875614/file/PhysRevLett.99.153001.pdf][*Multireference quantum Monte Carlo study of the O4 molecule.*]] |
- |  /Michel Caffarel/, /Ramón Hernández-Lamoneda/, /Anthony Scemama/, /Alejandro Ramírez-Solís/ |
- |  @@html:<a href="https://dx.doi.org/10.1103/PhysRevLett.99.153001"><img src="https://img.shields.io/badge/doi-10.1103/PhysRevLett.99.153001-blueviolet?style=social"></a>@@   |
-
-
--
- | [[https://hal.archives-ouvertes.fr/hal-00875618/file/paper.pdf][*Maximum probability domains from Quantum Monte Carlo Calculations*]] |
- |  /Anthony Scemama/, /Michel Caffarel/, /Andreas Savin/ |
- |  @@html:<a href="https://dx.doi.org/10.1002/jcc.20526"><img src="https://img.shields.io/badge/doi-10.1002/jcc.20526-blueviolet?style=social"></a>@@   |
+#+BEGIN_EXPORT html
+  <div id="2007-div" />
+#+END_EXPORT 
 
 
 ** 2006
 
--
- | [[https://hal.archives-ouvertes.fr/hal-00107403/file/arXiv_Assaraf.pdf][*Efficient Monte Carlo Calculations of the One-Body Density*]] |
- |  /Roland Assaraf/, /Michel Caffarel/, /Anthony Scemama/ |
- |  @@html:<a href="https://arxiv.org/abs/physics/0610132"><img src="https://img.shields.io/badge/arXiv-physics/0610132-B31B1B?style=social"></a>@@   |
-
-
--
- | [[https://hal.archives-ouvertes.fr/hal-00180167/file/PhysRevB.73.241101.pdf][*Simple and efficient approach to the optimization of correlated wave functions*]] |
- |  /Anthony Scemama/, /Claudia Filippi/ |
-
-
--
- | [[https://hal.archives-ouvertes.fr/hal-00875620/file/1.2354490.pdf][*An efficient sampling algorithm for variational Monte Carlo.*]] |
- |  /Anthony Scemama/, /Tony Lelièvre/, /Gabriel Stoltz/, /Eric Cancès/, /Michel Caffarel/ |
- |  @@html:<a href="https://dx.doi.org/10.1063/1.2354490"><img src="https://img.shields.io/badge/doi-10.1063/1.2354490-blueviolet?style=social"></a>@@   |
-
-
--
- | [[https://hal.archives-ouvertes.fr/hal-01539075/file/Book_QMC_OberWolfach_2006.pdf][*A few aspects of QMC for molecules*]] |
- |  /Michel Caffarel/, /Roland Assaraf/, /Anatole Khelif/, /Anthony Scemama/, /Alejandro Ramirez-Solis/ |
+#+BEGIN_EXPORT html
+  <div id="2006-div" />
+#+END_EXPORT 
 
 
 ** 2005
 
--
- | [[https://hal.archives-ouvertes.fr/hal-02457724/file/algo-volume_revtex.pdf][*Investigating the volume maximizing the probability of finding ν electrons from variational monte carlo data*]] |
- |  /Anthony Scemama/ |
- |  @@html:<a href="https://dx.doi.org/10.1142/S0219633605001581"><img src="https://img.shields.io/badge/doi-10.1142/S0219633605001581-blueviolet?style=social"></a>@@   |
+#+BEGIN_EXPORT html
+  <div id="2005-div" />
+#+END_EXPORT 
 
 
 ** 2004
 
--
- | [[https://tel.archives-ouvertes.fr/tel-00518025/file/these_scemama.pdf][*Réactivité en milieu atmosphérique et analyse Monte Carlo quantique de la localisation électronique*]] |
- |  /Anthony Scemama/ |
+#+BEGIN_EXPORT html
+  <div id="2004-div" />
+#+END_EXPORT 
 
 
--
- | [[https://dx.doi.org/10.1021/jp031159b][*Spectral, Kinetic, and Theoretical Studies of Sulfur-Centered Reactive Intermediates Derived from Thioethers Containing an Acetyl Group*]] |
- |  /Nicolas Varmenot/, /Jacqueline Bergès/, /Zohreh Abedinzadeh/, /Anthony Scemama/, /Grazyna Strzelczak/, /Krzysztof Bobrowski/ |
- |  @@html:<a href="https://dx.doi.org/10.1021/jp031159b"><img src="https://img.shields.io/badge/doi-10.1021/jp031159b-blueviolet?style=social"></a>@@   |
+** 2003
 
-
--
- | [[https://hal.archives-ouvertes.fr/hal-00875621/file/1.1765098.pdf][*Electron pair localization function: A practical tool to visualize electron localization in molecules from quantum Monte Carlo data*]] |
- |  /Anthony Scemama/, /Patrick Chaquin/, /Michel Caffarel/ |
- |  @@html:<a href="https://dx.doi.org/10.1063/1.1765098"><img src="https://img.shields.io/badge/doi-10.1063/1.1765098-blueviolet?style=social"></a>@@   |
-
-
--
- | [[https://dx.doi.org/10.1016/j.cplett.2004.06.106][*Theoretical study of the electrocyclization product of butadiyne: structure, stability and possible formations*]] |
- |  /Patrick Chaquin/, /Anthony Scemama/ |
- |  @@html:<a href="https://dx.doi.org/10.1016/j.cplett.2004.06.106"><img src="https://img.shields.io/badge/doi-10.1016/j.cplett.2004.06.106-blueviolet?style=social"></a>@@   |
+#+BEGIN_EXPORT html
+  <div id="2003-div" />
+#+END_EXPORT 
 
 
 ** 2002
 
--
- | [[https://dx.doi.org/10.1021/jp013043q][*Theoretical Study of the Structure and Properties of Polyynes and Monocyano- and Dicyanopolyynes: Predictions for Long Chain Compounds*]] |
- |  /Anthony Scemama/, /Patrick Chaquin/, /Marie-Claire Gazeau/, /Yves Bénilan/ |
- |  @@html:<a href="https://dx.doi.org/10.1021/jp013043q"><img src="https://img.shields.io/badge/doi-10.1021/jp013043q-blueviolet?style=social"></a>@@   |
-
-
--
- | [[https://hal.archives-ouvertes.fr/hal-01539078/file/Article-UV.pdf][*Semi-empirical calculation of electronic absorption wavelengths of polyynes, monocyano- and dicyanopolyynes. Predictions for long chain compounds and carbon allotrope carbyne*]] |
- |  /Anthony Scemama/, /Patrick Chaquin/, /Marie-Claire Gazeau/, /Yves Bénilan/ |
- |  @@html:<a href="https://dx.doi.org/10.1016/S0009-2614(02)00988-0"><img src="https://img.shields.io/badge/doi-10.1016/S0009--2614(02)00988--0-blueviolet?style=social"></a>@@   |
+#+BEGIN_EXPORT html
+  <div id="2002-div" />
+#+END_EXPORT 
 
 
 ** 2001
 
--
- | [[https://dx.doi.org/10.1016/S0273-1177(01)00059-X][*IR and UV spectroscopic data for polyynes: predictions for long carbon chain compounds in Titan's atmosphere*]] |
- |  /Véronique Vuitton/, /Anthony Scemama/, /Marie-Claire Gazeau/, /Patrick Chaquin/, /Yves Bénilan/ |
- |  @@html:<a href="https://dx.doi.org/10.1016/S0273-1177(01)00059-X"><img src="https://img.shields.io/badge/doi-10.1016/S0273--1177(01)00059--X-blueviolet?style=social"></a>@@   |
+#+BEGIN_EXPORT html
+  <div id="2001-div" />
+#+END_EXPORT 
+
 
 
