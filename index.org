@@ -25,7 +25,7 @@ table {
 scemama AT irsamc.ups-tlse.fr
 ORCID : [[https://orcid.org/0000-0003-4955-7136][0000-0003-4955-7136]]
 
-#+attr_html: :height 200px
+#+attr_html: :height 200px :border-radius 25%
 #+attr_html: :style margin:0px 0px 0px 20px;
 [[./images/PhotoScemama2019_3.jpg]]
 
@@ -164,13 +164,13 @@ div.revlist ol {
 -----
 * Publications
 
-#+BEGIN_EXPORT html
+#+BEGIN_EXPORT html 
 <div id="publications">
 Please wait...
 <script>
 
     window.onload = async function () {
-        var thisYear = 2020;
+        var thisYear = 2021;
 
         /* Get list of publication */
         pub = await fetch('https://api.archives-ouvertes.fr/search/?q=authId_i:(138649+OR+217193+OR+767210+OR+860806+OR+902463+OR+1023500)&indent=true&fl=citationRef_s,arxivId_s,files_s,title_s,s,authFullName_s,label_bibtex,doiId_s,publicationDateY_i,publicationDate_tdate&group=false&start=0&rows=10000&fq=docType_s:(ART+OR+COMM+OR+OUV+OR+COUV+OR+DOUV+OR+OTHER+OR+UNDEFINED+OR+REPORT+OR+THESE+OR+HDR)&sort=publicationDate_tdate%20desc').then(function (response) {
@@ -245,7 +245,7 @@ Please wait...
 
 
 #+begin_src python :exports none :results output raw
-for i in range(2020,2000,-1):
+for i in range(2021,2000,-1):
     print ( f"""** {i}
 
 #+BEGIN_EXPORT html
@@ -254,6 +254,14 @@ for i in range(2020,2000,-1):
 
 """)
 #+end_src
+
+#+RESULTS:
+** 2021
+
+#+BEGIN_EXPORT html
+  <div id="2021-div" />
+#+END_EXPORT
+
 
 ** 2020
 
