@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-12-03 Thu 09:53 -->
+<!-- 2020-12-14 Mon 18:46 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Anthony Scemama's web page</title>
@@ -40,7 +40,7 @@
   }
   pre.src {
     position: relative;
-    overflow: visible;
+    overflow: auto;
     padding-top: 1.2em;
   }
   pre.src:before {
@@ -161,6 +161,19 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -187,50 +200,26 @@
 <script type="text/javascript" src="src/lib/js/jquery.stickytableheaders.min.js"></script>
 <script type="text/javascript" src="src/readtheorg_theme/js/readtheorg.js"></script>
 <script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2019 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
 <!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
 </script>
 </head>
 <body>
@@ -239,31 +228,32 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org4d39bb0">Projects</a></li>
-<li><a href="#org098eec8">Software</a></li>
-<li><a href="#orgebcd04d">Oral presentations</a></li>
-<li><a href="#org0b678db">Publications</a>
+<li><a href="#orgd8d84a5">Projects</a></li>
+<li><a href="#org5b02d29">Software</a></li>
+<li><a href="#org180c06c">Oral presentations</a></li>
+<li><a href="#orgdb7e392">Publications</a>
 <ul>
-<li><a href="#orgbbf159c">2020</a></li>
-<li><a href="#org9bad706">2019</a></li>
-<li><a href="#org2fa104f">2018</a></li>
-<li><a href="#orgfe7cdec">2017</a></li>
-<li><a href="#orgf8728bd">2016</a></li>
-<li><a href="#org85831a2">2015</a></li>
-<li><a href="#orge8b9987">2014</a></li>
-<li><a href="#org1119b45">2013</a></li>
-<li><a href="#orgedc1ed4">2012</a></li>
-<li><a href="#orgb99d886">2011</a></li>
-<li><a href="#org026c204">2010</a></li>
-<li><a href="#org3e8498a">2009</a></li>
-<li><a href="#org5f2181f">2008</a></li>
-<li><a href="#org9b19ddf">2007</a></li>
-<li><a href="#org992fe3e">2006</a></li>
-<li><a href="#org0629686">2005</a></li>
-<li><a href="#org172feed">2004</a></li>
-<li><a href="#orge74aa75">2003</a></li>
-<li><a href="#org04dc51a">2002</a></li>
-<li><a href="#orga98b981">2001</a></li>
+<li><a href="#orgc286904">2021</a></li>
+<li><a href="#org01363a1">2020</a></li>
+<li><a href="#orgee36104">2019</a></li>
+<li><a href="#org80a2892">2018</a></li>
+<li><a href="#org7f4b576">2017</a></li>
+<li><a href="#org6ae2a18">2016</a></li>
+<li><a href="#org029a112">2015</a></li>
+<li><a href="#org82a4017">2014</a></li>
+<li><a href="#orgf019d63">2013</a></li>
+<li><a href="#org71eb649">2012</a></li>
+<li><a href="#org5017763">2011</a></li>
+<li><a href="#org730bb8c">2010</a></li>
+<li><a href="#org3fd6f95">2009</a></li>
+<li><a href="#org5d39397">2008</a></li>
+<li><a href="#org3b81004">2007</a></li>
+<li><a href="#orgc2a8f69">2006</a></li>
+<li><a href="#org2e0071c">2005</a></li>
+<li><a href="#orga642a1d">2004</a></li>
+<li><a href="#org0167fd4">2003</a></li>
+<li><a href="#orgbd81a27">2002</a></li>
+<li><a href="#org5d8396b">2001</a></li>
 </ul>
 </li>
 </ul>
@@ -292,8 +282,8 @@ ORCID : <a href="https://orcid.org/0000-0003-4955-7136">0000-0003-4955-7136</a><
 </p>
 
 
-<div class="figure">
-<p><img src="./images/PhotoScemama2019_3.jpg" alt="PhotoScemama2019_3.jpg" style="margin:0px 0px 0px 20px;" height="200px" /><br />
+<div id="orga74cd2d" class="figure">
+<p><img src="./images/PhotoScemama2019_3.jpg" alt="PhotoScemama2019_3.jpg" style="margin:0px 0px 0px 20px;" height="200px" border-radius="25%" /><br />
 </p>
 </div>
 
@@ -322,9 +312,9 @@ ORCID : <a href="https://orcid.org/0000-0003-4955-7136">0000-0003-4955-7136</a><
 
 
 <hr />
-<div id="outline-container-org4d39bb0" class="outline-2">
-<h2 id="org4d39bb0">Projects</h2>
-<div class="outline-text-2" id="text-org4d39bb0">
+<div id="outline-container-orgd8d84a5" class="outline-2">
+<h2 id="orgd8d84a5">Projects</h2>
+<div class="outline-text-2" id="text-orgd8d84a5">
 <ul class="org-ul">
 <li><a href="https://trex-coe.eu">TREX Center of Excellence</a><br /></li>
 <li><a href="https://lcpq.github.io/PTEROSOR">ERC PTEROSOR</a><br /></li>
@@ -334,9 +324,9 @@ ORCID : <a href="https://orcid.org/0000-0003-4955-7136">0000-0003-4955-7136</a><
 <hr />
 </div>
 </div>
-<div id="outline-container-org098eec8" class="outline-2">
-<h2 id="org098eec8">Software</h2>
-<div class="outline-text-2" id="text-org098eec8">
+<div id="outline-container-org5b02d29" class="outline-2">
+<h2 id="org5b02d29">Software</h2>
+<div class="outline-text-2" id="text-org5b02d29">
 <ul class="org-ul">
 <li><a href="https://quantumpackage.github.io/qp2">Quantum Package</a> : A programming environment for wave function methods.<br /></li>
 <li><a href="http://qmcchem.ups-tlse.fr">QMC=Chem</a> : Quantum Monte Carlo for Chemistry<br /></li>
@@ -361,10 +351,10 @@ div.revlist ol {
 </div>
 
 
-<div id="outline-container-orgebcd04d" class="outline-2">
-<h2 id="orgebcd04d">Oral presentations</h2>
-<div class="outline-text-2" id="text-orgebcd04d">
-<div class="revlist">
+<div id="outline-container-org180c06c" class="outline-2">
+<h2 id="org180c06c">Oral presentations</h2>
+<div class="outline-text-2" id="text-org180c06c">
+<div class="revlist" id="orgdb49e2e">
 <ol class="org-ol">
 <li><a href="http://irpf90.ups-tlse.fr/files/toulouse05.pdf">MCSCF en presence d'un facteur de corrélation de Jastrow</a><br />
 15/04/2005 IRSAMC, Toulouse<br /></li>
@@ -456,10 +446,15 @@ div.revlist ol {
 12/06/2019 Rencontres Prospectives RFCT 2019 : "Modélisations multi-échelle", Nantes<br /></li>
 <li><a href="http://irpf90.ups-tlse.fr/files/JPM80.pdf">Some applications of dressing to configuration interaction matrices</a><br />
 03/09/2019 Computation and understanding in molecular science, Toulouse.<br /></li>
-<li><a href="http://irpf90.ups-tlse.fr/files/JCAD2019AScemama.pdf">A quantum chemistry calculation distributed among computing facilities with Quantum Package</a><br />
-10/10/2019 Journées des Calculs et de données, Toulouse. <a href="https://prismes.univ-toulouse.fr/player.php?code=6E3Cefg2&amp;width=100%&amp;height=100%">Watch video</a><br /></li>
-<li><a href="http://irpf90.ups-tlse.fr/files/CECAM_TREX_2020.pdf">Software development strategy in the TREX Center of Excellence</a><br />
-18/06/2020 CECAM Workshop : <i>The importance of being H.P.C. Earnest</i>, online <a href="https://youtu.be/-scLUoHmFo4?t=3420">Watch video</a><br /></li>
+<li><a href="https://zenodo.org/record/4321326/files/JCAD2019AScemama.pdf?download=1">A quantum chemistry calculation distributed among computing facilities with Quantum Package</a><br />
+10/10/2019 Journées des Calculs et de données, Toulouse. <a href="https://prismes.univ-toulouse.fr/player.php?code=6E3Cefg2&amp;width=100%&amp;height=100%">Watch video</a><br />
+<a href="10.5281/zenodo.4321325">10.5281/zenodo.4321325</a><br /></li>
+<li><a href="https://zenodo.org/record/4321302/files/CECAM_TREX_2020.pdf?download=1">Software development strategy in the TREX Center of Excellence</a><br />
+18/06/2020 CECAM Workshop : <i>The importance of being H.P.C. Earnest</i>, online <a href="https://youtu.be/-scLUoHmFo4?t=3420">Watch video</a><br />
+<a href="10.5281/zenodo.4321301">10.5281/zenodo.4321301</a><br /></li>
+<li><a href="https://zenodo.org/record/4321272/files/cipsi_algorithms.pdf?download=1">Important aglorithms for CIPSI</a><br />
+14/12/2020 Special many-body discussion on zoom, online.<br />
+<a href="10.5281/zenodo.4321271">10.5281/zenodo.4321271</a><br /></li>
 </ol>
 
 </div>
@@ -468,15 +463,15 @@ div.revlist ol {
 <hr />
 </div>
 </div>
-<div id="outline-container-org0b678db" class="outline-2">
-<h2 id="org0b678db">Publications</h2>
-<div class="outline-text-2" id="text-org0b678db">
+<div id="outline-container-orgdb7e392" class="outline-2">
+<h2 id="orgdb7e392">Publications</h2>
+<div class="outline-text-2" id="text-orgdb7e392">
 <div id="publications">
 Please wait...
 <script>
 
     window.onload = async function () {
-        var thisYear = 2020;
+        var thisYear = 2021;
 
         /* Get list of publication */
         pub = await fetch('https://api.archives-ouvertes.fr/search/?q=authId_i:(138649+OR+217193+OR+767210+OR+860806+OR+902463+OR+1023500)&indent=true&fl=citationRef_s,arxivId_s,files_s,title_s,s,authFullName_s,label_bibtex,doiId_s,publicationDateY_i,publicationDate_tdate&group=false&start=0&rows=10000&fq=docType_s:(ART+OR+COMM+OR+OUV+OR+COUV+OR+DOUV+OR+OTHER+OR+UNDEFINED+OR+REPORT+OR+THESE+OR+HDR)&sort=publicationDate_tdate%20desc').then(function (response) {
@@ -550,161 +545,169 @@ Please wait...
 </div>
 
 
-<div id="outline-container-orgbbf159c" class="outline-3">
-<h3 id="orgbbf159c">2020</h3>
-<div class="outline-text-3" id="text-orgbbf159c">
+<div id="outline-container-orgc286904" class="outline-3">
+<h3 id="orgc286904">2021</h3>
+<div class="outline-text-3" id="text-orgc286904">
+<div id="2021-div" />
+</div>
+</div>
+
+
+<div id="outline-container-org01363a1" class="outline-3">
+<h3 id="org01363a1">2020</h3>
+<div class="outline-text-3" id="text-org01363a1">
 <div id="2020-div" />
 </div>
 </div>
 
 
-<div id="outline-container-org9bad706" class="outline-3">
-<h3 id="org9bad706">2019</h3>
-<div class="outline-text-3" id="text-org9bad706">
+<div id="outline-container-orgee36104" class="outline-3">
+<h3 id="orgee36104">2019</h3>
+<div class="outline-text-3" id="text-orgee36104">
 <div id="2019-div" />
 </div>
 </div>
 
 
-<div id="outline-container-org2fa104f" class="outline-3">
-<h3 id="org2fa104f">2018</h3>
-<div class="outline-text-3" id="text-org2fa104f">
+<div id="outline-container-org80a2892" class="outline-3">
+<h3 id="org80a2892">2018</h3>
+<div class="outline-text-3" id="text-org80a2892">
 <div id="2018-div" />
 </div>
 </div>
 
 
-<div id="outline-container-orgfe7cdec" class="outline-3">
-<h3 id="orgfe7cdec">2017</h3>
-<div class="outline-text-3" id="text-orgfe7cdec">
+<div id="outline-container-org7f4b576" class="outline-3">
+<h3 id="org7f4b576">2017</h3>
+<div class="outline-text-3" id="text-org7f4b576">
 <div id="2017-div" />
 </div>
 </div>
 
 
-<div id="outline-container-orgf8728bd" class="outline-3">
-<h3 id="orgf8728bd">2016</h3>
-<div class="outline-text-3" id="text-orgf8728bd">
+<div id="outline-container-org6ae2a18" class="outline-3">
+<h3 id="org6ae2a18">2016</h3>
+<div class="outline-text-3" id="text-org6ae2a18">
 <div id="2016-div" />
 </div>
 </div>
 
 
-<div id="outline-container-org85831a2" class="outline-3">
-<h3 id="org85831a2">2015</h3>
-<div class="outline-text-3" id="text-org85831a2">
+<div id="outline-container-org029a112" class="outline-3">
+<h3 id="org029a112">2015</h3>
+<div class="outline-text-3" id="text-org029a112">
 <div id="2015-div" />
 </div>
 </div>
 
 
-<div id="outline-container-orge8b9987" class="outline-3">
-<h3 id="orge8b9987">2014</h3>
-<div class="outline-text-3" id="text-orge8b9987">
+<div id="outline-container-org82a4017" class="outline-3">
+<h3 id="org82a4017">2014</h3>
+<div class="outline-text-3" id="text-org82a4017">
 <div id="2014-div" />
 </div>
 </div>
 
 
-<div id="outline-container-org1119b45" class="outline-3">
-<h3 id="org1119b45">2013</h3>
-<div class="outline-text-3" id="text-org1119b45">
+<div id="outline-container-orgf019d63" class="outline-3">
+<h3 id="orgf019d63">2013</h3>
+<div class="outline-text-3" id="text-orgf019d63">
 <div id="2013-div" />
 </div>
 </div>
 
 
-<div id="outline-container-orgedc1ed4" class="outline-3">
-<h3 id="orgedc1ed4">2012</h3>
-<div class="outline-text-3" id="text-orgedc1ed4">
+<div id="outline-container-org71eb649" class="outline-3">
+<h3 id="org71eb649">2012</h3>
+<div class="outline-text-3" id="text-org71eb649">
 <div id="2012-div" />
 </div>
 </div>
 
 
-<div id="outline-container-orgb99d886" class="outline-3">
-<h3 id="orgb99d886">2011</h3>
-<div class="outline-text-3" id="text-orgb99d886">
+<div id="outline-container-org5017763" class="outline-3">
+<h3 id="org5017763">2011</h3>
+<div class="outline-text-3" id="text-org5017763">
 <div id="2011-div" />
 </div>
 </div>
 
 
-<div id="outline-container-org026c204" class="outline-3">
-<h3 id="org026c204">2010</h3>
-<div class="outline-text-3" id="text-org026c204">
+<div id="outline-container-org730bb8c" class="outline-3">
+<h3 id="org730bb8c">2010</h3>
+<div class="outline-text-3" id="text-org730bb8c">
 <div id="2010-div" />
 </div>
 </div>
 
 
-<div id="outline-container-org3e8498a" class="outline-3">
-<h3 id="org3e8498a">2009</h3>
-<div class="outline-text-3" id="text-org3e8498a">
+<div id="outline-container-org3fd6f95" class="outline-3">
+<h3 id="org3fd6f95">2009</h3>
+<div class="outline-text-3" id="text-org3fd6f95">
 <div id="2009-div" />
 </div>
 </div>
 
 
-<div id="outline-container-org5f2181f" class="outline-3">
-<h3 id="org5f2181f">2008</h3>
-<div class="outline-text-3" id="text-org5f2181f">
+<div id="outline-container-org5d39397" class="outline-3">
+<h3 id="org5d39397">2008</h3>
+<div class="outline-text-3" id="text-org5d39397">
 <div id="2008-div" />
 </div>
 </div>
 
 
-<div id="outline-container-org9b19ddf" class="outline-3">
-<h3 id="org9b19ddf">2007</h3>
-<div class="outline-text-3" id="text-org9b19ddf">
+<div id="outline-container-org3b81004" class="outline-3">
+<h3 id="org3b81004">2007</h3>
+<div class="outline-text-3" id="text-org3b81004">
 <div id="2007-div" />
 </div>
 </div>
 
 
-<div id="outline-container-org992fe3e" class="outline-3">
-<h3 id="org992fe3e">2006</h3>
-<div class="outline-text-3" id="text-org992fe3e">
+<div id="outline-container-orgc2a8f69" class="outline-3">
+<h3 id="orgc2a8f69">2006</h3>
+<div class="outline-text-3" id="text-orgc2a8f69">
 <div id="2006-div" />
 </div>
 </div>
 
 
-<div id="outline-container-org0629686" class="outline-3">
-<h3 id="org0629686">2005</h3>
-<div class="outline-text-3" id="text-org0629686">
+<div id="outline-container-org2e0071c" class="outline-3">
+<h3 id="org2e0071c">2005</h3>
+<div class="outline-text-3" id="text-org2e0071c">
 <div id="2005-div" />
 </div>
 </div>
 
 
-<div id="outline-container-org172feed" class="outline-3">
-<h3 id="org172feed">2004</h3>
-<div class="outline-text-3" id="text-org172feed">
+<div id="outline-container-orga642a1d" class="outline-3">
+<h3 id="orga642a1d">2004</h3>
+<div class="outline-text-3" id="text-orga642a1d">
 <div id="2004-div" />
 </div>
 </div>
 
 
-<div id="outline-container-orge74aa75" class="outline-3">
-<h3 id="orge74aa75">2003</h3>
-<div class="outline-text-3" id="text-orge74aa75">
+<div id="outline-container-org0167fd4" class="outline-3">
+<h3 id="org0167fd4">2003</h3>
+<div class="outline-text-3" id="text-org0167fd4">
 <div id="2003-div" />
 </div>
 </div>
 
 
-<div id="outline-container-org04dc51a" class="outline-3">
-<h3 id="org04dc51a">2002</h3>
-<div class="outline-text-3" id="text-org04dc51a">
+<div id="outline-container-orgbd81a27" class="outline-3">
+<h3 id="orgbd81a27">2002</h3>
+<div class="outline-text-3" id="text-orgbd81a27">
 <div id="2002-div" />
 </div>
 </div>
 
 
-<div id="outline-container-orga98b981" class="outline-3">
-<h3 id="orga98b981">2001</h3>
-<div class="outline-text-3" id="text-orga98b981">
+<div id="outline-container-org5d8396b" class="outline-3">
+<h3 id="org5d8396b">2001</h3>
+<div class="outline-text-3" id="text-org5d8396b">
 <div id="2001-div" />
 </div>
 </div>
@@ -712,8 +715,8 @@ Please wait...
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Anthony Scemama</p>
-<p class="date">Created: 2020-12-03 Thu 09:53</p>
-<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2020-12-14 Mon 18:46</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
 </html>

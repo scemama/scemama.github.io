@@ -154,10 +154,17 @@ div.revlist ol {
     12/06/2019 Rencontres Prospectives RFCT 2019 : "Modélisations multi-échelle", Nantes
 45. [[http://irpf90.ups-tlse.fr/files/JPM80.pdf][Some applications of dressing to configuration interaction matrices]]
     03/09/2019 Computation and understanding in molecular science, Toulouse.
-46. [[http://irpf90.ups-tlse.fr/files/JCAD2019AScemama.pdf][A quantum chemistry calculation distributed among computing facilities with Quantum Package]]
+46. [[https://zenodo.org/record/4321326/files/JCAD2019AScemama.pdf?download=1][A quantum chemistry calculation distributed among computing facilities with Quantum Package]]
     10/10/2019 Journées des Calculs et de données, Toulouse. [[https://prismes.univ-toulouse.fr/player.php?code=6E3Cefg2&width=100%&height=100%][Watch video]]
-47. [[http://irpf90.ups-tlse.fr/files/CECAM_TREX_2020.pdf][Software development strategy in the TREX Center of Excellence]]
+    doi:10.5281/zenodo.4321325
+47. [[https://zenodo.org/record/4321302/files/CECAM_TREX_2020.pdf?download=1][Software development strategy in the TREX Center of Excellence]]
     18/06/2020 CECAM Workshop : /The importance of being H.P.C. Earnest/, online [[https://youtu.be/-scLUoHmFo4?t=3420][Watch video]]
+    doi:10.5281/zenodo.4321301
+48. [[https://zenodo.org/record/4321272/files/cipsi_algorithms.pdf?download=1][Important aglorithms for CIPSI]]
+    14/12/2020 Special many-body discussion on zoom, online.
+    doi:10.5281/zenodo.4321271
+
+
 #+END_revlist
 
 
