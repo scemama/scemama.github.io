@@ -50,7 +50,6 @@ ORCID : [[https://orcid.org/0000-0003-4955-7136][0000-0003-4955-7136]]
     - [[http://gitlab.com/scemama/EZFIO][EZFIO]] : Easy Fortran I/O library generator
     - [[http://github.com/scemama/f77_zmq][F77_ZMQ]] : Fortran77 binding for the ZeroMQ communication library.
 
-      #+begin_src :exports none
 @@html:
 <style>
 div.revlist ol {
@@ -59,7 +58,7 @@ div.revlist ol {
 }
 </style>
 @@
-      #+end_src :exports none
+
 -----
 
 
