@@ -168,7 +168,7 @@ div.revlist ol {
   -----
 * Publications
 
-#+BEGIN_EXPORT html 
+#+BEGIN_EXPORT html
 <div id="publications">
 Please wait...
 <script>
@@ -202,11 +202,13 @@ Please wait...
             // Some conference Presentations are UNDEFINED and not on ArXiv
             if ((pub[i].docType_s == "UNDEFINED") && !pub[i].arxivId_s)
                 continue;
+            if ((pub[i].docType_s == "COMM") && !pub[i].arxivId_s)
+                continue;
 
             // Bad IDs to skip
             if (pub[i].arxivId_s == "physics/0610132")
                 continue;
-                
+
             title = pub[i].title_s;
             arXivId  = "";
             year = pub[i].publicationDateY_i;
