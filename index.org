@@ -44,7 +44,7 @@ ORCID : [[https://orcid.org/0000-0003-4955-7136][0000-0003-4955-7136]]
 * Software
 
     - [[https://quantumpackage.github.io/qp2][Quantum Package]] : A programming environment for wave function methods.
-    - [[http://qmcchem.ups-tlse.fr][QMC=Chem]] : Quantum Monte Carlo for Chemistry
+    - [[https://gitlab.com/scemama/qmcchem][QMC=Chem]] : Quantum Monte Carlo for Chemistry
     - [[https://gitlab.com/scemama/QCaml][QCaml]] : Quantum chemistry with OCaml
     - [[http://irpf90.ups-tlse.fr][IRPF90]] : Fortran pre-processor helping the development of large scientific codes
     - [[http://gitlab.com/scemama/EZFIO][EZFIO]] : Easy Fortran I/O library generator
