@@ -64,7 +64,7 @@ div.revlist ol {
 * Oral presentations
 
   - [[https://zenodo.org/record/4696165/files/marseille.pdf?download=1][Guidelines for improving the performance of computer programs]]
-    16/04/2020, Institut Chimie Radicalaire & Centre de Calcul Intensif Aix-Marseille, online
+    16/04/2021, Institut Chimie Radicalaire & Centre de Calcul Intensif Aix-Marseille, online
     doi:10.5281/zenodo.4696165
   - [[https://zenodo.org/record/4321272/files/cipsi_algorithms.pdf][Important aglorithms for CIPSI]]
     14/12/2020 Special many-body discussion on zoom, online.
