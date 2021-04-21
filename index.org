@@ -63,6 +63,9 @@ div.revlist ol {
 
 * Oral presentations
 
+  - [[https://zenodo.org/record/4696165/files/marseille.pdf?download=1][Guidelines for improving the performance of computer programs]]
+    16/04/2020, Institut Chimie Radicalaire & Centre de Calcul Intensif Aix-Marseille, online
+    doi:10.5281/zenodo.4696165
   - [[https://zenodo.org/record/4321272/files/cipsi_algorithms.pdf][Important aglorithms for CIPSI]]
     14/12/2020 Special many-body discussion on zoom, online.
     [[https://dx.doi.org/10.5281/zenodo.4321271][doi:10.5281/zenodo.4321271]]
@@ -124,7 +127,7 @@ div.revlist ol {
     25/6/2013 CECAM deMon Workshop, LCC, Toulouse
   - [[http://irpf90.ups-tlse.fr/files/mds.pdf][Software optimization for petaflops/s scale Quantum Monte Carlo simulations]]
     4/12/2012 Maison de la simulation, Saclay
-  - [[http://irpf90.ups-tlse.fr/files/equipatmeso.pdf][Implémentation de simulations QMC  massivement parallèles pourla chimie: Du laboratoire aux calculateurs pétaflopiques en passant par les mésocentres]]
+  - [[http://irpf90.ups-tlse.fr/files/equipatmeso.pdf][Implémentation de simulations QMC  massivement parallèles pour la chimie: Du laboratoire aux calculateurs pétaflopiques en passant par les mésocentres]]
     18/10/2012 Journée scientifique Equip@Meso, Strasbourg, [[http://canalc2.u-strasbg.fr/video.asp?idvideo=11473][Watch video]]
   - [[http://irpf90.ups-tlse.fr/files/kobe_talk.pdf][QMC=Chem: a quantum Monte Carlo program for large-scale simulations in chemistry at the petascale level and beyond]]
     18/07/2012  10th International Meeting on High-Performance Computing for Computational Science (VECPAR 2012), Kobe (Japan)
