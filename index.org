@@ -63,6 +63,8 @@ div.revlist ol {
 
 * Oral presentations
 
+  - [[https://zenodo.org/record/4708403/files/scemama.pdf][Library development within TREX]]
+    21/04/2021, A. Grüneis group meeting, online.
   - [[https://zenodo.org/record/4696165/files/marseille.pdf?download=1][Guidelines for improving the performance of computer programs]]
     16/04/2021, Institut Chimie Radicalaire & Centre de Calcul Intensif Aix-Marseille, online
     doi:10.5281/zenodo.4696165
