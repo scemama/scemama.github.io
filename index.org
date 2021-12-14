@@ -181,7 +181,7 @@ Please wait...
 <script>
 
     window.onload = async function () {
-        var thisYear = 2021;
+        var thisYear = 2022;
 
         /* Get list of publication */
         pub = await fetch('https://api.archives-ouvertes.fr/search/?q=authId_i:(138649+OR+217193+OR+767210+OR+860806+OR+902463+OR+1023500)&indent=true&fl=citationRef_s,arxivId_s,files_s,title_s,s,authFullName_s,doiId_s,uri_s,fileMainAnnex_s,docType_s,publicationDateY_i&group=false&start=0&rows=10000&fq=docType_s:(ART+OR+COMM+OR+OUV+OR+COUV+OR+DOUV+OR+OTHER+OR+UNDEFINED+OR+REPORT+OR+THESE+OR+HDR)&sort=publicationDate_tdate%20desc').then(function (response) {
@@ -268,7 +268,7 @@ Please wait...
 
 
 #+begin_src python :exports none :results raw output
-for i in range(2021,2000,-1):
+for i in range(2022,2000,-1):
     print ( f"""** {i}
 
 #+BEGIN_EXPORT html
@@ -279,6 +279,307 @@ for i in range(2021,2000,-1):
 #+end_src
 
 #+RESULTS:
+** 2022
+
+#+BEGIN_EXPORT html
+  <div id="2022-div" />
+#+END_EXPORT
+
+
+** 2021
+
+#+BEGIN_EXPORT html
+  <div id="2021-div" />
+#+END_EXPORT
+
+
+** 2020
+
+#+BEGIN_EXPORT html
+  <div id="2020-div" />
+#+END_EXPORT
+
+
+** 2019
+
+#+BEGIN_EXPORT html
+  <div id="2019-div" />
+#+END_EXPORT
+
+
+** 2018
+
+#+BEGIN_EXPORT html
+  <div id="2018-div" />
+#+END_EXPORT
+
+
+** 2017
+
+#+BEGIN_EXPORT html
+  <div id="2017-div" />
+#+END_EXPORT
+
+
+** 2016
+
+#+BEGIN_EXPORT html
+  <div id="2016-div" />
+#+END_EXPORT
+
+
+** 2015
+
+#+BEGIN_EXPORT html
+  <div id="2015-div" />
+#+END_EXPORT
+
+
+** 2014
+
+#+BEGIN_EXPORT html
+  <div id="2014-div" />
+#+END_EXPORT
+
+
+** 2013
+
+#+BEGIN_EXPORT html
+  <div id="2013-div" />
+#+END_EXPORT
+
+
+** 2012
+
+#+BEGIN_EXPORT html
+  <div id="2012-div" />
+#+END_EXPORT
+
+
+** 2011
+
+#+BEGIN_EXPORT html
+  <div id="2011-div" />
+#+END_EXPORT
+
+
+** 2010
+
+#+BEGIN_EXPORT html
+  <div id="2010-div" />
+#+END_EXPORT
+
+
+** 2009
+
+#+BEGIN_EXPORT html
+  <div id="2009-div" />
+#+END_EXPORT
+
+
+** 2008
+
+#+BEGIN_EXPORT html
+  <div id="2008-div" />
+#+END_EXPORT
+
+
+** 2007
+
+#+BEGIN_EXPORT html
+  <div id="2007-div" />
+#+END_EXPORT
+
+
+** 2006
+
+#+BEGIN_EXPORT html
+  <div id="2006-div" />
+#+END_EXPORT
+
+
+** 2005
+
+#+BEGIN_EXPORT html
+  <div id="2005-div" />
+#+END_EXPORT
+
+
+** 2004
+
+#+BEGIN_EXPORT html
+  <div id="2004-div" />
+#+END_EXPORT
+
+
+** 2003
+
+#+BEGIN_EXPORT html
+  <div id="2003-div" />
+#+END_EXPORT
+
+
+** 2002
+
+#+BEGIN_EXPORT html
+  <div id="2002-div" />
+#+END_EXPORT
+
+
+** 2001
+
+#+BEGIN_EXPORT html
+  <div id="2001-div" />
+#+END_EXPORT
+
+
+** 2021
+
+#+BEGIN_EXPORT html
+  <div id="2021-div" />
+#+END_EXPORT
+
+
+** 2020
+
+#+BEGIN_EXPORT html
+  <div id="2020-div" />
+#+END_EXPORT
+
+
+** 2019
+
+#+BEGIN_EXPORT html
+  <div id="2019-div" />
+#+END_EXPORT
+
+
+** 2018
+
+#+BEGIN_EXPORT html
+  <div id="2018-div" />
+#+END_EXPORT
+
+
+** 2017
+
+#+BEGIN_EXPORT html
+  <div id="2017-div" />
+#+END_EXPORT
+
+
+** 2016
+
+#+BEGIN_EXPORT html
+  <div id="2016-div" />
+#+END_EXPORT
+
+
+** 2015
+
+#+BEGIN_EXPORT html
+  <div id="2015-div" />
+#+END_EXPORT
+
+
+** 2014
+
+#+BEGIN_EXPORT html
+  <div id="2014-div" />
+#+END_EXPORT
+
+
+** 2013
+
+#+BEGIN_EXPORT html
+  <div id="2013-div" />
+#+END_EXPORT
+
+
+** 2012
+
+#+BEGIN_EXPORT html
+  <div id="2012-div" />
+#+END_EXPORT
+
+
+** 2011
+
+#+BEGIN_EXPORT html
+  <div id="2011-div" />
+#+END_EXPORT
+
+
+** 2010
+
+#+BEGIN_EXPORT html
+  <div id="2010-div" />
+#+END_EXPORT
+
+
+** 2009
+
+#+BEGIN_EXPORT html
+  <div id="2009-div" />
+#+END_EXPORT
+
+
+** 2008
+
+#+BEGIN_EXPORT html
+  <div id="2008-div" />
+#+END_EXPORT
+
+
+** 2007
+
+#+BEGIN_EXPORT html
+  <div id="2007-div" />
+#+END_EXPORT
+
+
+** 2006
+
+#+BEGIN_EXPORT html
+  <div id="2006-div" />
+#+END_EXPORT
+
+
+** 2005
+
+#+BEGIN_EXPORT html
+  <div id="2005-div" />
+#+END_EXPORT
+
+
+** 2004
+
+#+BEGIN_EXPORT html
+  <div id="2004-div" />
+#+END_EXPORT
+
+
+** 2003
+
+#+BEGIN_EXPORT html
+  <div id="2003-div" />
+#+END_EXPORT
+
+
+** 2002
+
+#+BEGIN_EXPORT html
+  <div id="2002-div" />
+#+END_EXPORT
+
+
+** 2001
+
+#+BEGIN_EXPORT html
+  <div id="2001-div" />
+#+END_EXPORT
+
+
 ** 2021
 
 #+BEGIN_EXPORT html
