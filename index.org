@@ -63,6 +63,8 @@ div.revlist ol {
 
 * Oral presentations
 
+  - [[https://zenodo.org/record/5792161/files/scemama.pdf][Diffusion Monte Carlo with range-separated DFT/CIPSI trial wave functions]]
+    19/12/2021, Pacifichem 2021, online.
   - [[https://zenodo.org/record/5061984/files/trex_isc.pdf][TREX: an innovative view of HPC usage applied to QMC simulations]]
     2/07/2021, ISC2021 virtual PRACE booth, online.
   - [[https://zenodo.org/record/4708403/files/scemama.pdf][Library development within TREX]]
