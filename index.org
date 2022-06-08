@@ -64,6 +64,7 @@ div.revlist ol {
 -----
 
 * Oral presentations
+  # 54 report 2022
 
   - [[https://zenodo.org/record/6624127/files/molcas2022.pdf?download=1][The TREXIO file format and library]]
     8/06/2022, 10th OpenMolcas Developers' Workshop, online.
@@ -204,6 +205,8 @@ Please wait...
         for (year = 2001 ; year <= thisYear ; year++) {
             listContainer = document.getElementById(year+'-div')
             listContainer.className = "outline-text-2";
+// Activate to count. 83 in June 2022
+//            listElement = document.createElement('ol');
             listElement = document.createElement('ul');
             listElement.id = year+'-ol';
             listElement.className = "org-ol";
