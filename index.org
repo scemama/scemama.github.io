@@ -43,6 +43,8 @@ ORCID : [[https://orcid.org/0000-0003-4955-7136][0000-0003-4955-7136]]
 -----
 * Software
 
+    - [[https://github.com/Trex-CoE/qmckl][QMCkl]] : Quantum Monte Carlo kernel library
+    - [[https://github.com/Trex-CoE/trexio][TREXIO]] : TREX Input/Output library and format
     - [[https://quantumpackage.github.io/qp2][Quantum Package]] : A programming environment for wave function methods.
     - [[https://gitlab.com/scemama/qmcchem][QMC=Chem]] : Quantum Monte Carlo for Chemistry
     - [[https://gitlab.com/scemama/QCaml][QCaml]] : Quantum chemistry with OCaml
@@ -63,11 +65,13 @@ div.revlist ol {
 
 * Oral presentations
 
+  - [[https://zenodo.org/record/6624127/files/molcas2022.pdf?download=1][The TREXIO file format and library]]
+    8/06/2022, 10th OpenMolcas Developers' Workshop, online.
   - [[https://zenodo.org/record/5792161/files/scemama.pdf][Diffusion Monte Carlo with range-separated DFT/CIPSI trial wave functions]]
     19/12/2021, Pacifichem 2021, online.
   - [[http://irpf90.ups-tlse.fr/files/bordeaux2021.pdf][Libraries developed in the TREX CoE]]
     20/10/2021, INRIA Bordeaux.
-  - [[https://zenodo.org/record/5061984/files/trex_isc.pdf][TREX: an innovative view of HPC usage applied to QMC simulations]]
+  - [[https://zenodo.org/record/5061984/files/trex_isc.pdf?download=1][TREX: an innovative view of HPC usage applied to QMC simulations]]
     2/07/2021, ISC2021 virtual PRACE booth, online.
   - [[https://zenodo.org/record/4708403/files/scemama.pdf][Library development within TREX]]
     21/04/2021, A. Grüneis group meeting, online.
