@@ -19,7 +19,7 @@ table {
 *Anthony Scemama*
 /Ingénieur de Recherche CNRS/
 [[https://www.lcpq.ups-tlse.fr][Laboratoire de Chimie et Physique Quantiques]]
-[[https://www.irsamc.ups-tlse.fr][IRSAMC]], Université Paul Sabatier Toulouse III
+[[https://www.irsamc.ups-tlse.fr][Fermi]], Université Paul Sabatier Toulouse III
 [[https://goo.gl/maps/VgrxsMkHd8FWGYxY6][118, route de Narbonne]]
 31062 Toulouse Cedex 4
 scemama AT irsamc.ups-tlse.fr
@@ -29,8 +29,7 @@ ORCID : [[https://orcid.org/0000-0003-4955-7136][0000-0003-4955-7136]]
 #+attr_html: :style margin:0px 0px 0px 20px;
 [[./images/Scemama_2022.jpg]]
 
-| [[http://twitter.com/scemama666][Twitter]] | [[https://github.com/scemama][GitHub]] | [[https://gitlab.com/scemama][GitLab]] | [[https://www.researchgate.net/profile/Anthony_Scemama>`__         ][ResearchGate]] |
-
+| [[https://github.com/scemama][GitHub]] | [[https://gitlab.com/scemama][GitLab]] | [[https://www.researchgate.net/profile/Anthony_Scemama>`__][ResearchGate]] | [[http://arxiv.org/a/scemama_a_1][ArXiv]]
 
 
 -----
