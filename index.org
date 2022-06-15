@@ -193,7 +193,7 @@ Please wait...
         var thisYear = 2022;
 
         /* Get list of publication */
-        pub = await fetch('https://api.archives-ouvertes.fr/search/?q=authId_i:(138649+OR+217193+OR+767210+OR+860806+OR+902463+OR+1023500)&indent=true&fl=citationRef_s,arxivId_s,files_s,title_s,s,authFullName_s,doiId_s,uri_s,fileMainAnnex_s,docType_s,publicationDateY_i&group=false&start=0&rows=10000&fq=docType_s:(ART+OR+COMM+OR+OUV+OR+COUV+OR+DOUV+OR+OTHER+OR+UNDEFINED+OR+REPORT+OR+THESE+OR+HDR)&sort=publicationDate_tdate%20desc').then(function (response) {
+        pub = await fetch('https://api.archives-ouvertes.fr/search/?q=authIdHal_s:anthony-scemama&indent=true&fl=citationRef_s,arxivId_s,files_s,title_s,s,authFullName_s,doiId_s,uri_s,fileMainAnnex_s,docType_s,publicationDateY_i&group=false&start=0&rows=10000&fq=docType_s:(ART+OR+COMM+OR+OUV+OR+COUV+OR+DOUV+OR+OTHER+OR+UNDEFINED+OR+REPORT+OR+THESE+OR+HDR)&sort=publicationDate_tdate%20desc').then(function (response) {
             return response.json();
         }).then(function (response) {
             return response.response.docs;
