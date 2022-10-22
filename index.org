@@ -25,11 +25,21 @@ table {
 scemama AT irsamc.ups-tlse.fr
 ORCID : [[https://orcid.org/0000-0003-4955-7136][0000-0003-4955-7136]]
 
-#+attr_html: :height 200px :border-radius 25%
-#+attr_html: :style margin:0px 0px 0px 20px;
-[[./images/Scemama_2022.jpg]]
+# attr_html: :height 200px :border-radius 25%
+# attr_html: :style margin:0px 0px 0px 20px;
+# [[./images/Scemama_2022.jpg]]
 
-| [[https://github.com/scemama][GitHub]] | [[https://gitlab.com/scemama][GitLab]] | [[https://www.researchgate.net/profile/Anthony_Scemama>`__][ResearchGate]] | [[http://arxiv.org/a/scemama_a_1][ArXiv]]
+@@html:
+<a href="https://www.fsf.org/fb">
+<img src="images/Scemama_2022.jpg" width="180px"
+border-radius="25%" style="margin:2px 2px 2px 20px"/>
+<img src="https://static.fsf.org/nosvn/no-facebook-me.png"
+alt="Not f'd — you won't find me on Facebook" width="180px"
+border-radius="25%" style="margin:2px 2px 2px 20px"/> </a>
+@@
+
+
+| [[https://github.com/scemama][GitHub]] | [[https://gitlab.com/scemama][GitLab]] | [[https://www.researchgate.net/profile/Anthony_Scemama>`__][ResearchGate]] | [[http://arxiv.org/a/scemama_a_1][ArXiv]] |
 
 
 -----
