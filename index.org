@@ -75,6 +75,8 @@ div.revlist ol {
 * Oral presentations
   # 54 report 2022
 
+  - [[http://irpf90.ups-tlse.fr/files/ocaml_meetup_2023.pdf][Utilisation d'OCaml dans le contexte du HPC]]
+    17/01/2023, 2nd OCaml Meetup, Toulouse.
   - [[https://zenodo.org/record/6624127/files/molcas2022.pdf?download=1][The TREXIO file format and library]]
     8/06/2022, 10th OpenMolcas Developers' Workshop, online. [[https://youtu.be/mvNREhW22og][Watch video]]
   - [[https://zenodo.org/record/5792161/files/scemama.pdf][Diffusion Monte Carlo with range-separated DFT/CIPSI trial wave functions]]
