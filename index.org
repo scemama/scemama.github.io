@@ -79,26 +79,26 @@ div.revlist ol {
     27/06/2023, 3rd OCaml Meetup, Toulouse.
   - [[https://zenodo.org/record/7804737/preview/workshop_erc_2023.pdf][The TREXIO file format and library]]
     5/04/2023, Emerging excited-state methods in electronic structure, Toulouse.
-    [[doi:10.5281/zenodo.7804737]]
+    [[https://dx.doi.org/10.5281/zenodo.7804737][doi:10.5281/zenodo.7804737]]
   - [[http://irpf90.ups-tlse.fr/files/ocaml_meetup_2023.pdf][Utilisation d'OCaml dans le contexte du HPC]]
     17/01/2023, 2nd OCaml Meetup, Toulouse.
   - [[https://zenodo.org/record/6624127/preview/molcas2022.pdf][The TREXIO file format and library]]
     8/06/2022, 10th OpenMolcas Developers' Workshop, online. [[https://youtu.be/mvNREhW22og][Watch video]]
-    doi:10.5281/zenodo.6624127
+    [[https://dx.doi.org/10.5281/zenodo.6624127][doi:10.5281/zenodo.6624127]]
   - [[https://zenodo.org/record/5792161/preview/scemama.pdf][Diffusion Monte Carlo with range-separated DFT/CIPSI trial wave functions]]
     19/12/2021, Pacifichem 2021, online.
-    doi:10.5281/zenodo.5792161
+    [[https://dx.doi.org/10.5281/zenodo.5792161][doi:10.5281/zenodo.5792161]]
   - [[http://irpf90.ups-tlse.fr/files/bordeaux2021.pdf][Libraries developed in the TREX CoE]]
     20/10/2021, INRIA Bordeaux.
   - [[https://zenodo.org/record/5061984/preview/trex_isc.pdf][TREX: an innovative view of HPC usage applied to QMC simulations]]
     2/07/2021, ISC2021 virtual PRACE booth, online.
-    doi:10.5281/zenodo.5061984
+    [[https://dx.doi.org/10.5281/zenodo.5061984][doi:10.5281/zenodo.5061984]]
   - [[https://zenodo.org/record/4708403/preview/scemama.pdf][Library development within TREX]]
     21/04/2021, A. Grüneis group meeting, online.
-    doi:10.5281/zenodo.4708403
+    [[https://dx.doi.org/10.5281/zenodo.4708403][doi:10.5281/zenodo.4708403]]
   - [[https://zenodo.org/record/4696165/preview/marseille.pdf][Guidelines for improving the performance of computer programs]]
     16/04/2021, Institut Chimie Radicalaire & Centre de Calcul Intensif Aix-Marseille, online
-    doi:10.5281/zenodo.4696165
+    [[https://dx.doi.org/10.5281/zenodo.4696165][doi:10.5281/zenodo.4696165]]
   - [[https://zenodo.org/record/4321272/preview/cipsi_algorithms.pdf][Important aglorithms for CIPSI]]
     14/12/2020 Special many-body discussion on zoom, online.
     [[https://dx.doi.org/10.5281/zenodo.4321271][doi:10.5281/zenodo.4321272]]
