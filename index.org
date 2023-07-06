@@ -73,8 +73,10 @@ div.revlist ol {
 -----
 
 * Oral presentations
-  # 54 report 2022
+  # 56 report 2023
 
+  - [[https://zenodo.org/record/8119287/preview/qcaml.pdf][QCaml: Chimie quantique avec OCaml]]
+    27/06/2023, 3rd OCaml Meetup, Toulouse.
   - [[https://zenodo.org/record/7804737/preview/workshop_erc_2023.pdf][The TREXIO file format and library]]
     5/04/2023, Emerging excited-state methods in electronic structure, Toulouse.
     [[doi:10.5281/zenodo.7804737]]
@@ -223,9 +225,9 @@ Please wait...
         for (year = 2001 ; year <= thisYear ; year++) {
             listContainer = document.getElementById(year+'-div')
             listContainer.className = "outline-text-2";
-// Activate to count. 83 in June 2022
-//            listElement = document.createElement('ol');
             listElement = document.createElement('ul');
+// Activate to count. 90 in June 2023
+//          listElement = document.createElement('ol');
             listElement.id = year+'-ol';
             listElement.className = "org-ol";
             listContainer.appendChild(listElement);
