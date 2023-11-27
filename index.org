@@ -276,7 +276,9 @@ Please wait...
                 + "<div>" + authors + "</div>"
                 + "<div><p>" + citationRef
                 + arXivId + "</div>";
-            listElement.appendChild(listItem);
+            if (listElement != null) {
+                listElement.appendChild(listItem);
+            }
 
         }
         var start = 0;
@@ -299,7 +301,7 @@ Please wait...
 
 
 #+begin_src python :exports none :results raw output
-for i in range(2024,2000,-1):
+for i in range(2023,2000,-1):
     print ( f"""** {i}
 
 #+BEGIN_EXPORT html
