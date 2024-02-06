@@ -75,6 +75,9 @@ div.revlist ol {
 * Oral presentations
   # 56 report 2023
 
+  - [[https://zenodo.org/records/10622933/preview/scemama.pdf][QMCkl: A Unified Approach to Accelerating Quantum Monte Carlo Codes]]
+    05/02/2024, /Bridging Quantum Monte Carlo and High-Performance Simulations/, Esch-sur-Alzette.
+    [[doi:10.5281/zenodo.10622933]]
   - [[https://zenodo.org/record/8119287/preview/qcaml.pdf][QCaml: Chimie quantique avec OCaml]]
     27/06/2023, 3rd OCaml Meetup, Toulouse.
   - [[https://zenodo.org/record/7804737/preview/workshop_erc_2023.pdf][The TREXIO file format and library]]
