@@ -31,7 +31,7 @@ ORCID : [[https://orcid.org/0000-0003-4955-7136][0000-0003-4955-7136]]
 
 @@html:
 <a href="https://www.fsf.org/fb">
-<img src="images/Scemama_2022.png" width="180px"
+<img src="images/scemama_2024.jpg" width="180px"
 border-radius="25%" style="margin:2px 2px 2px 20px"/>
 <img src="https://static.fsf.org/nosvn/no-facebook-me.png"
 alt="Not f'd — you won't find me on Facebook" width="180px"
