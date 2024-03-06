@@ -27,7 +27,7 @@ ORCID : [[https://orcid.org/0000-0003-4955-7136][0000-0003-4955-7136]]
 
 # attr_html: :height 200px :border-radius 25%
 # attr_html: :style margin:0px 0px 0px 20px;
-# [[./images/Scemama_2022.png]]
+# [[./images/scemama_2024.jpg]]
 
 @@html:
 <a href="https://www.fsf.org/fb">
