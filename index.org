@@ -228,7 +228,7 @@ Please wait...
         /* Display list of publications */
         var count = [];
         for (year = 2001 ; year <= thisYear ; year++) {
-            listContainer = document.getElementById(year+'-div')
+            listContainer = document.getElementById(year+'-div');
             listContainer.className = "outline-text-2";
             listElement = document.createElement('ul');
 // Activate to count. 97 in May  2024
