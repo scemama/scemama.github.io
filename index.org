@@ -71,7 +71,8 @@ div.revlist ol {
 @@
 
 -----
-
+* Teaching
+  [[./teaching/index.html][Visit this page]]
 * Oral presentations
   # 56 report 2023
 

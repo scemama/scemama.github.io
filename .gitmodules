@@ -1,3 +1,6 @@
 [submodule "org-html-themes"]
 	path = org-html-themes
 	url = https://github.com/fniessen/org-html-themes.git
+[submodule "teaching"]
+	path = teaching
+	url = https://github.com/scemama/teaching.git
