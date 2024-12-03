@@ -76,6 +76,8 @@ div.revlist ol {
 * Oral presentations
   # 56 report 2023
 
+  - [[https://hal.science/hal-04815715v1/file/scemama.pdf][Developing libraries to increase performance, interoperability and reproducibility]]
+    29/11/2024, /Theory Days/, Toulouse.
   - [[https://hal.science/hal-04728651v1/file/jtms_scemama.pdf][Selected configuration interaction using a transcorrelated Hamiltonian]]
     09/10/2024, /Journées Théorie, Modélisation et Simulations - JTMS 2024/, Toulouse.
   - [[https://zenodo.org/records/10622933/preview/scemama.pdf][QMCkl: A Unified Approach to Accelerating Quantum Monte Carlo Codes]]
