@@ -48,6 +48,8 @@ border-radius="25%" style="margin:2px 2px 2px 20px"/> </a>
     - [[https://trex-coe.eu][TREX Center of Excellence]]
     - [[https://lcpq.github.io/PTEROSOR][ERC PTEROSOR]]
 
+    If you need to write a data management plan (DMP), you can use
+    this one as an example: https://github.com/scemama/dmp-template.git
 
 -----
 * Software
