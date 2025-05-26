@@ -76,7 +76,7 @@ div.revlist ol {
 * Teaching
   [[./teaching/index.html][Visit this page]]
 * Oral presentations
-  # 56 report 2023
+  # 60 report 2025
 
   - [[https://hal.science/hal-04815715v1/file/scemama.pdf][Developing libraries to increase performance, interoperability and reproducibility]]
     29/11/2024, /Theory Days/, Toulouse.
@@ -236,8 +236,8 @@ Please wait...
             listContainer = document.getElementById(year+'-div');
             listContainer.className = "outline-text-2";
             listElement = document.createElement('ul');
-// Activate to count. 97 in May  2024
-//          listElement = document.createElement('ol');
+// Activate to count. Display 105 in May  2025 -> 96 in report
+//            listElement = document.createElement('ol');
             listElement.id = year+'-ol';
             listElement.className = "org-ol";
             listContainer.appendChild(listElement);
