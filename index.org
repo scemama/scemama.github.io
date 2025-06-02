@@ -236,7 +236,7 @@ Please wait...
             listContainer = document.getElementById(year+'-div');
             listContainer.className = "outline-text-2";
             listElement = document.createElement('ul');
-// Activate to count. Display 105 in May  2025 -> 96 in report
+// Activate to count. Display 105 in May  2025 -> 94+2 in report
 //            listElement = document.createElement('ol');
             listElement.id = year+'-ol';
             listElement.className = "org-ol";
