@@ -25,18 +25,19 @@ table {
 scemama AT irsamc.ups-tlse.fr
 ORCID : [[https://orcid.org/0000-0003-4955-7136][0000-0003-4955-7136]]
 
+@@html:
+<a href="https://www.fsf.org/fb">
+<img src="images/Anthony_AI_2025.jpg" width="256px"
+border-radius="25%" style="margin:2px 2px 2px 20px"/>
+</a>
+@@
 # attr_html: :height 200px :border-radius 25%
 # attr_html: :style margin:0px 0px 0px 20px;
 # [[./images/scemama_2024.jpg]]
 
-@@html:
-<a href="https://www.fsf.org/fb">
-<img src="images/scemama_2024.jpg" width="180px"
-border-radius="25%" style="margin:2px 2px 2px 20px"/>
-<img src="https://static.fsf.org/nosvn/no-facebook-me.png"
-alt="Not f'd — you won't find me on Facebook" width="180px"
-border-radius="25%" style="margin:2px 2px 2px 20px"/> </a>
-@@
+# <img src="https://static.fsf.org/nosvn/no-facebook-me.png"
+# alt="Not f'd — you won't find me on Facebook" width="360px"
+# border-radius="25%" style="margin:2px 2px 2px 20px"/>
 
 
 | [[https://github.com/scemama][GitHub]] | [[https://gitlab.com/scemama][GitLab]] | [[https://www.researchgate.net/profile/Anthony_Scemama>`__][ResearchGate]] | [[http://arxiv.org/a/scemama_a_1][ArXiv]] |
@@ -74,7 +75,7 @@ div.revlist ol {
 
 -----
 * Teaching
-  [[./teaching/index.html][Visit this page]]
+[[./teaching/index.html][Visit this page]]
 * Oral presentations
   # 60 report 2025
 
