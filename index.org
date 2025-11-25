@@ -78,15 +78,17 @@ div.revlist ol {
 [[./teaching/index.html][Visit this page]]
 * Oral presentations
   # 60 report 2025
-
+  - [[https://hal.science/hal-05380968v1/file/scemama.pdf][Porting codes to GPUs]]
+    20/11/2025, Prospect Meeting 2025: "Means of calculation", Themosia, Marseille.
   - [[https://hal.science/hal-05136985/file/scemama.pdf][TREXIO: an open-source file format and library for quantum chemical data]]
-    30/06/2025, /ReLibQC/, Helsinki.
+    30/06/2025, /ReLibQC/, Helsinki, Finland.
   - [[https://hal.science/hal-04815715v1/file/scemama.pdf][Developing libraries to increase performance, interoperability and reproducibility]]
     29/11/2024, /Theory Days/, Toulouse.
   - [[https://hal.science/hal-04728651v1/file/jtms_scemama.pdf][Selected configuration interaction using a transcorrelated Hamiltonian]]
     09/10/2024, /Journées Théorie, Modélisation et Simulations - JTMS 2024/, Toulouse.
   - [[https://zenodo.org/records/10622933/preview/scemama.pdf][QMCkl: A Unified Approach to Accelerating Quantum Monte Carlo Codes]]
-    05/02/2024, /Bridging Quantum Monte Carlo and High-Performance Simulations/, Esch-sur-Alzette.
+    05/02/2024, /Bridging Quantum Monte Carlo and High-Performance
+    Simulations/, Esch-sur-Alzette, Luxembourg.
     [[https://dx.doi.org/10.5281/zenodo.10622933][doi:10.5281/zenodo.10622933]]
   - [[https://zenodo.org/record/8119287/preview/qcaml.pdf][QCaml: Chimie quantique avec OCaml]]
     27/06/2023, 3rd OCaml Meetup, Toulouse.
