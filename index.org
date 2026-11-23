@@ -78,8 +78,10 @@ div.revlist ol {
 [[./teaching/index.html][Visit this page]]
 * Oral presentations
   # 60 report 2025
+  - [[./talks/2026-11-19-agentic-ai.pdf][How agentic AI transformed my way of working]]
+    19/11/2026, /LCPQ group meeting/, Toulouse.
   - [[https://hal.science/hal-05685853/file/scemama.pdf][From Monolithic Codes to Reusable Libraries]]
-    08/07/2026, TheMoSiA conference, Nancy, France
+    08/07/2026, TheMoSiA conference, Nantes, France
   - [[https://hal.science/hal-05380968v1/file/scemama.pdf][Porting codes to GPUs]]
     20/11/2025, Prospect Meeting 2025: "Means of calculation", Themosia, Marseille.
   - [[https://hal.science/hal-05136985/file/scemama.pdf][TREXIO: an open-source file format and library for quantum chemical data]]
